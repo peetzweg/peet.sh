@@ -1,0 +1,46 @@
+body {
+    background-color: #4B4B4B;
+    color: #D9D9D9;
+    font-size: 24px;
+}
+
+pre {
+    font-family: 'FantasqueSansMonoRegular';
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2, h3 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.dir {
+    color: #B7DDFC;
+}
+
+a {
+    color: #F9D7D7;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: #99BCBD;
+    color: #D9D9D9;
+}
+
+#name {
+    color: #A3C8A4;
+}
+
+.prompt {
+    color: #F9D7D7;
+}
+
+::selection {
+    background: #99BCBD; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+    background: #99BCBD; /* Gecko Browsers */
+}
+
