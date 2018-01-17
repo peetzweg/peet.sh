@@ -2,3 +2,4 @@
 *.map
 .cache
 node_modules
+public
