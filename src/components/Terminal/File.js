@@ -8,9 +8,9 @@ const styles = {
   }
 }
 
-const File = ({name, url}) => {
+const File = ({name, url, ...rest}) => {
   return (
-    <span>
+    <span {...rest}>
       <a
         style={styles.file}
         href={url}

@@ -13,9 +13,9 @@ const styles = {
   }
 }
 
-const Prompt = ({path, command, args}) => {
+const Prompt = ({path, command, args, ...rest}) => {
   return (
-    <div>
+    <div {...rest}>
       <div
         style={styles.path}>
         {path}

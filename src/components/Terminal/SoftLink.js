@@ -8,9 +8,9 @@ const styles = {
   }
 }
 
-const SoftLink = ({verbose, title, url}) => {
+const SoftLink = ({verbose, title, url, ...rest}) => {
   return (
-    <span>
+    <span {...rest}>
       <a
         style={styles.link}
         href={url}

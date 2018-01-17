@@ -8,9 +8,9 @@ const styles = {
   }
 }
 
-const Executable = ({name, url}) => {
+const Executable = ({name, url, ...rest}) => {
   return (
-    <span>
+    <span {...rest}>
       <a
         style={styles.executable}
         href={url}
