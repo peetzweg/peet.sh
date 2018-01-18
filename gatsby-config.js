@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: '/atem.io',
+  // pathPrefix: '/atem.io', // NOT needed because I'm hosting it on a TLD
   siteMetadata: {
     title: 'Gatsby Default Starter',
   },
