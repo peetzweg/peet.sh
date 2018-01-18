@@ -1,11 +1,10 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Prompt from '../components/Terminal/Prompt'
-import File from '../components/Terminal/File'
 import Executable from '../components/Terminal/Executable'
 import Profiles from '../components/Section/Profiles'
 import Projects from '../components/Section/Projects'
-import Resume from '../documents/resume_poloczek_philip.pdf'
+import Documents from '../components/Section/Documents'
 import PixelMe from '../images/me.png'
 
 const styles = {
@@ -40,7 +39,7 @@ const IndexPage = () => (
       <br />
 
       <Prompt path={'~'} command={'ls'} args={'documents/'} />
-      <File name={'resume.pdf'} url={Resume} />
+      <Documents />
       <br />
 
       <Prompt path={'~'} command={'ls'} args={'bin/'} />

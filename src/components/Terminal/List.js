@@ -10,6 +10,10 @@ const styles = {
 }
 
 const List = ({name, long, children, ...rest}) => {
+  if (!Array.isArray(children)) {
+    children = [children]
+  }
+
   if (long) {
     return (
       <div {...rest}>
