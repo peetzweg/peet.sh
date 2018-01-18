@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/atem.io',
   siteMetadata: {
     title: 'Gatsby Default Starter',
   },
