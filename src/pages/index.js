@@ -4,6 +4,7 @@ import Prompt from '../components/Terminal/Prompt'
 import File from '../components/Terminal/File'
 import Executable from '../components/Terminal/Executable'
 import Profiles from '../components/Section/Profiles'
+import Projects from '../components/Section/Projects'
 import Resume from '../documents/resume_poloczek_philip.pdf'
 import PixelMe from '../images/me.png'
 
@@ -35,6 +36,7 @@ const IndexPage = () => (
       <br />
 
       <Prompt path={'~'} command={'ls'} args={'-l projects/'} />
+      <Projects />
       <br />
 
       <Prompt path={'~'} command={'ls'} args={'documents/'} />
