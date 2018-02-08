@@ -47,7 +47,7 @@ export const ProjectData = [
 ]
 export const ProfileData = [
   {title: 'LinkedIn', url: 'https://www.linkedin.com/in/philip-poloczek-1b3202125/'},
-  {title: 'GitHub', url: 'GitHub'},
+  {title: 'GitHub', url: 'https://github.com/Pczek'},
   {title: 'STRAVA', url: 'https://www.strava.com/athletes/18353420'},
   {title: 'Instagram', url: 'https://www.instagram.com/naolimao/'},
 ]
