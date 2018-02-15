@@ -1,5 +1,10 @@
 export const ProjectData = [
   {
+    title: 'Monota',
+    url:'https://github.com/Pczek/Monota',
+    createdAt: new Date(2017, 11, 1)
+  },
+  {
     title: 'Aves',
     url: 'http://getaves.com/',
     createdAt: new Date(2017, 5, 1)
