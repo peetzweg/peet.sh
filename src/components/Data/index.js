@@ -1,17 +1,27 @@
 export const ProjectData = [
 	{
-		title: 'Globe - Connected Ether Tracker',
+		title: 'Airbox - Audio Inbox for your Smart Speaker',
+		url: 'http://airbox.network',
+		createdAt: new Date(2018, 4, 15)
+	},
+	{
+		title: 'Google Maps for Decentraland',
+		url: 'https://github.com/Pczek/ParcelExplorer',
+		createdAt: new Date(2018, 3, 1)
+	},
+	{
+		title: 'Globe - Connected Ether Tracker/Wallet',
 		url: 'https://github.com/Pczek/Globe',
 		createdAt: new Date(2018, 2, 15)
 	},
 	{
-		title: 'Monota - Mono Tasking App',
+		title: 'Monota - Mono Tasking iOS App',
 		url: 'https://github.com/Pczek/Monota',
 		createdAt: new Date(2017, 11, 1)
 	},
 	{
 		title: 'Aves -  Setupless Text2Speech for Blogs',
-		url: 'http://getaves.com/',
+		url: 'http://getaves.com.s3-website-eu-west-1.amazonaws.com/introduction/',
 		createdAt: new Date(2017, 5, 1)
 	},
 	{
