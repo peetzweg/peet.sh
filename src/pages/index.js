@@ -6,9 +6,18 @@ import Profiles from '../components/Section/Profiles'
 import Projects from '../components/Section/Projects'
 import Documents from '../components/Section/Documents'
 import PixelMe from '../images/me.png'
+import { Helmet } from 'react-helmet'
 
 const styles = {
-  container: {},
+  container: {
+    backgroundColor: '#4B4B4B',
+    color: '#D9D9D9',
+    imageRendering: 'pixelated',
+    fontSize: '20px',
+    fontFamily: 'FantasqueSansMonoRegular, serif',
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+  },
   content: {},
   pixelMe: {
     width: '10vw',
@@ -21,6 +30,10 @@ const styles = {
 
 const IndexPage = () => (
   <div style={styles.container}>
+    <Helmet>
+      <link rel="stylesheet" href="./atem.css" type="text/css" />
+    </Helmet>
+
     <div style={styles.content}>
       <Prompt path={'~'} command={'cat'} args={'./README.md'} />
       # Hi there,<br />
