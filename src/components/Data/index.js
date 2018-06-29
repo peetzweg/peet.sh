@@ -1,66 +1,79 @@
 export const ProjectData = [
 	{
-		title: 'Airbox - Audio Inbox for your Smart Speaker',
+		title: 'Airbox',
+		description: 'Audio Inbox for your Smart Speaker',
 		url: 'http://airbox.network',
-		createdAt: new Date(2018, 4, 15)
+		createdAt: new Date(2018, 4, 1)
 	},
 	{
-		title: 'Google Maps for Decentraland',
+		title: 'Parcel Explorer App',
+		description: 'Google Maps for Decentraland',
 		url: 'https://github.com/Pczek/ParcelExplorer',
 		createdAt: new Date(2018, 3, 1)
 	},
 	{
-		title: 'Globe - Connected Ether Tracker/Wallet',
+		title: 'Globe',
+		description: 'Connected Ether Tracker/Wallet',
 		url: 'https://github.com/Pczek/Globe',
 		createdAt: new Date(2018, 2, 15)
 	},
 	{
-		title: 'Monota - Mono Tasking iOS App',
-		url: 'https://github.com/Pczek/Monota',
+		title: 'Monota',
+		description: 'Mono Tasking iOS App',
+		url: 'https://itunes.apple.com/us/app/monota/id1333036184?mt=8',
 		createdAt: new Date(2017, 11, 1)
 	},
 	{
-		title: 'Aves -  Setupless Text2Speech for Blogs',
+		title: 'Aves',
+		description: 'Setupless Text2Speech for Blogs',
 		url: 'http://getaves.com.s3-website-eu-west-1.amazonaws.com/introduction/',
 		createdAt: new Date(2017, 5, 1)
 	},
 	{
-		title: 'papr - Paper Calendar Templates',
+		title: 'papr',
+		description: 'Paper Calendar Templates',
 		url: 'https://github.com/Pczek/papr',
 		createdAt: new Date(2017, 1, 1)
 	},
 	{
-		title: 'diarydash - Daily Diary Dashboard',
+		title: 'diarydash',
+		description: 'Daily Diary Dashboard',
 		url: 'http://diarydash.com/',
 		createdAt: new Date(2017, 0, 1)
 	},
 	{
-		title: 'breathpacer - Rythmic Breath Pacer',
+		title: 'breathpacer',
+		description: 'Rythmic Breath Pacer',
 		url: 'https://pczek.github.io/breathpacer/',
 		createdAt: new Date(2016, 6, 1)
 	},
 	{
-		title: 'matgen - Cutting Mat Background Generator',
+		title: 'matgen',
+		description: 'Cutting Mat Background Generator',
 		url: 'https://pczek.github.io/matgen/',
 		createdAt: new Date(2016, 2, 1)
 	},
 	{
 		title: 'Five_Minute_Journal',
+		description: '',
 		url: 'https://pczek.github.io/5mJ/',
 		createdAt: new Date(2015, 6, 1)
 	},
 	{
 		title: 'Commander_Ottens_Pro_Longboarding',
+		description: '',
 		url: 'https://github.com/Pczek/COPL',
 		createdAt: new Date(2015, 1, 1)
 	},
 	{
 		title: 'Nuclear_Power_Plant_Simulator_2014',
+		description: '',
 		url: 'https://github.com/Pczek/NPPS2014',
 		createdAt: new Date(2015, 11, 1)
 	},
 	{
-		title: 'cairobou - Creative Coding with Cairo',
+		title: 'cairobou',
+		description: 'Creative Coding with Cairo',
 		url: 'https://github.com/Pczek/cairobou',
 		createdAt: new Date(2014, 9, 1)
 	}
