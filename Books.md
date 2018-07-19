@@ -1,4 +1,12 @@
 # Books I've Read
+## 2018
+Zero to One - Peter Thiel
+The Lean Startup - Eric Ries
+Meine Spirituelle Biographie -  Dalai Lama
+American Kingpin - Nick Bilton
+Flugangst 7A - Sebastian Fitzek
+The Mom Test - Rob Fitzpatrick
+Waking Up - Sam Harris
 
 ## 2017
 The Fifth Agreement - Don Miguel Ruiz / Don Jose Ruiz
