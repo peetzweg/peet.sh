@@ -10,7 +10,8 @@ import { Helmet } from 'react-helmet';
 import { BackgroundColor, FontColor } from '../components/Colors';
 const styles = {
 	container: {
-		margin: '1rem',
+		margin: '0px 1rem 0px 1rem',
+		padding: '0px 0px 1rem 0px',
 		backgroundColor: BackgroundColor,
 		color: FontColor,
 		imageRendering: 'pixelated',
