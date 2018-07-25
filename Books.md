@@ -13,6 +13,8 @@ The Fifth Agreement - Don Miguel Ruiz / Don Jose Ruiz
 Acht Nacht - Sebastian Fitzek
 30 Lessens for Life - Karl Pillemer Ph.D.
 The Subtle Art of Not Giving a F*ck - Mark Manson
+The Organized Mind - Daniel Levitin
+Deep Work - Cal Newport
 
 ## ????
 
