@@ -5,7 +5,7 @@ import Executable from '../components/Terminal/Executable';
 import Profiles from '../components/Section/Profiles';
 import Projects from '../components/Section/Projects';
 import Documents from '../components/Section/Documents';
-import PixelMe from '../images/me.png';
+import PixelMe from '../images/meBig.png';
 import { Helmet } from 'react-helmet';
 import { BackgroundColor, FontColor } from '../components/Colors';
 const styles = {
@@ -22,6 +22,7 @@ const styles = {
 	},
 	content: {},
 	pixelMe: {
+		imageRendering: 'pixelated',
 		width: '10vw',
 		minWidth: '100px',
 		position: 'fixed',
