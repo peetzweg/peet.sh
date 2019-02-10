@@ -1,18 +1,28 @@
 # Books I've Read
+
+## 2019
+
+Why We Sleep - Mathew Walker
+The Machine Stops - E.M. Forster
+21 Lessons for the 21st Century
+
 ## 2018
+
 Zero to One - Peter Thiel
 The Lean Startup - Eric Ries
-Meine Spirituelle Biographie -  Dalai Lama
+Meine Spirituelle Biographie - Dalai Lama
 American Kingpin - Nick Bilton
 Flugangst 7A - Sebastian Fitzek
 The Mom Test - Rob Fitzpatrick
 Waking Up - Sam Harris
+Das Paket - Sebastian Fitzek
 
 ## 2017
+
 The Fifth Agreement - Don Miguel Ruiz / Don Jose Ruiz
 Acht Nacht - Sebastian Fitzek
 30 Lessens for Life - Karl Pillemer Ph.D.
-The Subtle Art of Not Giving a F*ck - Mark Manson
+The Subtle Art of Not Giving a F\*ck - Mark Manson
 The Organized Mind - Daniel Levitin
 Deep Work - Cal Newport
 
@@ -57,4 +67,3 @@ Shantaram - Gregory David Roberts
 Brave New World - Aldous Huxley
 Die Kunst des klaren Denkens - Rolf Dobelli
 Selbstbetrachtungen - Mark Aurel
-
