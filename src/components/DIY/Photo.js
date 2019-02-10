@@ -9,7 +9,7 @@ const styles = {
 
 const Photo = ({src, style, ...rest}) => {
   return (
-    <img className={'photo'} style={styles.image} src={src} />
+    <img className={'photo'} style={styles.image} src={src} alt=""/>
   )
 }
 

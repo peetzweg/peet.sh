@@ -1,5 +1,4 @@
 import React from 'react';
-import Link from 'gatsby-link';
 import Prompt from '../components/Terminal/Prompt';
 import Executable from '../components/Terminal/Executable';
 import Profiles from '../components/Section/Profiles';
@@ -36,8 +35,20 @@ const styles = {
 const IndexPage = () => (
 	<div style={styles.container}>
 		<Helmet>
+			<meta charSet="utf-8" />
+			<title>atem.io / Philip Poloczek</title>
+			<meta name="description" content="This is the personal website of Philip Poloczek" />
+			<meta name="keywords" content="developer, profile, resume" />
+			<link
+				rel="stylesheet"
+				media="screen"
+				href="https://fontlibrary.org/face/fantasque-sans-mono"
+				type="text/css"
+			/>
+			<link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet" />
 			<link rel="stylesheet" href="./atem.css" type="text/css" />
 		</Helmet>
+
 
 		<div style={styles.content}>
 			<Prompt path={'~'} command={'cat'} args={'./README.md'} />
@@ -62,7 +73,7 @@ const IndexPage = () => (
 			<Prompt path={'~'} />
 		</div>
 
-		<img style={styles.pixelMe} src={PixelMe} />
+		<img style={styles.pixelMe} src={PixelMe} alt="" />
 	</div>
 );
 

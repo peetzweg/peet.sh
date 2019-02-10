@@ -1,5 +1,11 @@
 export const ProjectData = [
 	{
+		title: 'Polos Pretty Paper',
+		description: 'Print Templates',
+		url: 'https://itunes.apple.com/us/app/polos-pretty-paper/id1439946484?mt=8',
+		createdAt: new Date(2018, 12, 1)
+	},
+	{
 		title: 'Airbox',
 		description: 'Audio Inbox for your Smart Speaker',
 		url: 'http://airbox.network',
