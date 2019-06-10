@@ -1,0 +1,13 @@
+Make this list publicalyy available similar to Nomad List
+- [ ] Blood Oxidation
+- [ ] No Workout before bed. Last time 2-3 Hours
+- [ ] Not stuffed
+- [ ] Not hungry
+- [ ] Washed Face
+- [ ] Cold Feet
+- [ ] 8 Hours of Sleep Opportunity
+- [ ] 20Degrees
+- [ ] Complete Darkness during the time
+- [ ] No Blue Light 3 Hours before bed
+- [ ] No Screen for at least 1 hour prior to bed
+- [ ]
