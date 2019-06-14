@@ -56,7 +56,6 @@ const Prompt = ({ path = "~", command, args, ...rest }) => {
       <Path>{path}</Path>
       <Input>
         <PromptSymbol>❯</PromptSymbol>
-
         {command ? <Command>{` ${command}`}</Command> : <Caret />}
         {args ? <Arguments>{` ${args}`}</Arguments> : null}
       </Input>

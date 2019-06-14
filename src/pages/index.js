@@ -5,6 +5,7 @@ import Profiles from "../components/Section/Profiles";
 import Projects from "../components/Section/Projects";
 import Documents from "../components/Section/Documents";
 import PixelMe from "../images/meBig.png";
+import AppIcon from "../images/loop/AppIcon.png";
 import { Helmet } from "react-helmet";
 import {
   BackgroundColor,
@@ -27,22 +28,22 @@ const Page = styled.div`
   min-height: 100vh;
   background-color: ${BackgroundColor};
   color: ${FontColor};
-  image-rendering: pixelated;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 16px;
+  padding: 0 16px;
 `;
 
-const PixelMeImage = styled.image`
+const PixelMeImage = styled.img`
   image-rendering: pixelated;
   width: 10vw;
   min-width: 100px;
+  zindex: 10;
   position: fixed;
-  margin: 0;
   bottom: 0;
-  right: 16;
-  zindex: 0;
+  right: 16px;
+  margin: 0;
 `;
 
 const IndexPage = () => (
@@ -66,20 +67,17 @@ const IndexPage = () => (
         />
       </Helmet>
 
+      <PixelMeImage src={PixelMe} alt="" />
+
       <div>
         <Prompt path={"~"} command={"cat"} args={"./README.md"} />
         # Hi there,
+        <br />
         <br />
         I am Phil, people tend to call me Polo. As a master's degree computer
         scientist I lived a lot of my life inside terminals. I enjoy writing
         clean code and learning about new technologies to solve hard problems.
         <br />
-        <br />
-        <Prompt path={"~"} command={"ls"} args={"profiles/"} />
-        <Profiles />
-        <br />
-        <Prompt path={"~"} command={"ls"} args={"-l projects/"} />
-        <Projects />
         <br />
         <Prompt path={"~"} command={"ls"} args={"documents/"} />
         <Documents />
@@ -88,10 +86,15 @@ const IndexPage = () => (
         <Executable name={"mailMe"} url={"mailto:phil.czek@gmail.com"} />
         <br />
         <br />
+        <Prompt path={"~"} command={"ls"} args={"profiles/"} />
+        <Profiles />
+        <br />
+        <Prompt path={"~"} command={"ls"} args={"-l projects/"} />
+        <Projects />
+        <br />
         <Prompt path={"~"} />
+        <br />
       </div>
-
-      <PixelMeImage src={PixelMe} alt="" />
     </Page>
   </>
 );
