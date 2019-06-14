@@ -33,6 +33,16 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-142149309-1",
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true
+      }
+    },
+    {
       resolve: `gatsby-plugin-create-client-paths`,
       options: { prefixes: [`/live/*`] }
     }

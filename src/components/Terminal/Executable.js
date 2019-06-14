@@ -1,25 +1,21 @@
-import React from 'react'
-import { ExecutableColor } from '../Colors'
+import React from "react";
+import { ExecutableColor, LinkHoverColor } from "../Colors";
+import styled from "styled-components";
 
-const styles = {
-  executable: {
-    color: ExecutableColor,
-    textDecoration: 'none',
+const Link = styled.a`
+  color: ${ExecutableColor};
+  text-decoration: none;
+  &:hover {
+    background-color: ${LinkHoverColor};
   }
-}
+`;
 
-const Executable = ({name, url, ...rest}) => {
+const Executable = ({ name, url, ...rest }) => {
   return (
     <span {...rest}>
-      <a
-        style={styles.executable}
-        href={url}
-      >
-        {name}
-      </a>
-      *
+      <Link href={url}>{name}</Link>*
     </span>
-  )
-}
+  );
+};
 
-export default Executable
+export default Executable;

@@ -1,44 +1,67 @@
-import React from 'react';
-import { PromptSymbolColor, DirectoryColor, CommandColor, CaretColor } from '../Colors';
+import React from "react";
+import styled from "styled-components";
+import {
+  PromptSymbolColor,
+  DirectoryColor,
+  CommandColor,
+  CaretColor
+} from "../Colors";
 
-const styles = {
-	path: {
-		color: DirectoryColor
-	},
-	input: {
-		display: 'flex',
-		flexDirection: 'row'
-	},
-	prompt: {
-		color: PromptSymbolColor,
-		marginRight: '0.5rem'
-	},
-	command: {
-		color: CommandColor,
-		marginRight: '0.5rem'
-	},
-	args: {
-		marginRight: '0.5rem'
-	},
-	caret: {
-		backgroundColor: CaretColor,
-		width: '0.6rem',
-		heigth: '1rem'
-	}
-};
+const Path = styled.div`
+  color: ${DirectoryColor};
+`;
 
-const Prompt = ({ path = '~', command, args, ...rest }) => {
-	return (
-		<div {...rest}>
-			<div style={styles.path}>{path}</div>
-			<div style={styles.input}>
-				<b style={styles.prompt}>❯</b>
+const Input = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
 
-				{command ? <b style={styles.command}>{` ${command}`}</b> : <span style={styles.caret}> </span>}
-				{args ? <span>{` ${args}`}</span> : null}
-			</div>
-		</div>
-	);
+const PromptSymbol = styled.span`
+  color: ${PromptSymbolColor};
+  margin-right: 0.5rem;
+  font-weight: bold;
+`;
+
+const Command = styled.span`
+  color: ${CommandColor};
+  margin-right: 0.5rem;
+  font-weight: bold;
+`;
+
+const Caret = styled.span`
+  background-color: ${CaretColor};
+  width: 0.6rem;
+  heigth: 1rem;
+
+  animation: blink-animation 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) alternate
+    infinite;
+
+  @keyframes blink-animation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
+
+const Arguments = styled.span`
+  margin-right: 0.5rem;
+`;
+
+const Prompt = ({ path = "~", command, args, ...rest }) => {
+  return (
+    <div {...rest}>
+      <Path>{path}</Path>
+      <Input>
+        <PromptSymbol>❯</PromptSymbol>
+
+        {command ? <Command>{` ${command}`}</Command> : <Caret />}
+        {args ? <Arguments>{` ${args}`}</Arguments> : null}
+      </Input>
+    </div>
+  );
 };
 
 export default Prompt;

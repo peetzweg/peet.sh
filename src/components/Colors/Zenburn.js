@@ -1,0 +1,11 @@
+export const BackgroundColor = "#4B4B4B";
+export const CaretColor = "#99BCBD";
+export const CommandColor = "#A3C8A4";
+export const DirectoryColor = "#B7DDFC";
+export const ExecutableColor = "#F9D7D7";
+export const FileColor = "#F9D7D7";
+export const FontColor = "#D9D9D9";
+export const LinkColor = "#F9D7D7";
+export const LinkHoverColor = "#517474";
+export const PromptSymbolColor = "#F9D7D7";
+export const SelectionColor = "#99BCBD";

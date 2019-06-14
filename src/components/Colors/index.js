@@ -1,11 +1,1 @@
-export const CaretColor = '#99BCBD';
-export const SelectionColor = '#99BCBD';
-export const BackgroundColor = '#4B4B4B';
-export const FontColor = '#D9D9D9';
-export const DirectoryColor = '#B7DDFC';
-export const FileColor = '#F9D7D7';
-export const ExecutableColor = '#F9D7D7';
-export const LinkColor = '#F9D7D7';
-export const LinkHoverColor = '#99BCBD';
-export const CommandColor = '#A3C8A4';
-export const PromptSymbolColor = '#F9D7D7';
+export * from "./Zenburn";
