@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import { Colors } from "../theme/loop";
 import DemoGif from "../images/loop/demo.gif";
 import AppIconFile from "../images/loop/AppIcon.png";
+import yaml from "js-yaml";
 
 const PageContainer = styled.div`
   display: flex;
@@ -82,6 +83,20 @@ const AppIcon = styled.image`
   margin: 0;
 `;
 
+const BUCKET = "https://s3.eu-central-1.amazonaws.com/atem.io";
+const LATEST_MAC_YAML = "latest-mac.yml";
+
+const download = async () => {
+  try {
+    const response = await fetch(`${BUCKET}/${LATEST_MAC_YAML}`);
+    const text = await response.text();
+    const obj = yaml.load(text);
+    window.location.href = `${BUCKET}/${obj.path}`;
+  } catch (exception) {
+    console.error(exception);
+  }
+};
+
 const LoopPage = () => (
   <>
     <Helmet>
@@ -111,9 +126,7 @@ const LoopPage = () => (
 
           <InfoTitle>loop for Mac OS</InfoTitle>
           <InfoSubtitle>Keep Track of Your Social Interactions</InfoSubtitle>
-          <Button href="https://s3.eu-central-1.amazonaws.com/atem.io/app/mac/loop.dmg">
-            Download for free
-          </Button>
+          <Button onClick={download}>Download for free</Button>
         </InfoContainer>
       </GridContainer>
     </PageContainer>

@@ -1,11 +1,12 @@
 import React from "react";
+import Link from "../components/Terminal/Link";
 import Prompt from "../components/Terminal/Prompt";
 import Executable from "../components/Terminal/Executable";
 import Profiles from "../components/Section/Profiles";
 import Projects from "../components/Section/Projects";
 import Documents from "../components/Section/Documents";
 import PixelMe from "../images/meBig.png";
-import AppIcon from "../images/loop/AppIcon.png";
+
 import { Helmet } from "react-helmet";
 import {
   BackgroundColor,
@@ -73,10 +74,12 @@ const IndexPage = () => (
         <Prompt path={"~"} command={"cat"} args={"./README.md"} />
         # Hi there,
         <br />
+        <br />I am Phil, people tend to call me Polo. As a master's degree
+        computer scientist I lived a lot of my life inside terminals. I enjoy
+        writing clean code and learning about new technologies to solve hard
+        problems.
         <br />
-        I am Phil, people tend to call me Polo. As a master's degree computer
-        scientist I lived a lot of my life inside terminals. I enjoy writing
-        clean code and learning about new technologies to solve hard problems.
+        <Link href="/diy">As a hobby I build furniture.</Link>
         <br />
         <br />
         <Prompt path={"~"} command={"ls"} args={"documents/"} />
