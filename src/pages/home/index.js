@@ -5,10 +5,13 @@ import { Helmet } from "react-helmet";
 import Link from "../../components/Terminal/Link";
 import Prompt from "../../components/Terminal/Prompt";
 import Executable from "../../components/Terminal/Executable";
+import InputPrompt from "../../components/Terminal/InputPrompt";
+
 import Profiles from "../../components/Section/Profiles";
 import Projects from "../../components/Section/Projects";
 import Documents from "../../components/Section/Documents";
 import PixelMe from "../../images/meSummer.png";
+
 
 import {
   GlobalStyle,
@@ -66,7 +69,7 @@ const IndexPage = () => (
           <Prompt path={"~"} command={"ls"} args={"-l projects/"} />
           <Projects />
           <br />
-          <Prompt path={"~"} />
+          <InputPrompt path={"~"} />
         </Terminal>
       </TerminalContainer>
     </Page>
