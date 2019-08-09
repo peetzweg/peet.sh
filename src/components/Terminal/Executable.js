@@ -1,5 +1,5 @@
 import React from "react";
-import { ExecutableColor, LinkHoverColor } from "../Colors";
+import { ExecutableColor, LinkHoverColor } from "../../theme/home/Colors";
 import styled from "styled-components";
 
 const Link = styled.a`

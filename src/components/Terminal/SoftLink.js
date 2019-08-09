@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { LinkColor, LinkHoverColor } from "../Colors";
+import { LinkColor, LinkHoverColor } from "../../theme/home/Colors";
 
 const Link = styled.a`
   color: ${LinkColor};

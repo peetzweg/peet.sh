@@ -1,4 +1,4 @@
-import { ExecutableColor, LinkHoverColor } from "../Colors";
+import { ExecutableColor, LinkHoverColor } from "../../theme/home/Colors";
 import styled from "styled-components";
 
 export default styled.a`

@@ -1,5 +1,5 @@
 import React from "react";
-import { FileColor, LinkHoverColor } from "../Colors";
+import { FileColor, LinkHoverColor } from "../../theme/home/Colors";
 
 import styled from "styled-components";
 

@@ -5,7 +5,7 @@ import {
   DirectoryColor,
   CommandColor,
   CaretColor
-} from "../Colors";
+} from "../../theme/home/Colors";
 
 const Path = styled.div`
   color: ${DirectoryColor};
@@ -33,7 +33,7 @@ const Caret = styled.span`
   width: 0.6rem;
   heigth: 1rem;
 
-  animation: blink-animation 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) alternate
+  animation: blink-animation 1s cubic-bezier(0.215, 0.61, 0.355, 1) alternate
     infinite;
 
   @keyframes blink-animation {

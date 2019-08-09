@@ -79,10 +79,6 @@ const Button = styled.a`
   }
 `;
 
-const AppIcon = styled.image`
-  margin: 0;
-`;
-
 const BUCKET = "https://s3.eu-central-1.amazonaws.com/atem.io";
 const LATEST_MAC_YAML = "latest-mac.yml";
 
@@ -119,10 +115,10 @@ const LoopPage = () => (
     <PageContainer>
       <GridContainer>
         <DemoContainer>
-          <img src={DemoGif} style={{ margin: 0 }} />
+          <img src={DemoGif} alt="" style={{ margin: 0 }} />
         </DemoContainer>
         <InfoContainer>
-          <img src={AppIconFile} />
+          <img src={AppIconFile} alt="" />
 
           <InfoTitle>loop for Mac OS</InfoTitle>
           <InfoSubtitle>Keep Track of Your Social Interactions</InfoSubtitle>

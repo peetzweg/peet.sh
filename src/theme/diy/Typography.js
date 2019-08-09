@@ -22,7 +22,6 @@ export const Typography = {
     fontFamily: SecondaryFont,
     color: Colors.primary,
     fontSize: BaseFontSize,
-    fontSize: "20px",
     fontWeight: "400"
   }
 };
