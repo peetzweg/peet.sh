@@ -56,3 +56,5 @@ export const Window = styled.iframe`
   padding: none;
   height: calc(100vh - 15px - 15px);
 `;
+
+export default () => null;
