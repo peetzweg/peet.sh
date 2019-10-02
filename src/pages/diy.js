@@ -1,12 +1,11 @@
 import React from "react";
-
-import Curtain from "../images/DIY/CurtainPole.jpg";
-import Rack from "../images/DIY/Rack01.jpg";
-import Bernd from "../images/DIY/bernd.jpg";
-import Lamp from "../images/DIY/Lamp.jpg";
-
-import styled from "styled-components";
 import { Helmet } from "react-helmet";
+import styled from "styled-components";
+import Bernd from "../images/DIY/bernd.jpg";
+import Curtain from "../images/DIY/CurtainPole.jpg";
+import Lamp from "../images/DIY/Lamp.jpg";
+import Rack from "../images/DIY/Rack01.jpg";
+import Shades from "../images/DIY/shades.jpg";
 import { Typography } from "../theme/diy";
 
 const Page = styled.div`
@@ -70,6 +69,34 @@ const Entry = ({ title, description, src }) => (
   </EntryGrid>
 );
 
+const ENTRIES = [
+  {
+    title: "Lamp Shades",
+    description: "A4 & A3 sized shades made out of a paper fabric mix.",
+    src: Shades
+  },
+  {
+    title: "Rack",
+    description: "Painted and welded construction steel rods.",
+    src: Rack
+  },
+  {
+    title: "Leather Chair",
+    description: "Was a piece of a blue velvet Rolf Benz sofa.",
+    src: Bernd
+  },
+  {
+    title: "Curtain-Rod",
+    description: "Simple construction made out of tin heating pipes.",
+    src: Curtain
+  },
+  {
+    title: "Ladder Chandelier",
+    description: "Fixed to the ceiling with tow and metal chain.",
+    src: Lamp
+  }
+];
+
 const SelfmadePage = () => (
   <>
     <Helmet>
@@ -87,26 +114,9 @@ const SelfmadePage = () => (
     </Helmet>
     <Page>
       <Heading>Stuff I've Built</Heading>
-      <Entry
-        title={"Rack"}
-        description="Painted and welded construction steel rods."
-        src={Rack}
-      />
-      <Entry
-        title={"Leather Chair"}
-        description="Was a piece of a blue velvet Rolf Benz sofa."
-        src={Bernd}
-      />
-      <Entry
-        title={"Curtain-Rod"}
-        description="Simple construction made out of tin heating pipes."
-        src={Curtain}
-      />
-      <Entry
-        title={"Ladder Chandelier"}
-        description="Fixed to the ceiling with tow and metal chain."
-        src={Lamp}
-      />
+      {ENTRIES.map(entry => (
+        <Entry {...entry} />
+      ))}
     </Page>
   </>
 );
