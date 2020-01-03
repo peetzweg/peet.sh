@@ -2,7 +2,7 @@ import "normalize.css";
 import React from "react";
 import { Helmet } from "react-helmet";
 import { Page } from "./style";
-import playlistData from "./playlists";
+import playlistData from "../../components/Data/playlists";
 import format from "date-fns/format";
 import styled from "styled-components";
 
@@ -12,12 +12,13 @@ const PlaylistContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 1.5rem;
-  padding: 0 16px;
+  padding: 0 10px;
 `;
 
 const PlaylistContent = styled.div`
-  width: 100%;
-  max-width: 380px;
+  width: 50vw;
+  max-width: 400px;
+  min-width: 300px;
 `;
 
 const PlaylistIframe = styled.iframe`
@@ -26,10 +27,21 @@ const PlaylistIframe = styled.iframe`
   border: 0;
 `;
 
+const PlaylistHeading = styled.h2`
+  margin-bottom: 0.5rem;
+`;
+
+const PageHeading = styled.h1`
+  padding: 0 10px;
+`;
+
 const Playlist = ({ playlist, date }) => (
   <PlaylistContainer key={date.toString()}>
     <PlaylistContent>
-      <h2>{`${format(date, "LLL")} '${format(date, "yy")}`}</h2>
+      <PlaylistHeading>{`${format(date, "LLL")} '${format(
+        date,
+        "yy"
+      )}`}</PlaylistHeading>
       <PlaylistIframe
         src={`https://open.spotify.com/embed/playlist/${playlist}`}
         allowtransparency="true"
@@ -43,7 +55,7 @@ const IndexPage = () => (
   <>
     <Helmet>
       <meta charSet="utf-8" />
-      <title>atem.io / Otten's Mixtapes</title>
+      <title>atem.io / Hype Mixtapes for Otten's</title>
       <meta
         name="description"
         content="Mixtapes I make for a friend to discover new music."
@@ -57,7 +69,7 @@ const IndexPage = () => (
       />
     </Helmet>
     <Page>
-      <h1>Otten's Mixtapes</h1>
+      <PageHeading>Hype Mixtapes for Otten's</PageHeading>
       {playlistData.map(data => (
         <Playlist {...data} />
       ))}
