@@ -1,5 +1,9 @@
 export default [
   {
+    playlist: "3cPBvDG8UZmXbd8mlD213a",
+    date: new Date("2020-01-01")
+  },
+  {
     playlist: "4bzzBlVTwvN2Rzszs4BJZJ",
     date: new Date("2019-12-01")
   },
