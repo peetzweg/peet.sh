@@ -10,7 +10,7 @@ import InputPrompt from "../../components/Terminal/InputPrompt";
 import Profiles from "../../components/Section/Profiles";
 import Projects from "../../components/Section/Projects";
 import Documents from "../../components/Section/Documents";
-import PixelMe from "../../images/meSummer.png";
+import PixelMe from "../../images/meBig.png";
 
 
 import {

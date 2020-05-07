@@ -1,9 +1,35 @@
+const capitalize = require(`remark-capitalize`)
+const emoji = require(`remark-emoji`)
+const bookmarks = require(`remark-bookmarks`)
+
 module.exports = {
   // pathPrefix: '/atem.io', // NOT needed because I'm hosting it on a TLD
   siteMetadata: {
     title: "atem.io // philip poloczek"
   },
   plugins: [
+    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        remarkPlugins: [capitalize, emoji, bookmarks],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1035,
+              sizeByPixelDensity: true,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/pages`,
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {

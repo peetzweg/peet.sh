@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-import {
-  PromptSymbolColor,
-  DirectoryColor,
-  CommandColor,
-  CaretColor,
-  FontColor
-} from "../../theme/home/Colors";
+import { CaretColor, DirectoryColor, FontColor, PromptSymbolColor } from "../../theme/home/Colors";
 
 const Path = styled.div`
   color: ${DirectoryColor};
@@ -19,12 +13,6 @@ const InputContainer = styled.div`
 
 const PromptSymbol = styled.span`
   color: ${PromptSymbolColor};
-  margin-right: 0.5rem;
-  font-weight: bold;
-`;
-
-const Command = styled.span`
-  color: ${CommandColor};
   margin-right: 0.5rem;
   font-weight: bold;
 `;
