@@ -1,5 +1,11 @@
 export const ProjectData = [
   {
+    title: "Offwhite",
+    description: "Store for Stationary Templates",
+    url: "https://www.instagram.com/offwhiteapp",
+    createdAt: new Date(2020, 1, 28)
+  },
+  {
     title: "loop",
     description: "Mac App to Keep Track of Your Social Interactions",
     url: "/loop",
