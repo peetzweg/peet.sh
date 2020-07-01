@@ -1,5 +1,13 @@
 export default [
   {
+    playlist: "6pjzD4VwszhPdBbmsFgKEG",
+    date: new Date("2020-06-01")
+  },
+  {
+    playlist: "2DSDS3yNDjMogrSKwbZoC4",
+    date: new Date("2020-05-01")
+  },
+  {
     playlist: "710E0jCXYWXKXyTTRnEj8N",
     date: new Date("2020-04-01")
   },

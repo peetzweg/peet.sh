@@ -55,7 +55,7 @@ const IndexPage = () => (
   <>
     <Helmet>
       <meta charSet="utf-8" />
-      <title>atem.io / Hype Mixtapes for Otten's</title>
+      <title>atem.io / Polo's Mixtapes for Ottens</title>
       <meta
         name="description"
         content="Mixtapes I make for a friend to discover new music."
