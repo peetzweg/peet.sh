@@ -10,6 +10,7 @@ import InputPrompt from "../../components/Terminal/InputPrompt";
 import Profiles from "../../components/Section/Profiles";
 import Projects from "../../components/Section/Projects";
 import Documents from "../../components/Section/Documents";
+import ThePoloClub from "../../components/Section/ThePoloClub";
 import PixelMe from "../../images/meBig.png";
 
 
@@ -55,6 +56,8 @@ const IndexPage = () => (
           <br />
           <Link href="/diy">As a hobby I build furniture.</Link>
           <br />
+          <Prompt path={"~"} command={"ls"} args={"-l The\\ Polo\\ Club"} />
+          <ThePoloClub />
           <br />
           <Prompt path={"~"} command={"ls"} args={"documents/"} />
           <Documents />

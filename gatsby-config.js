@@ -1,33 +1,19 @@
-const capitalize = require(`remark-capitalize`)
-const emoji = require(`remark-emoji`)
-const bookmarks = require(`remark-bookmarks`)
-
 module.exports = {
-  // pathPrefix: '/atem.io', // NOT needed because I'm hosting it on a TLD
   siteMetadata: {
+    siteUrl: "https://www.atem.io/",
     title: "atem.io // philip poloczek"
   },
   plugins: [
-    `gatsby-remark-images`,
+    "gatsby-plugin-styled-components",
+    "gatsby-plugin-image",
     {
-      resolve: `gatsby-plugin-mdx`,
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        remarkPlugins: [capitalize, emoji, bookmarks],
-        gatsbyRemarkPlugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1035,
-              sizeByPixelDensity: true,
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/pages`,
+        trackingId: "UA-142149309-1",
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true
       },
     },
     {
@@ -37,40 +23,31 @@ module.exports = {
       }
     },
     "gatsby-plugin-react-helmet",
-    "gatsby-plugin-styled-components",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        icon: "src/images/icon.png",
+      },
+    },
+    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-plugin-favicon`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        logo: "./src/favicon.png",
-        injectHTML: true,
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: false,
-          windows: false
-        }
-      }
+        name: "images",
+        path: "./src/images/",
+      },
+      __key: "images",
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        trackingId: "UA-142149309-1",
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true
-      }
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
     },
-    {
-      resolve: `gatsby-plugin-create-client-paths`,
-      options: { prefixes: [`/live/*`] }
-    }
-  ]
+  ],
 };
