@@ -8,10 +8,11 @@ import Executable from "../../components/Terminal/Executable";
 import InputPrompt from "../../components/Terminal/InputPrompt";
 
 import Profiles from "../../components/Section/Profiles";
+import Sketches from "../../components/Section/Sketches";
 import Projects from "../../components/Section/Projects";
 import Documents from "../../components/Section/Documents";
 import ThePoloClub from "../../components/Section/ThePoloClub";
-import PixelMe from "../../images/meBig.png";
+import PixelMe from "../../images/meSummer.png";
 
 
 import {
@@ -56,6 +57,9 @@ const IndexPage = () => (
           <br />
           <Link href="/diy">As a hobby I build furniture.</Link>
           <br />
+          <Prompt path={"~"} command={"ls"} args={"generative_art_sketches"} />
+          <Sketches />
+          <br />
           <Prompt path={"~"} command={"ls"} args={"-l The\\ Polo\\ Club"} />
           <ThePoloClub />
           <br />
@@ -64,7 +68,6 @@ const IndexPage = () => (
           <br />
           <Prompt path={"~"} command={"ls"} args={"bin/"} />
           <Executable name={"mailMe"} url={"mailto:phil.czek@gmail.com"} />
-          <br />
           <br />
           <Prompt path={"~"} command={"ls"} args={"profiles/"} />
           <Profiles />

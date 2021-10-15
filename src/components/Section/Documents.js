@@ -7,7 +7,7 @@ import Resume from '../../documents/resume_poloczek_philip.pdf'
 const Documents = () => {
   return (
     <List name={'Documents'}>
-      <File name={'resume_poloczek.pdf'} url={Resume} />
+      <File name={'outdated_resume_poloczek.pdf'} url={Resume} />
     </List>
   )
 }

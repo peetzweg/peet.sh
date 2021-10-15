@@ -2,7 +2,7 @@ import React from "react";
 
 import SoftLink from "../Terminal/SoftLink";
 import List from "../Terminal/List";
-import { ProjectData } from "../Data";
+import ProjectData from "../Data/projects";
 
 const Projects = () => (
   <List long name={"Projects"}>
