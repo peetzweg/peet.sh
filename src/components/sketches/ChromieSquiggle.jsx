@@ -16,7 +16,7 @@ const SketchTemplate = (props) => {
         green = p5.map(p5.random(), 0, 1, 0, 255);
         p5.noStroke()
 
-        p5.noiseDetail(2, 0.5)
+        p5.noiseDetail(2, .9)
     };
 
     const draw = (p5) => {

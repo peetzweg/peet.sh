@@ -2,12 +2,12 @@ import React from 'react'
 
 import SoftLink from '../Terminal/SoftLink'
 import List from '../Terminal/List'
-import ProfileData from '../Data/profiles'
+import SketchesData from '../Data/sketches'
 
-const Profiles = () => {
+const Sketches = () => {
   return (
-    <List name={'Profiles'}>
-      {ProfileData.map(profile => (
+    <List name={'Sketches'}>
+      {SketchesData.map(profile => (
         <SoftLink
           key={`${profile.title}_Profile`}
           title={profile.title}
@@ -17,4 +17,4 @@ const Profiles = () => {
   )
 }
 
-export default Profiles
+export default Sketches

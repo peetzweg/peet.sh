@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 import loadable from '@loadable/component'
 const OtherComponent = loadable(() => import('../../components/sketches/ChromieSquiggle'))
-const OtherComponent2 = loadable(() => import('../../components/sketches/Subscapes'))
+
 
 export const Container = styled.div`
   display: flex;
@@ -30,7 +30,7 @@ const IndexPage = () => (
 
         </Helmet>
         <Container>
-            <OtherComponent2 />
+            <OtherComponent />
         </Container>
     </>
 );
