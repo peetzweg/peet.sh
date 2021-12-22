@@ -5,17 +5,6 @@ module.exports = {
   },
   plugins: [
     "gatsby-plugin-styled-components",
-    "gatsby-plugin-image",
-    {
-      resolve: "gatsby-plugin-google-analytics",
-      options: {
-        trackingId: "UA-142149309-1",
-        // Setting this parameter is optional
-        anonymize: true,
-        // Setting this parameter is also optional
-        respectDNT: true
-      },
-    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -33,6 +22,15 @@ module.exports = {
     "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
+    {
+      resolve: `gatsby-source-notion-api`,
+      options: {
+        token: `secret_l9H4WCZcf82rCJc8cvJg7oaVuDEgd0bLrkZDGvsKgIN`,
+        databaseId: `7d0e0e2b7d484c68b7511fa9ba9ae108`,
+        propsToFrontmatter: true,
+        lowerTitleLevel: true,
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {

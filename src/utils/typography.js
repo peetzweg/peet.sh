@@ -6,14 +6,9 @@ const typography = new Typography({
   baseLineHeight: 1,
   headerFontFamily: [
     "fantasque-sans-mono",
-    "Avenir Next",
-    "Helvetica Neue",
-    "Segoe UI",
-    "Helvetica",
-    "Arial",
     "sans-serif"
   ],
-  bodyFontFamily: ["Fantasque Sans Mono", "sans-serif"]
+  bodyFontFamily: ["Fantasque Sans Mono", "monospaced"]
 });
 
 export default typography;

@@ -8,9 +8,6 @@ import {
 export const GlobalStyle = createGlobalStyle``;
 
 export const Page = styled.div`
-  padding: 15px;
-  width: 100vw;
-  height: 100vh;
   display: flex;
   flex-direction: row;
   & > * {
@@ -19,13 +16,9 @@ export const Page = styled.div`
 `;
 
 export const TerminalContainer = styled.div`
-  border-radius: 2px;
+  border-radius: 0px;
   background-color: ${BackgroundColor};
-
   padding: 16px;
-  overflow: scroll;
-  max-height: calc(100vh - 15px - 15px);
-
   ::selection {
     background: ${SelectionColor};
   }
@@ -33,7 +26,8 @@ export const TerminalContainer = styled.div`
 
 export const Terminal = styled.div`
   color: ${FontColor};
-
+  font-family:'Fira Mono';
+  word-wrap: break-word;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -43,7 +37,7 @@ export const PixelMeImage = styled.img`
   image-rendering: pixelated;
   width: 10vw;
   min-width: 100px;
-  zindex: 10;
+  z-index: 10;
   position: fixed;
   bottom: 0;
   right: 16px;
