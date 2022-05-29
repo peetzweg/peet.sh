@@ -1,15 +1,15 @@
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.atem.io/",
-    title: "atem.io // philip poloczek"
+    title: "peet.sh // philip poloczek",
   },
   plugins: [
     "gatsby-plugin-styled-components",
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography.js`
-      }
+        pathToConfigModule: `src/utils/typography.js`,
+      },
     },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
