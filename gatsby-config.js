@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.atem.io/",
+    siteUrl: "https://www.peet.sh/",
     title: "peet.sh // philip poloczek",
   },
   plugins: [

@@ -3,24 +3,21 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import PixelMe from "../../images/meSummer.png";
-import {
-  GlobalStyle,
-  PixelMeImage
-} from "./styles";
+import { GlobalStyle, PixelMeImage } from "./styles";
 import TerminalComponent from "./Terminal";
 import Writings from "./Writings";
 
 const Page = styled.div`
-  display:flex;
-  width:100vw;
-  min-height:100vh;
-  flex-direction:row;
-  justify-content:space-between;
-  flex-wrap:wrap;
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
   & > * {
     flex: 1;
   }
-`
+`;
 
 const IndexPage = () => {
   return (
@@ -28,7 +25,7 @@ const IndexPage = () => {
       <GlobalStyle />
       <Helmet>
         <meta charSet="utf-8" />
-        <title>atem.io / Philip Poloczek</title>
+        <title>peet.sh / Philip Poloczek</title>
         <meta
           name="description"
           content="This is the personal website of Philip Poloczek"
@@ -49,7 +46,6 @@ const IndexPage = () => {
       </Page>
     </>
   );
-}
-
+};
 
 export default IndexPage;
