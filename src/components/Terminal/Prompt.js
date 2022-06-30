@@ -4,7 +4,7 @@ import {
   PromptSymbolColor,
   DirectoryColor,
   CommandColor,
-  CaretColor
+  CaretColor,
 } from "../../theme/home/Colors";
 
 const Path = styled.div`
@@ -31,7 +31,7 @@ const Command = styled.span`
 const Caret = styled.span`
   background-color: ${CaretColor};
   width: 0.6rem;
-  heigth: 1rem;
+  height: 1rem;
 
   animation: blink-animation 1s cubic-bezier(0.215, 0.61, 0.355, 1) alternate
     infinite;
