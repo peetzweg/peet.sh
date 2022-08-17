@@ -1,5 +1,17 @@
 export default [
   {
+    title: "Crypto Address Lens",
+    description: "VSCode Extension to Validate Ethereum Style Addresses",
+    url: "https://github.com/peetzweg/vscode-crypto-address-lens",
+    createdAt: new Date(2022, 8, 1),
+  },
+  {
+    title: "abimate",
+    description: "Precompiled ABI packages for Popular Smart Contracts",
+    url: "https://github.com/peetzweg/abimate",
+    createdAt: new Date(2022, 6, 1),
+  },
+  {
     title: "Offwhite",
     description: "Store for Stationary Templates",
     url: "https://www.instagram.com/offwhiteapp",

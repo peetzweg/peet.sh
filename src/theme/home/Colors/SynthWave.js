@@ -13,6 +13,6 @@ export const ExecutableColor = "#FF414B";
 export const FileColor = "#F9D7D7";
 export const FontColor = "#FFDF50";
 export const LinkColor = "#FF7ADD";
-export const LinkHoverColor = "#FF414B";
+export const LinkHoverColor = "#F0EFF1";
 export const PromptSymbolColor = "#FB882B";
 export const SelectionColor = "#F0EFF1";
