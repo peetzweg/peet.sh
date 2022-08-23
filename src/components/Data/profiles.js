@@ -11,6 +11,6 @@ export default [
   { title: "STRAVA", url: "https://www.strava.com/athletes/18353420" },
   {
     title: "goodreads",
-    url: "https://www.goodreads.com/user/show/150027885-peetzweg",
+    url: "https://www.goodreads.com/peetzweg",
   },
 ];
