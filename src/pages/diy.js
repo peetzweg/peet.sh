@@ -6,119 +6,116 @@ import Curtain from "../images/DIY/CurtainPole.jpg";
 import Lamp from "../images/DIY/Lamp.jpg";
 import Rack from "../images/DIY/Rack01.jpg";
 import Shades from "../images/DIY/shades.jpg";
+import Pottery from "../images/DIY/pottery.jpeg";
 import { Typography } from "../theme/diy";
 
 const Page = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   width: 100vw;
   height: auto;
+  margin: 60px 0;
 `;
 
 const Heading = styled.h1`
   ${Typography.heading}
 `;
-
-const EntryGrid = styled.div`
-  display: grid;
-  width: 960px;
-  margin-bottom: 20px;
-  grid-template-areas:
-    "photo title title"
-    "photo description description";
-  @media (max-width: 960px) {
-    justify-content: center;
-    grid-template-areas:
-      "photo"
-      "title"
-      "description";
-  }
+const Title = styled.h3`
+  margin: 0;
+  position: absolute;
+  bottom: -18px;
+  right: 60px;
+  ${Typography.description};
+  color: black;
+  font-size: 64px;
 `;
 
 const Photo = styled.img`
   margin: 0;
-  grid-area: photo;
-  max-height: 420px;
+  position: static;
+`;
+
+const Grid = styled.div`
+  gap: 1px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: center;
+  flex-basis: 1;
+  flex-wrap: wrap;
   @media (max-width: 960px) {
-    justify-self: center;
   }
 `;
-
-const Title = styled.h2`
-  grid-area: title;
-  align-self: flex-end;
-  margin: 5px 0 0 0;
-
-  ${Typography.title};
+const Frame = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  background-color: white;
+  padding: 60px;
+  outline: 1px solid gray;
+  /* border: 0.5px solid black; */
+  width: min(100vw, 720px);
+  z-index: ${(props) => props.zIndex};
 `;
-const Description = styled.p`
-  grid-area: description;
-  margin: 0;
-  max-width: 200px;
-
-  ${Typography.description};
-`;
-
-const Entry = ({ title, description, src }) => (
-  <EntryGrid>
-    <Photo src={src} />
-    <Title>{title}</Title>
-    <Description>{description}</Description>
-  </EntryGrid>
-);
 
 const ENTRIES = [
   {
-    title: "Lamp Shades",
-    description: "A4 & A3 sized shades made out of a paper fabric mix.",
-    src: Shades
+    title: "Shades",
+    src: Shades,
+  },
+  {
+    title: "Pot",
+    src: Pottery,
   },
   {
     title: "Rack",
-    description: "Painted and welded construction steel rods.",
-    src: Rack
+    src: Rack,
   },
   {
-    title: "Leather Chair",
-    description: "Was a piece of a blue velvet Rolf Benz sofa.",
-    src: Bernd
+    title: "Leather easy chair",
+    src: Bernd,
   },
   {
-    title: "Curtain-Rod",
-    description: "Simple construction made out of tin heating pipes.",
-    src: Curtain
+    title: "Curtain-hanger",
+    src: Curtain,
   },
   {
-    title: "Ladder Chandelier",
-    description: "Fixed to the ceiling with tow and metal chain.",
-    src: Lamp
-  }
+    title: "Chandelier",
+    src: Lamp,
+  },
 ];
 
-const SelfmadePage = () => (
+const DIYPage = () => (
   <>
     <Helmet>
       <meta charSet="utf-8" />
-      <title>Selfmade / Philip Poloczek</title>
-      <meta
-        name="description"
-        content="Selfmade Furniture by Philip Poloczek"
-      />
-      <meta name="keywords" content="diy, furniture, selfmade" />
+      <title>peet.sh</title>
+      <meta name="description" content="Built by Peet" />
+      <meta name="keywords" content="diy, furniture, self-made" />
       <link
         href="https://fonts.googleapis.com/css?family=Playfair+Display:400,900&display=swap"
         rel="stylesheet"
       />
     </Helmet>
     <Page>
-      <Heading>Stuff I've Built</Heading>
-      {ENTRIES.map(entry => (
-        <Entry {...entry} />
-      ))}
+      <Heading>Make Things ↓</Heading>
+      <Grid>
+        {ENTRIES.map((entry, index, array) => (
+          <Frame zIndex={array.length - index}>
+            <Photo src={entry.src} />
+            {/* <Title>{entry.title}</Title> */}
+          </Frame>
+        ))}
+      </Grid>
     </Page>
   </>
 );
 
-export default SelfmadePage;
+export default DIYPage;

@@ -1,4 +1,4 @@
-export default [
+const profiles = [
   {
     title: "Twitter",
     url: "https://twitter.com/peetzweg",
@@ -14,3 +14,4 @@ export default [
     url: "https://www.goodreads.com/peetzweg",
   },
 ];
+export default profiles;
