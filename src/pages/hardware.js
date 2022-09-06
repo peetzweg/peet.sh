@@ -31,6 +31,9 @@ const HeadingContainer = styled.div`
 `;
 const Heading = styled.h1`
   ${Typography.heading}
+  @media (max-width: 960px) {
+    ${Typography.headingMobile}
+  }
 `;
 const Title = styled.h3`
   margin: 0;
@@ -130,7 +133,7 @@ const DIYPage = () => (
     </Helmet>
     <Page>
       <HeadingContainer>
-        <Heading>Hardware ↓</Heading>
+        <Heading>Hardware Made by Me ↓</Heading>
       </HeadingContainer>
       <Grid>
         {ENTRIES.map((entry, index, array) => (

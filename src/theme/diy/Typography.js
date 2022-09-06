@@ -12,6 +12,12 @@ export const Typography = {
     fontSize: "160px",
     margin: "60px",
   },
+  headingMobile: {
+    fontFamily: PrimaryFont,
+    color: Colors.primary,
+    fontWeight: "200",
+    fontSize: "90px",
+  },
   title: {
     fontFamily: PrimaryFont,
     color: Colors.primary,
