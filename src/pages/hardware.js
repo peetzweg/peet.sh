@@ -7,6 +7,9 @@ import Lamp from "../images/DIY/Lamp.jpg";
 import Rack from "../images/DIY/Rack01.jpg";
 import Shades from "../images/DIY/shades.jpg";
 import Pottery from "../images/DIY/pottery.jpeg";
+import WallMount from "../images/DIY/bikewallmount.jpg";
+import Potence01 from "../images/DIY/potence01.jpg";
+import Bed from "../images/DIY/bed.jpeg";
 import { Typography } from "../theme/diy";
 
 const Page = styled.div`
@@ -19,6 +22,13 @@ const Page = styled.div`
   margin: 60px 0;
 `;
 
+const HeadingContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 const Heading = styled.h1`
   ${Typography.heading}
 `;
@@ -67,21 +77,31 @@ const Frame = styled.div`
 
 const ENTRIES = [
   {
-    title: "Shades",
-    src: Shades,
+    title: "Leather easy chair",
+    src: Bernd,
+  },
+
+  {
+    title: "Bed",
+    src: Bed,
   },
   {
     title: "Pot",
     src: Pottery,
   },
   {
+    title: "Potence01",
+    src: Potence01,
+  },
+  {
+    title: "Bike Mount",
+    src: WallMount,
+  },
+  {
     title: "Rack",
     src: Rack,
   },
-  {
-    title: "Leather easy chair",
-    src: Bernd,
-  },
+
   {
     title: "Curtain-hanger",
     src: Curtain,
@@ -89,6 +109,10 @@ const ENTRIES = [
   {
     title: "Chandelier",
     src: Lamp,
+  },
+  {
+    title: "Shades",
+    src: Shades,
   },
 ];
 
@@ -105,7 +129,9 @@ const DIYPage = () => (
       />
     </Helmet>
     <Page>
-      <Heading>Make Things ↓</Heading>
+      <HeadingContainer>
+        <Heading>Hardware ↓</Heading>
+      </HeadingContainer>
       <Grid>
         {ENTRIES.map((entry, index, array) => (
           <Frame zIndex={array.length - index}>
