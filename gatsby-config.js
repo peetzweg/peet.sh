@@ -46,5 +46,6 @@ module.exports = {
       },
       __key: "pages",
     },
+    `gatsby-plugin-client-side-redirect` // keep it in last in list
   ],
 };
