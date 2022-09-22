@@ -6,10 +6,11 @@ import Curtain from "../images/DIY/CurtainPole.jpg";
 import Lamp from "../images/DIY/Lamp.jpg";
 import Rack from "../images/DIY/Rack01.jpg";
 import Shades from "../images/DIY/shades.jpg";
-import Pottery from "../images/DIY/pottery.jpeg";
+import Pottery from "../images/DIY/pottery.jpg";
+import ConcreteLamp from "../images/DIY/concretelamp.jpg";
 import WallMount from "../images/DIY/bikewallmount.jpg";
 import Potence01 from "../images/DIY/potence01.jpg";
-import Bed from "../images/DIY/bed.jpeg";
+import Bed from "../images/DIY/bed.jpg";
 import { Typography } from "../theme/diy";
 
 const Page = styled.div`
@@ -80,10 +81,13 @@ const Frame = styled.div`
 
 const ENTRIES = [
   {
+    title: "Concrete Lamp",
+    src: ConcreteLamp,
+  },
+  {
     title: "Leather easy chair",
     src: Bernd,
   },
-
   {
     title: "Bed",
     src: Bed,
