@@ -9,6 +9,7 @@ import Shades from "../images/DIY/shades.jpg";
 import Pottery from "../images/DIY/pottery.jpg";
 import ConcreteLamp from "../images/DIY/concretelamp.jpg";
 import WallMount from "../images/DIY/bikewallmount.jpg";
+import Wakizashi from "../images/DIY/woodenwakizashi.jpg";
 import Potence01 from "../images/DIY/potence01.jpg";
 import Bed from "../images/DIY/bed.jpg";
 import { Typography } from "../theme/diy";
@@ -80,6 +81,10 @@ const Frame = styled.div`
 `;
 
 const ENTRIES = [
+  {
+    title: "Wooden Wakizashi",
+    src: Wakizashi,
+  },
   {
     title: "Concrete Lamp",
     src: ConcreteLamp,
