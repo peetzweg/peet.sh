@@ -11,7 +11,7 @@ const Documents = () => {
       <SoftLink
         title={"client_work"}
         url={
-          "https://peetzweg.notion.site/peetzweg/Client-Work-504f7a0b831841f7b71c50bbe8b6f368"
+          "/client-work"
         }
       />
     </List>
