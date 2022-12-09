@@ -6,6 +6,12 @@ export default [
     createdAt: new Date(2022, 8, 1),
   },
   {
+    title: "notar",
+    description: "CLI to read smart contract data from EVM chains",
+    url: "https://github.com/peetzweg/notar",
+    createdAt: new Date(2022, 7, 1),
+  },
+  {
     title: "abimate",
     description: "Precompiled ABI packages for Popular Smart Contracts",
     url: "https://github.com/peetzweg/abimate",
