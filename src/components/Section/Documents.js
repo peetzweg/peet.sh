@@ -14,6 +14,12 @@ const Documents = () => {
           "/client-work"
         }
       />
+      <SoftLink
+        title={"software_side_projects"}
+        url={
+          "/software"
+        }
+      />
     </List>
   );
 };
