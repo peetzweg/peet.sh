@@ -38,7 +38,7 @@ export default [
   {
     title: "Airbox",
     description: "Audio Inbox for your Smart Speaker",
-    url: "http://airbox.network",
+    url: "https://julianlehr.medium.com/we-are-building-the-twitter-for-smart-speakers-49d70c0f2a21",
     createdAt: new Date(2018, 4, 1),
   },
   {
