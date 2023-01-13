@@ -2,7 +2,7 @@ exports.createPages = ({ actions }) => {
   const { createRedirect } = actions;
   createRedirect({
     fromPath: "/web3-vscode-extension",
-    toPath: "https://github.com/peetzweg/vscode-crypto-address-lens#readme",
+    toPath: "https://marketplace.visualstudio.com/items?itemName=peetzweg.crypto-address-lens&ssr=false#overview",
     isPermanent: true,
   });
   createRedirect({
