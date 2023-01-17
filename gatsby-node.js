@@ -11,6 +11,11 @@ exports.createPages = ({ actions }) => {
     isPermanent: true,
   });
   createRedirect({
+    fromPath: "/notar",
+    toPath: "https://github.com/peetzweg/notar#readme",
+    isPermanent: true,
+  });
+  createRedirect({
     fromPath: "/ABImate",
     toPath: "https://github.com/peetzweg/abimate#readme",
     isPermanent: true,
