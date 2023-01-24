@@ -14,6 +14,8 @@ import Potence01 from "../images/DIY/potence01.jpg";
 import Bed from "../images/DIY/bed.jpg";
 import { Typography } from "../theme/diy";
 
+import BathroomLamp from "../images/DIY/BathroomLamp.jpeg";
+
 const Page = styled.div`
   display: flex;
   flex-direction: column;
@@ -78,9 +80,16 @@ const Frame = styled.div`
   /* border: 0.5px solid black; */
   width: min(100vw, 720px);
   z-index: ${(props) => props.zIndex};
+  @media (max-width: 960px) {
+    padding:30px;
+  }
 `;
 
 const ENTRIES = [
+  {
+    title: "Bathroom Lamp",
+    src: BathroomLamp,
+  },
   {
     title: "Wooden Wakizashi",
     src: Wakizashi,
