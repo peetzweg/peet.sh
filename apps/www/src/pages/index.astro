@@ -1,0 +1,12 @@
+---
+import { FeatProfileArena } from '@peet.sh/feat/profile-arena';
+import { TerminalComponent } from '@peet.sh/feat/profile-terminal';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="peet.sh / Philip Poloczek">
+  <main>
+    <FeatProfileArena/>
+    <TerminalComponent client:only/>
+  </main>
+</Layout>
