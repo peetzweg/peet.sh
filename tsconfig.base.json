@@ -1,0 +1,27 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@peet.sh/feat/portfolio-diy": ["libs/feat/portfolio-diy/src/index.ts"],
+      "@peet.sh/feat/portfolio-p5": ["libs/feat/portfolio-p5/src/index.ts"],
+      "@peet.sh/feat/profile-arena": ["libs/feat/profile-arena/src/index.ts"],
+      "@peet.sh/feat/profile-terminal": [
+        "libs/feat/profile-terminal/src/index.ts"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

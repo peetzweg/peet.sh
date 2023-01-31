@@ -1,0 +1,38 @@
+---
+export interface Props {
+  title: string;
+}
+import '@fontsource/noto-sans-mono';
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="This is the personal website of Philip Poloczek"
+    />
+    <meta name="keywords" content="developer, profile, resume" />
+    <title>{title}</title>
+  </head>
+
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    font-family: 'Noto Sans Mono', monospace;
+  }
+  body {
+    font-family: 'Noto Sans Mono', monospace;
+    margin: 0px;
+    padding: 0px;
+  }
+</style>

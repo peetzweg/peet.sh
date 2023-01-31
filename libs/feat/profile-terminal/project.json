@@ -1,0 +1,16 @@
+{
+  "name": "feat-profile-terminal",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/feat/profile-terminal/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/feat/profile-terminal/**/*.{ts,tsx,js,jsx}"]
+      }
+    }
+  }
+}
