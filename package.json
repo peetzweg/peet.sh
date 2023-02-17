@@ -8,12 +8,16 @@
   "private": true,
   "dependencies": {
     "@fontsource/noto-sans-mono": "^4.5.13",
+    "@react-three/drei": "^9.56.25",
+    "@react-three/fiber": "^8.11.2",
+    "@types/three": "^0.149.0",
     "framer-motion": "^8.5.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-is": "18.2.0",
     "react-p5-wrapper": "^4.1.0",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "three": "^0.149.0"
   },
   "devDependencies": {
     "@astrojs/react": "^2.0.2",
@@ -21,7 +25,7 @@
     "@nrwl/cypress": "15.6.3",
     "@nrwl/eslint-plugin-nx": "15.6.3",
     "@nrwl/linter": "15.6.3",
-    "@nrwl/react": "^15.6.3",
+    "@nrwl/react": "15.7.1",
     "@nrwl/workspace": "15.6.3",
     "@nxtensions/astro": "^3.3.0",
     "@testing-library/react": "13.4.0",

@@ -8,6 +8,7 @@ export function FeatPortfolioP5(props: FeatPortfolioP5Props) {
   return (
     <div
       style={{
+        height: '100vh',
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
