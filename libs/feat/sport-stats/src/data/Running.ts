@@ -43,7 +43,7 @@ export default (data as any as ElevateData)
 let accElevation = 0;
 let accDistance = 0;
 
-export const ACCUMULATED = (data as any as ElevateData)
+export const ACCUMULATED: RunningData = (data as any as ElevateData)
   .filter((d) => d.Type === 'Run')
   .map((d, i) => {
     const distance = Number(d['Distance (km)']) || 0;
@@ -56,4 +56,4 @@ export const ACCUMULATED = (data as any as ElevateData)
       elevation: accElevation,
       date: new Date(d.Date),
     } as Run;
-  }) as RunningData;
+  });

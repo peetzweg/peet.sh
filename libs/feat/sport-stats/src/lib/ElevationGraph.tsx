@@ -1,5 +1,6 @@
-import { AxisBottom, AxisLeft } from '@visx/axis';
+import { AxisBottom, AxisLeft, AxisRight } from '@visx/axis';
 import { curveStep } from '@visx/curve';
+import { GridColumns, GridRows } from '@visx/grid';
 import { Group } from '@visx/group';
 import { scaleLinear, scaleTime } from '@visx/scale';
 import { LinePath } from '@visx/shape';
@@ -16,6 +17,8 @@ const yScale = scaleLinear({
   domain: [0, max(data, getY)],
 });
 
+const margin = { top: 20, right: 60, bottom: 60, left: 20 };
+
 export function ElevationGraph({
   width,
   height,
@@ -23,17 +26,24 @@ export function ElevationGraph({
   width: number;
   height: number;
 }) {
-  xScale.range([0, width - 50]);
-  yScale.range([height, 0]);
+  // bounds
+  const xMax = width - margin.left - margin.right;
+  const yMax = height - margin.top - margin.bottom;
+
+  xScale.range([0, xMax]);
+  yScale.range([yMax, 0]);
   return (
     <svg width={width} height={height}>
-      <Group>
+      <Group left={margin.left} top={margin.top}>
+        <text x="0" y="0" fontSize={11}>
+          Cumulated Running Elevation Gain (m)
+        </text>
         {data.map((d, j) => (
           <circle
             key={j}
             r={2}
             cx={xScale(getX(d))}
-            cy={height - yScale(getY(d))}
+            cy={yMax - yScale(getY(d))}
             stroke="rgba(33,33,33,0.5)"
             fill="transparent"
           />
@@ -42,12 +52,21 @@ export function ElevationGraph({
           curve={curveStep}
           data={data}
           x={(d) => xScale(getX(d)) ?? 0}
-          y={(d) => height - yScale(getY(d)) ?? 0}
+          y={(d) => yMax - yScale(getY(d)) ?? 0}
           stroke="#333"
         />
+
+        <GridRows scale={yScale} width={xMax} height={yMax} stroke="#e0e0e0" />
+
+        <GridColumns
+          scale={xScale}
+          width={xMax}
+          height={yMax}
+          stroke="#e0e0e0"
+        />
+
         <AxisBottom
-          top={height - 50}
-          left={50}
+          top={yMax}
           scale={xScale}
           tickFormat={(d) => d.toLocaleDateString()}
           stroke={'#1b1a1e'}
@@ -59,8 +78,8 @@ export function ElevationGraph({
           })}
         />
 
-        <AxisLeft
-          left={50}
+        <AxisRight
+          left={xMax}
           scale={yScale}
           tickFormat={(d) => d + 'm'}
           stroke={'#1b1a1e'}
@@ -68,7 +87,7 @@ export function ElevationGraph({
           tickLabelProps={() => ({
             fill: '#1b1a1e',
             fontSize: 11,
-            textAnchor: 'end',
+            textAnchor: 'start',
           })}
         />
       </Group>
