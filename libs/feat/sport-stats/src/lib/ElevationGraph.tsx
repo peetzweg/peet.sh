@@ -38,7 +38,7 @@ export function ElevationGraph({
         <text x="0" y="0" fontSize={11}>
           Cumulated Running Elevation Gain (m)
         </text>
-        {data.map((d, j) => (
+        {/* {data.map((d, j) => (
           <circle
             key={j}
             r={2}
@@ -47,7 +47,9 @@ export function ElevationGraph({
             stroke="rgba(33,33,33,0.5)"
             fill="transparent"
           />
-        ))}
+        ))} */}
+        <GridRows scale={yScale} width={xMax} height={yMax} stroke="#e0e0e0" />
+
         <LinePath<Run>
           curve={curveStep}
           data={data}
@@ -55,8 +57,6 @@ export function ElevationGraph({
           y={(d) => yMax - yScale(getY(d)) ?? 0}
           stroke="#333"
         />
-
-        <GridRows scale={yScale} width={xMax} height={yMax} stroke="#e0e0e0" />
 
         <GridColumns
           scale={xScale}
@@ -68,7 +68,7 @@ export function ElevationGraph({
         <AxisBottom
           top={yMax}
           scale={xScale}
-          tickFormat={(d) => d.toLocaleDateString()}
+          tickFormat={(d) => d.getFullYear()}
           stroke={'#1b1a1e'}
           tickStroke={'#1b1a1e'}
           tickLabelProps={() => ({
@@ -81,10 +81,13 @@ export function ElevationGraph({
         <AxisRight
           left={xMax}
           scale={yScale}
-          tickFormat={(d) => d + 'm'}
+          tickFormat={(d) =>
+            d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'm'
+          }
           stroke={'#1b1a1e'}
           tickStroke={'#1b1a1e'}
           tickLabelProps={() => ({
+            x: 11,
             fill: '#1b1a1e',
             fontSize: 11,
             textAnchor: 'start',
