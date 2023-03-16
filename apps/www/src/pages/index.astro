@@ -4,6 +4,7 @@ import { TerminalComponent } from '@peet.sh/feat/profile-terminal';
 import { FeatPortfolioP5 } from '@peet.sh/feat/portfolio-p5';
 import { FeatPortfolioModels } from '@peet.sh/feat/portfolio-models';
 import { FeatSportStats } from '@peet.sh/feat/sport-stats';
+import { FeatQuotes } from '@peet.sh/feat/quotes';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -12,6 +13,7 @@ import Layout from '../layouts/Layout.astro';
     <FeatProfileArena client:only/>
     <FeatSportStats client:only/>
     <FeatPortfolioModels client:only/>
+    <FeatQuotes client:only/>
     <FeatPortfolioP5 client:only/>
     <TerminalComponent client:only/>
   </main>

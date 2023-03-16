@@ -24,7 +24,8 @@
       "@peet.sh/feat/portfolio-models": [
         "libs/feat/portfolio-models/src/index.ts"
       ],
-      "@peet.sh/feat/sport-stats": ["libs/feat/sport-stats/src/index.ts"]
+      "@peet.sh/feat/sport-stats": ["libs/feat/sport-stats/src/index.ts"],
+      "@peet.sh/feat/quotes": ["libs/feat/quotes/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
