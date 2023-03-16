@@ -5,8 +5,8 @@ import styles from './feat-quotes.module.css';
 /* eslint-disable-next-line */
 export interface FeatQuotesProps {}
 
-const DURATION = 0.3;
-const CARD_OFFSET = 5;
+const DURATION = 0.4;
+const CARD_OFFSET = 15;
 const DECK_HEIGHT = 3;
 const DATA = [
   {
@@ -44,6 +44,7 @@ function getRandomArbitrary(min: number, max: number) {
 export function FeatQuotes(props: FeatQuotesProps) {
   const initialOrder = DATA.map((d) => d.id);
   const cardOrder = useRef<Array<number>>(initialOrder);
+  const midAir = useRef<number>(0);
   const deckRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(deckRef);
   const cardControl = useAnimationControls();
@@ -52,17 +53,23 @@ export function FeatQuotes(props: FeatQuotesProps) {
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (event.repeat) return;
-      const topCardId = cardOrder.current.at(-1);
+      const orderNow = [...cardOrder.current];
+      const topCardId = orderNow.at(-1);
+      cardOrder.current = [
+        ...cardOrder.current.slice(-1),
+        ...cardOrder.current.slice(0, -1),
+      ];
+      midAir.current++;
 
       // Move Top Card up an down
       cardControl.start((cardId) => {
         if (cardId === topCardId) {
           const flip = getRandomArbitrary(-2, 2);
           return {
-            y: [0, -340, -340, DECK_HEIGHT * CARD_OFFSET],
-            rotate: [0, flip, flip, 0],
-
-            scale: [1, 1.02, 0.98, 1],
+            y: [0, -340, DECK_HEIGHT * CARD_OFFSET],
+            rotate: [0, flip, 0],
+            scale: [1, 1.02, 1],
+            zIndex: 100 + midAir.current,
 
             transition: { duration: DURATION, type: 'spring', bounce: 5 },
           };
@@ -71,29 +78,28 @@ export function FeatQuotes(props: FeatQuotesProps) {
       });
 
       // Move Cards to new zIndices
-      cardControl.start((cardId) => {
-        // Move Top Card to bottom
-        if (cardId === topCardId) {
+      cardControl
+        .start((cardId) => {
+          // Move Top Card to bottom
+          if (cardId === topCardId) {
+            return {
+              zIndex: -100 - midAir.current,
+              transition: { delay: DURATION / 2 },
+            };
+          }
+          // Move other cards up
+          const currentCardIndex = orderNow.findIndex((id) => id === cardId);
           return {
-            zIndex: 0,
-            transition: { delay: DURATION / 4 },
+            zIndex: currentCardIndex + 1,
+            y:
+              Math.min(DECK_HEIGHT, DATA.length - currentCardIndex - 3) *
+              CARD_OFFSET,
+            transition: { delay: DURATION * 0.3, type: 'easeInOut' },
           };
-        }
-        // Move other cards up
-        const currentCardIndex = cardOrder.current.findIndex(
-          (id) => id === cardId
-        );
-        return {
-          zIndex: currentCardIndex + 1,
-          y: Math.min(3, DATA.length - currentCardIndex - 2) * 4,
-          transition: { delay: DURATION * 0.8, type: 'easeInOut' },
-        };
-      });
-
-      cardOrder.current = [
-        ...cardOrder.current.slice(-1),
-        ...cardOrder.current.slice(0, -1),
-      ];
+        })
+        .then(() => {
+          midAir.current--;
+        });
     },
     [cardControl]
   );
