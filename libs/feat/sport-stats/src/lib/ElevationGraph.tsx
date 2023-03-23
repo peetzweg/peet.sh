@@ -61,10 +61,10 @@ export function ElevationGraph({
           </text>
 
           <text x="0" y="15" fontSize={11} fill={COLOR.MARATHON}>
-            {`Marathons (${marathons})`}
+            {`Marathon (${marathons})`}
           </text>
           <text x="0" y="30" fontSize={11} fill={COLOR.HALF}>
-            {`Half-Marathons (${halfs})`}
+            {`Half-Marathon (${halfs})`}
           </text>
         </Group>
 
