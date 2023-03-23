@@ -26,9 +26,15 @@ export interface Run {
   date: Date;
   elevation: number;
 }
-export type RunningData = Array<Run>;
+export interface AccumulatedRun extends Run {
+  accDistance: number;
+  accElevation: number;
+}
 
-export default (data as any as ElevateData)
+export type RunningData = Array<Run>;
+export type AccumulatedRunningData = Array<AccumulatedRun>;
+
+export default (data as unknown as ElevateData)
   .filter((d) => d.Type === 'Run')
   .map(
     (d, i) =>
@@ -43,17 +49,22 @@ export default (data as any as ElevateData)
 let accElevation = 0;
 let accDistance = 0;
 
-export const ACCUMULATED: RunningData = (data as any as ElevateData)
+export const ACCUMULATED: AccumulatedRunningData = (
+  data as unknown as ElevateData
+)
   .filter((d) => d.Type === 'Run')
   .map((d, i) => {
     const distance = Number(d['Distance (km)']) || 0;
     const elevation = Number(d['Elevation Gain (m)']) || 0;
+
     accElevation += elevation;
     accDistance += distance;
     return {
       index: i,
-      distance: accDistance,
-      elevation: accElevation,
+      distance,
+      elevation,
+      accDistance,
+      accElevation,
       date: new Date(d.Date),
-    } as Run;
+    } as AccumulatedRun;
   });

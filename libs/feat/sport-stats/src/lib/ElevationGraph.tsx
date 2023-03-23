@@ -1,14 +1,20 @@
-import { AxisBottom, AxisLeft, AxisRight } from '@visx/axis';
+import { AxisBottom, AxisRight } from '@visx/axis';
 import { curveStep } from '@visx/curve';
 import { GridColumns, GridRows } from '@visx/grid';
 import { Group } from '@visx/group';
 import { scaleLinear, scaleTime } from '@visx/scale';
 import { LinePath } from '@visx/shape';
 import { extent, max } from 'd3-array';
-import { ACCUMULATED as data, Run } from '../data/Running';
+import { useMemo } from 'react';
+import { ACCUMULATED as data, AccumulatedRun, Run } from '../data/Running';
 
 const getX = (d: Run) => d.date;
-const getY = (d: Run) => d.elevation;
+const getY = (d: AccumulatedRun) => d.accElevation;
+
+const COLOR = {
+  MARATHON: '#d95972',
+  HALF: '#e59d4d',
+};
 
 const xScale = scaleTime({
   domain: extent(data, (r: Run) => r.date) as [Date, Date],
@@ -32,22 +38,36 @@ export function ElevationGraph({
 
   xScale.range([0, xMax]);
   yScale.range([yMax, 0]);
+  const [marathons, halfs] = useMemo(function calcTotals() {
+    let marathons = 0,
+      halfs = 0;
+    data.forEach((d) =>
+      d.distance >= 42 ? marathons++ : d.distance >= 21 ? halfs++ : undefined
+    );
+    return [marathons, halfs];
+  }, []);
   return (
     <svg width={width} height={height}>
       <Group left={margin.left} top={margin.top}>
-        <text x="0" y="0" fontSize={11}>
-          Cumulated Running Elevation Gain (m)
-        </text>
-        {/* {data.map((d, j) => (
-          <circle
-            key={j}
-            r={2}
-            cx={xScale(getX(d))}
-            cy={yMax - yScale(getY(d))}
-            stroke="rgba(33,33,33,0.5)"
-            fill="transparent"
-          />
-        ))} */}
+        <GridColumns
+          scale={xScale}
+          width={xMax}
+          height={yMax}
+          stroke="#e0e0e0"
+        />
+        <Group left={30} top={30}>
+          <text x="0" y="0" fontSize={11}>
+            Cumulated Running Elevation Gain (m)
+          </text>
+
+          <text x="0" y="15" fontSize={11} fill={COLOR.MARATHON}>
+            {`Marathons (${marathons})`}
+          </text>
+          <text x="0" y="30" fontSize={11} fill={COLOR.HALF}>
+            {`Half-Marathons (${halfs})`}
+          </text>
+        </Group>
+
         <GridRows scale={yScale} width={xMax} height={yMax} stroke="#e0e0e0" />
 
         <LinePath<Run>
@@ -58,12 +78,30 @@ export function ElevationGraph({
           stroke="#333"
         />
 
-        <GridColumns
-          scale={xScale}
-          width={xMax}
-          height={yMax}
-          stroke="#e0e0e0"
-        />
+        {data.map((d, i) => {
+          if (d.distance >= 42) {
+            return (
+              <circle
+                key={`circle-${i}`}
+                r={4}
+                cx={xScale(getX(d))}
+                cy={yMax - yScale(getY(d))}
+                fill={COLOR.MARATHON}
+              />
+            );
+          }
+          if (d.distance >= 21) {
+            return (
+              <circle
+                key={`circle-${i}`}
+                r={4}
+                cx={xScale(getX(d))}
+                cy={yMax - yScale(getY(d))}
+                fill={COLOR.HALF}
+              />
+            );
+          }
+        })}
 
         <AxisBottom
           top={yMax}
