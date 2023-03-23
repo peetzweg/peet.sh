@@ -1,48 +1,22 @@
 import { motion, useAnimationControls, useInView } from 'framer-motion';
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import styles from './feat-quotes.module.css';
+import Quotes from './quotes.json';
 
-/* eslint-disable-next-line */
-export interface FeatQuotesProps {}
-
-const DURATION = 0.4;
-const CARD_OFFSET = 15;
+const DURATION = 0.1;
+const CARD_OFFSET = 2;
 const DECK_HEIGHT = 3;
-const DATA = [
-  {
-    id: 1,
-    quote:
-      "I'm not a great programmer; I'm just a good programmer with great habits.",
-  },
-  {
-    id: 2,
-    quote: 'Talk is cheap. Show me the code.',
-  },
-  {
-    id: 3,
-    quote:
-      'Measuring programming progress by lines of code is like measuring aircraft building progress by weight.',
-  },
-  {
-    id: 4,
-    quote: 'Code is like humor. When you have to explain it, it’s bad.',
-  },
-  {
-    id: 5,
-    quote: 'Before software can be reusable it first has to be usable.',
-  },
-  {
-    id: 6,
-    quote: 'Simplicity is prerequisite for reliability.',
-  },
-];
 
 function getRandomArbitrary(min: number, max: number) {
   return Math.random() * (max - min) + min;
 }
 
-export function FeatQuotes(props: FeatQuotesProps) {
-  const initialOrder = DATA.map((d) => d.id);
+export function FeatQuotes() {
+  const shuffledQuotes = useMemo(
+    () => Quotes.sort((a, b) => 0.5 - Math.random()),
+    []
+  );
+  const initialOrder = shuffledQuotes.map((d) => d.id);
   const cardOrder = useRef<Array<number>>(initialOrder);
   const midAir = useRef<number>(0);
   const deckRef = useRef<HTMLDivElement>(null);
@@ -53,8 +27,10 @@ export function FeatQuotes(props: FeatQuotesProps) {
   const handleKeyDown = useCallback(
     (event: KeyboardEvent) => {
       if (event.repeat) return;
-      const orderNow = [...cardOrder.current];
+      const orderNow = [...cardOrder.current.slice(-5)];
+      console.log({ orderNow });
       const topCardId = orderNow.at(-1);
+
       cardOrder.current = [
         ...cardOrder.current.slice(-1),
         ...cardOrder.current.slice(0, -1),
@@ -69,7 +45,7 @@ export function FeatQuotes(props: FeatQuotesProps) {
             y: [0, -340, DECK_HEIGHT * CARD_OFFSET],
             rotate: [0, flip, 0],
             scale: [1, 1.02, 1],
-            zIndex: 100 + midAir.current,
+            zIndex: 1000 + midAir.current,
 
             transition: { duration: DURATION, type: 'spring', bounce: 5 },
           };
@@ -83,19 +59,23 @@ export function FeatQuotes(props: FeatQuotesProps) {
           // Move Top Card to bottom
           if (cardId === topCardId) {
             return {
-              zIndex: -100 - midAir.current,
+              zIndex: -1000 - midAir.current,
               transition: { delay: DURATION / 2 },
             };
           }
           // Move other cards up
           const currentCardIndex = orderNow.findIndex((id) => id === cardId);
-          return {
-            zIndex: currentCardIndex + 1,
-            y:
-              Math.min(DECK_HEIGHT, DATA.length - currentCardIndex - 3) *
-              CARD_OFFSET,
-            transition: { delay: DURATION * 0.3, type: 'easeInOut' },
-          };
+          if (currentCardIndex) {
+            return {
+              zIndex: currentCardIndex + 1,
+              y:
+                Math.min(DECK_HEIGHT, Quotes.length - currentCardIndex - 3) *
+                CARD_OFFSET,
+              transition: { delay: DURATION * 0.3, type: 'easeInOut' },
+            };
+          } else {
+            return {};
+          }
         })
         .then(() => {
           midAir.current--;
@@ -119,21 +99,24 @@ export function FeatQuotes(props: FeatQuotesProps) {
         animate={deckControl}
         ref={deckRef}
       >
-        {DATA.map((d, i) => (
+        {shuffledQuotes.map((d, i) => (
           <motion.div
             key={'card' + i}
             className={styles['card']}
             custom={d.id}
             style={{
               zIndex: i,
-              backgroundColor: `hsl(${d.id * 30}, 100%, 50%)`,
-              y: Math.min(DECK_HEIGHT, DATA.length - i - 2) * CARD_OFFSET,
+              // backgroundColor: `hsl(${d.id * 30}, 100%, 50%)`,
+              y: Math.max(
+                Math.min(DECK_HEIGHT, Quotes.length - i - 2) * CARD_OFFSET,
+                100
+              ),
             }}
             animate={cardControl}
           >
             <div className={styles['card-content']}>
-              <h1>{d.id}</h1>
-              <p>{d.quote}</p>
+              <p>{d.content}</p>
+              <p>{d.bookTitle}</p>
             </div>
           </motion.div>
         ))}
