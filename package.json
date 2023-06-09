@@ -36,7 +36,7 @@
     "@nrwl/linter": "15.6.3",
     "@nrwl/react": "15.7.1",
     "@nrwl/workspace": "15.6.3",
-    "@nxtensions/astro": "^3.3.0",
+    "@nxtensions/astro": "3.5.0",
     "@testing-library/react": "13.4.0",
     "@types/d3-array": "^3.0.4",
     "@types/node": "18.11.9",
@@ -47,7 +47,7 @@
     "@types/three": "^0.149.0",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
-    "astro": "^2.0.0",
+    "astro": "^2.6.2",
     "babel-plugin-styled-components": "1.10.7",
     "cypress": "^12.2.0",
     "eslint": "~8.15.0",
@@ -65,3 +65,4 @@
     "typescript": "~4.8.2"
   }
 }
+
