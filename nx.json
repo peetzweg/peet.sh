@@ -31,7 +31,7 @@
   },
   "defaultProject": "www",
   "generators": {
-    "@nrwl/react": {
+    "@nx/react": {
       "application": {
         "babel": true
       },

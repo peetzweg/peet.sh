@@ -16,13 +16,13 @@
     "baseUrl": ".",
     "paths": {
       "@peet.sh/feat/portfolio-diy": ["libs/feat/portfolio-diy/src/index.ts"],
+      "@peet.sh/feat/portfolio-models": [
+        "libs/feat/portfolio-models/src/index.ts"
+      ],
       "@peet.sh/feat/portfolio-p5": ["libs/feat/portfolio-p5/src/index.ts"],
       "@peet.sh/feat/profile-arena": ["libs/feat/profile-arena/src/index.ts"],
       "@peet.sh/feat/profile-terminal": [
         "libs/feat/profile-terminal/src/index.ts"
-      ],
-      "@peet.sh/feat/portfolio-models": [
-        "libs/feat/portfolio-models/src/index.ts"
       ],
       "@peet.sh/feat/sport-stats": ["libs/feat/sport-stats/src/index.ts"]
     }
