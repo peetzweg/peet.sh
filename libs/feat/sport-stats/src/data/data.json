@@ -1,5 +1,149 @@
 [
   {
+    "Distance (km)": "4.9",
+    "Type": "Ride",
+    "Elevation Gain (m)": "29",
+    "Date": "2023-06-11T17:18:29.000Z"
+  },
+  {
+    "Distance (km)": "52",
+    "Type": "Ride",
+    "Elevation Gain (m)": "189",
+    "Date": "2023-06-11T15:36:10.000Z"
+  },
+  {
+    "Distance (km)": "9.4",
+    "Type": "Ride",
+    "Elevation Gain (m)": "28",
+    "Date": "2023-06-10T15:06:44.000Z"
+  },
+  {
+    "Distance (km)": "7.2",
+    "Type": "Run",
+    "Elevation Gain (m)": "43",
+    "Date": "2023-06-09T13:51:42.000Z"
+  },
+  {
+    "Distance (km)": "67.9",
+    "Type": "Ride",
+    "Elevation Gain (m)": "169",
+    "Date": "2023-06-08T15:34:23.000Z"
+  },
+  {
+    "Distance (km)": "2.9",
+    "Type": "Ride",
+    "Elevation Gain (m)": "25",
+    "Date": "2023-06-08T14:42:15.000Z"
+  },
+  {
+    "Distance (km)": "2.5",
+    "Type": "Ride",
+    "Elevation Gain (m)": "65",
+    "Date": "2023-06-08T07:16:15.000Z"
+  },
+  {
+    "Distance (km)": "9.1",
+    "Type": "Run",
+    "Elevation Gain (m)": "28",
+    "Date": "2023-06-06T15:10:26.000Z"
+  },
+  {
+    "Distance (km)": "20",
+    "Type": "Ride",
+    "Elevation Gain (m)": "126",
+    "Date": "2023-06-01T16:45:50.000Z"
+  },
+  {
+    "Distance (km)": "7",
+    "Type": "Run",
+    "Elevation Gain (m)": "20",
+    "Date": "2023-06-01T15:30:32.000Z"
+  },
+  {
+    "Distance (km)": "5.2",
+    "Type": "Ride",
+    "Elevation Gain (m)": "31",
+    "Date": "2023-06-01T07:17:37.000Z"
+  },
+  {
+    "Distance (km)": "3.6",
+    "Type": "Ride",
+    "Elevation Gain (m)": "57",
+    "Date": "2023-05-30T16:50:32.000Z"
+  },
+  {
+    "Distance (km)": "3.7",
+    "Type": "Run",
+    "Elevation Gain (m)": "114",
+    "Date": "2023-05-30T16:10:39.000Z"
+  },
+  {
+    "Distance (km)": "2.6",
+    "Type": "Ride",
+    "Elevation Gain (m)": "19",
+    "Date": "2023-05-30T10:23:37.000Z"
+  },
+  {
+    "Distance (km)": "5.7",
+    "Type": "Ride",
+    "Elevation Gain (m)": "32",
+    "Date": "2023-05-29T14:25:44.000Z"
+  },
+  {
+    "Distance (km)": "50.4",
+    "Type": "Ride",
+    "Elevation Gain (m)": "100",
+    "Date": "2023-05-29T08:11:46.000Z"
+  },
+  {
+    "Distance (km)": "36",
+    "Type": "Ride",
+    "Elevation Gain (m)": "214",
+    "Date": "2023-05-28T08:12:14.000Z"
+  },
+  {
+    "Distance (km)": "72.9",
+    "Type": "Ride",
+    "Elevation Gain (m)": "302",
+    "Date": "2023-05-27T09:12:38.000Z"
+  },
+  {
+    "Distance (km)": "29.2",
+    "Type": "Ride",
+    "Elevation Gain (m)": "211",
+    "Date": "2023-05-26T17:51:30.000Z"
+  },
+  {
+    "Distance (km)": "9.6",
+    "Type": "Run",
+    "Elevation Gain (m)": "25",
+    "Date": "2023-05-25T16:15:09.000Z"
+  },
+  {
+    "Distance (km)": "9.5",
+    "Type": "Run",
+    "Elevation Gain (m)": "56",
+    "Date": "2023-05-23T15:38:34.000Z"
+  },
+  {
+    "Distance (km)": "2.5",
+    "Type": "Ride",
+    "Elevation Gain (m)": "41",
+    "Date": "2023-05-23T14:33:40.000Z"
+  },
+  {
+    "Distance (km)": "2.6",
+    "Type": "Ride",
+    "Elevation Gain (m)": "8",
+    "Date": "2023-05-23T07:12:01.000Z"
+  },
+  {
+    "Distance (km)": "56.9",
+    "Type": "Ride",
+    "Elevation Gain (m)": "157",
+    "Date": "2023-05-22T16:20:47.000Z"
+  },
+  {
     "Distance (km)": "7.9",
     "Type": "Ride",
     "Elevation Gain (m)": "36",
