@@ -8,14 +8,14 @@ dependencies:
     specifier: ^4.2.0
     version: 4.2.0(react-dom@18.2.0)(react@18.2.0)
   '@react-three/drei':
-    specifier: ^9.74.7
-    version: 9.74.7(@react-three/fiber@8.13.0)(@types/three@0.152.1)(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
+    specifier: ^9.74.11
+    version: 9.74.11(@react-three/fiber@8.13.2)(@types/three@0.152.1)(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
   '@react-three/fiber':
-    specifier: ^8.13.0
-    version: 8.13.0(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
+    specifier: ^8.13.2
+    version: 8.13.2(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
   '@react-three/flex':
     specifier: ^1.0.1
-    version: 1.0.1(@react-three/fiber@8.13.0)(react@18.2.0)(three@0.153.0)
+    version: 1.0.1(@react-three/fiber@8.13.2)(react@18.2.0)(three@0.153.0)
   '@visx/axis':
     specifier: ^3.1.0
     version: 3.1.0(react@18.2.0)
@@ -42,7 +42,7 @@ dependencies:
     version: 10.12.16(react-dom@18.2.0)(react@18.2.0)
   framer-motion-3d:
     specifier: ^10.12.16
-    version: 10.12.16(@react-three/fiber@8.13.0)(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
+    version: 10.12.16(@react-three/fiber@8.13.2)(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
   leva:
     specifier: ^0.9.35
     version: 0.9.35(@types/react-dom@18.2.4)(@types/react@18.2.11)(react-dom@18.2.0)(react@18.2.0)
@@ -3190,7 +3190,7 @@ packages:
       react: 18.2.0
     dev: false
 
-  /@react-spring/three@9.6.1(@react-three/fiber@8.13.0)(react@18.2.0)(three@0.153.0):
+  /@react-spring/three@9.6.1(@react-three/fiber@8.13.2)(react@18.2.0)(three@0.153.0):
     resolution: {integrity: sha512-Tyw2YhZPKJAX3t2FcqvpLRb71CyTe1GvT3V+i+xJzfALgpk10uPGdGaQQ5Xrzmok1340DAeg2pR/MCfaW7b8AA==}
     peerDependencies:
       '@react-three/fiber': '>=6.0'
@@ -3201,7 +3201,7 @@ packages:
       '@react-spring/core': 9.6.1(react@18.2.0)
       '@react-spring/shared': 9.6.1(react@18.2.0)
       '@react-spring/types': 9.6.1
-      '@react-three/fiber': 8.13.0(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
+      '@react-three/fiber': 8.13.2(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
       react: 18.2.0
       three: 0.153.0
     dev: false
@@ -3210,8 +3210,8 @@ packages:
     resolution: {integrity: sha512-POu8Mk0hIU3lRXB3bGIGe4VHIwwDsQyoD1F394OK7STTiX9w4dG3cTLljjYswkQN+hDSHRrj4O36kuVa7KPU8Q==}
     dev: false
 
-  /@react-three/drei@9.74.7(@react-three/fiber@8.13.0)(@types/three@0.152.1)(react-dom@18.2.0)(react@18.2.0)(three@0.153.0):
-    resolution: {integrity: sha512-rGl1WHEbVk83KDtRzpuQZkrOLGSmvpuu9uGEZpZzy1csxlVjOA8EWWwSCSKwmY/spWwcLnSIQ30haUMmL8ZSCw==}
+  /@react-three/drei@9.74.11(@react-three/fiber@8.13.2)(@types/three@0.152.1)(react-dom@18.2.0)(react@18.2.0)(three@0.153.0):
+    resolution: {integrity: sha512-7V8Yd3LtAZQmzf+lxc8cWBC3M2Y2vihEVF1phpqsIV9zSmGe6qTtzECueb5TAnVH8E4zQKtYQGmYJZ7eB2EGzQ==}
     peerDependencies:
       '@react-three/fiber': '>=8.0'
       react: '>=18.0'
@@ -3223,8 +3223,8 @@ packages:
     dependencies:
       '@babel/runtime': 7.22.5
       '@mediapipe/tasks-vision': 0.10.1
-      '@react-spring/three': 9.6.1(@react-three/fiber@8.13.0)(react@18.2.0)(three@0.153.0)
-      '@react-three/fiber': 8.13.0(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
+      '@react-spring/three': 9.6.1(@react-three/fiber@8.13.2)(react@18.2.0)(three@0.153.0)
+      '@react-three/fiber': 8.13.2(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
       '@use-gesture/react': 10.2.27(react@18.2.0)
       camera-controls: 2.4.2(three@0.153.0)
       detect-gpu: 5.0.28
@@ -3239,7 +3239,7 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
       react-merge-refs: 1.1.0
       stats.js: 0.17.0
-      suspend-react: 0.0.8(react@18.2.0)
+      suspend-react: 0.1.0(react@18.2.0)
       three: 0.153.0
       three-mesh-bvh: 0.5.24(three@0.153.0)
       three-stdlib: 2.23.9(three@0.153.0)
@@ -3250,8 +3250,8 @@ packages:
       - '@types/three'
     dev: false
 
-  /@react-three/fiber@8.13.0(react-dom@18.2.0)(react@18.2.0)(three@0.153.0):
-    resolution: {integrity: sha512-hPFzFNgikEMyEbL+NpSA7q+UWZxInrrkJldWaCR2w34Fwf20x9p68bsyN0/yn9oM2VlWoJcJjR8hw1tN9AxHuA==}
+  /@react-three/fiber@8.13.2(react-dom@18.2.0)(react@18.2.0)(three@0.153.0):
+    resolution: {integrity: sha512-3HWq1HSrm3wrlL63Pd0ePOjZ0o9SEjChiKwGENmTmBsIIgPcuX8GX1RbiSUuteCJbAkoRfIcUbBOSqhxGPdVVA==}
     peerDependencies:
       expo: '>=43.0'
       expo-asset: '>=8.4'
@@ -3280,12 +3280,12 @@ packages:
       react-reconciler: 0.27.0(react@18.2.0)
       react-use-measure: 2.1.1(react-dom@18.2.0)(react@18.2.0)
       scheduler: 0.21.0
-      suspend-react: 0.0.8(react@18.2.0)
+      suspend-react: 0.1.0(react@18.2.0)
       three: 0.153.0
       zustand: 3.7.2(react@18.2.0)
     dev: false
 
-  /@react-three/flex@1.0.1(@react-three/fiber@8.13.0)(react@18.2.0)(three@0.153.0):
+  /@react-three/flex@1.0.1(@react-three/fiber@8.13.2)(react@18.2.0)(three@0.153.0):
     resolution: {integrity: sha512-m1zcuE0BWyUP6ASX09SGYZWHkyMS9GVcP4WGXjdSdxWi228D0p8hti9nHlnv+fpZvQO8v+Qz4EXmrf302mEzXQ==}
     peerDependencies:
       '@react-three/fiber': '>=8.0'
@@ -3293,7 +3293,7 @@ packages:
       three: '>=0.137'
     dependencies:
       '@react-pdf/yoga': 2.0.4
-      '@react-three/fiber': 8.13.0(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
+      '@react-three/fiber': 8.13.2(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
       react: 18.2.0
       react-merge-refs: 1.1.0
       three: 0.153.0
@@ -6259,7 +6259,7 @@ packages:
       mime-types: 2.1.35
     dev: true
 
-  /framer-motion-3d@10.12.16(@react-three/fiber@8.13.0)(react-dom@18.2.0)(react@18.2.0)(three@0.153.0):
+  /framer-motion-3d@10.12.16(@react-three/fiber@8.13.2)(react-dom@18.2.0)(react@18.2.0)(three@0.153.0):
     resolution: {integrity: sha512-6oQRVw11OFG1czwFyciLtWNQzEEqzKLVtH92YLQCnyLgC6Y3NiXR4VC6VF5iQPnzb6yvLTAw47SbSzQM3ZQMYQ==}
     peerDependencies:
       '@react-three/fiber': ^8.2.2
@@ -6267,7 +6267,7 @@ packages:
       react-dom: '>=18.0'
       three: '>=0.133'
     dependencies:
-      '@react-three/fiber': 8.13.0(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
+      '@react-three/fiber': 8.13.2(react-dom@18.2.0)(react@18.2.0)(three@0.153.0)
       framer-motion: 10.12.16(react-dom@18.2.0)(react@18.2.0)
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
@@ -9456,8 +9456,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /suspend-react@0.0.8(react@18.2.0):
-    resolution: {integrity: sha512-ZC3r8Hu1y0dIThzsGw0RLZplnX9yXwfItcvaIzJc2VQVi8TGyGDlu92syMB5ulybfvGLHAI5Ghzlk23UBPF8xg==}
+  /suspend-react@0.1.0(react@18.2.0):
+    resolution: {integrity: sha512-J+dYBrK1myX+EpijscT4op5M4C7gMf+k1D38dLz4JivXzVX5T1HqRdAdrMalYVcnf4UWI6GfTMH1uoU3jGLu1g==}
     peerDependencies:
       react: '>=17.0'
     dependencies:
