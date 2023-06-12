@@ -9,8 +9,8 @@
   "dependencies": {
     "@fontsource/noto-sans-mono": "^5.0.3",
     "@p5-wrapper/react": "^4.2.0",
-    "@react-three/drei": "^9.74.7",
-    "@react-three/fiber": "^8.13.0",
+    "@react-three/drei": "^9.74.11",
+    "@react-three/fiber": "^8.13.2",
     "@react-three/flex": "^1.0.1",
     "@visx/axis": "^3.1.0",
     "@visx/grid": "^3.0.1",

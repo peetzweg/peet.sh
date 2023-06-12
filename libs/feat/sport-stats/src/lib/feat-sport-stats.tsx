@@ -1,5 +1,5 @@
 import ParentSize from '@visx/responsive/lib/components/ParentSize';
-import { ElevationGraph } from './ElevationGraph';
+import { AccumulatedGraph } from './AccumulatedGraph';
 import styles from './feat-sport-stats.module.css';
 
 /* eslint-disable-next-line */
@@ -28,7 +28,7 @@ export function FeatSportStats(props: FeatSportStatsProps) {
       >
         <ParentSize>
           {({ width, height }) => (
-            <ElevationGraph width={width} height={height} />
+            <AccumulatedGraph width={width} height={height} />
           )}
         </ParentSize>
       </div>

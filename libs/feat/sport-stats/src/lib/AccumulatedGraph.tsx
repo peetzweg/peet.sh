@@ -9,7 +9,7 @@ import { useMemo } from 'react';
 import { ACCUMULATED as data, AccumulatedRun, Run } from '../data/Running';
 
 const getX = (d: Run) => d.date;
-const getY = (d: AccumulatedRun) => d.accElevation;
+const getY = (d: AccumulatedRun) => d.accDistance;
 
 const COLOR = {
   MARATHON: '#d95972',
@@ -25,7 +25,7 @@ const yScale = scaleLinear({
 
 const margin = { top: 20, right: 60, bottom: 60, left: 20 };
 
-export function ElevationGraph({
+export function AccumulatedGraph({
   width,
   height,
 }: {
@@ -38,6 +38,7 @@ export function ElevationGraph({
 
   xScale.range([0, xMax]);
   yScale.range([yMax, 0]);
+
   const [marathons, halfs] = useMemo(function calcTotals() {
     let marathons = 0,
       halfs = 0;
@@ -57,7 +58,7 @@ export function ElevationGraph({
         />
         <Group left={30} top={30}>
           <text x="0" y="0" fontSize={11}>
-            Cumulated Running Elevation Gain (m)
+            Cumulated Running Distance (km)
           </text>
 
           <text x="0" y="15" fontSize={11} fill={COLOR.MARATHON}>
@@ -119,8 +120,10 @@ export function ElevationGraph({
         <AxisRight
           left={xMax}
           scale={yScale}
-          tickFormat={(d) =>
-            d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'm'
+          tickFormat={(d) =>{
+            return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'km'
+          }
+
           }
           stroke={'#1b1a1e'}
           tickStroke={'#1b1a1e'}
