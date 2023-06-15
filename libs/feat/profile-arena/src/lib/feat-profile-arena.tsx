@@ -1,40 +1,56 @@
-import { Environment, Float, OrbitControls } from '@react-three/drei';
-import { Canvas } from '@react-three/fiber';
+import { Circle, useTexture } from '@react-three/drei';
+import { Canvas, useFrame } from '@react-three/fiber';
+import { useRef } from 'react';
 
-export interface FeatProfileArenaProps {}
-
+const SCALE = 0.25;
 const Scene = () => {
+  const [cyan, magenta, yellow] = useTexture([
+    '/set2/1.png',
+    '/set2/2.png',
+    '/set2/3.png',
+  ]);
+
+  const cyanRef = useRef(null);
+  const magentaRef = useRef(null);
+  const yellowRef = useRef(null);
+  useFrame((state, delta) => {
+    if (cyanRef.current && magentaRef.current && yellowRef.current) {
+      cyanRef.current.rotation.z += delta * SCALE;
+      magentaRef.current.rotation.z -= delta * SCALE * 2;
+      yellowRef.current.rotation.z += delta * SCALE * 4;
+    }
+  });
+
   return (
     <>
       <ambientLight intensity={1} />
-      <OrbitControls
-        makeDefault
-        autoRotate
-        enableDamping
-        rotateSpeed={1}
-        autoRotateSpeed={4}
-        enableZoom={false}
-      />
 
-      <Float floatIntensity={1} speed={1} floatingRange={[-0.05, 0.05]}>
-        <mesh
-          scale={0.7}
-          castShadow
-          position={[0, 0, 0]}
-          rotation={[0, 0, 0.5]}
-        >
-          <meshStandardMaterial color="#C8A86E" metalness={0} roughness={1} />
+      <Circle position={[0, 0, 0.001]} ref={cyanRef} args={[undefined, 90]}>
+        <meshStandardMaterial map={cyan} transparent={true} />
+      </Circle>
 
-          <sphereGeometry args={[1, 128, 128]} />
-        </mesh>
-      </Float>
+      <Circle
+        position={[0, 0, 0]}
+        rotation={[0, 0, 2]}
+        ref={magentaRef}
+        args={[undefined, 90]}
+      >
+        <meshStandardMaterial map={magenta} transparent={true} />
+      </Circle>
 
-      <Environment files="https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/aerodynamics_workshop_1k.hdr" />
+      <Circle
+        position={[0, 0, -0.001]}
+        rotation={[0, 0, 1]}
+        ref={yellowRef}
+        args={[undefined, 90]}
+      >
+        <meshStandardMaterial map={yellow} transparent={true} />
+      </Circle>
     </>
   );
 };
 
-export function FeatProfileArena(props: FeatProfileArenaProps) {
+export function FeatProfileArena() {
   return (
     <div
       style={{
@@ -77,7 +93,7 @@ export function FeatProfileArena(props: FeatProfileArenaProps) {
               height: '100vh',
               width: '100vw',
             }}
-            camera={{ fov: 90, near: 0.1, far: 10, position: [0.5, 0.5, 1] }}
+            camera={{ fov: 90, near: 0.1, far: 10, position: [0, 0, 1.5] }}
           >
             <Scene />
           </Canvas>

@@ -1,8 +1,8 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
+import { Group } from 'three';
 import styles from './feat-portfolio-models.module.css';
 import { Model as Tulip } from './models/Tulip';
-import { Group, BoxGeometry, MeshStandardMaterial } from 'three';
 
 /* eslint-disable-next-line */
 export interface FeatPortfolioModelsProps {}
