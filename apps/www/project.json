@@ -4,31 +4,19 @@
   "projectType": "application",
   "sourceRoot": "apps/www/src",
   "targets": {
-    "build": {
-      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
-      "executor": "@nxtensions/astro:build",
-      "options": {}
-    },
     "dev": {
-      "executor": "@nxtensions/astro:dev",
+      "executor": "nx:run-commands",
       "options": {
-        "port": 3001
+        "command": "astro dev",
+        "cwd": "apps/www"
       }
     },
-    "preview": {
-      "dependsOn": [
-        {
-          "target": "build"
-        }
-      ],
-      "executor": "@nxtensions/astro:preview",
-      "options": {}
-    },
-    "check": {
-      "executor": "@nxtensions/astro:check"
-    },
-    "sync": {
-      "executor": "@nxtensions/astro:sync"
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "astro build",
+        "cwd": "apps/www"
+      }
     }
   },
   "tags": []
