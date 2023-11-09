@@ -12,15 +12,15 @@
   },
   "private": true,
   "dependencies": {
-    "feature-portfolio-p5":"workspace:*",
-    "feature-portfolio-models":"workspace:*",
-    "feature-portfolio-diy":"workspace:*",
-    "feature-profile-arena":"workspace:*",
-    "feature-profile-terminal":"workspace:*",
-    "feature-sport-stats":"workspace:*",
+    "@astrojs/tailwind": "^5.0.2",
     "@fontsource/noto-sans-mono": "^5.0.5",
-    "@p5-wrapper/react": "^4.2.0"
-
+    "feature-portfolio-diy": "workspace:*",
+    "feature-portfolio-models": "workspace:*",
+    "feature-portfolio-p5": "workspace:*",
+    "feature-profile-arena": "workspace:*",
+    "feature-profile-terminal": "workspace:*",
+    "feature-sport-stats": "workspace:*",
+    "tailwindcss": "^3.3.5"
   },
   "devDependencies": {
     "@astrojs/check": "^0.3.1",
