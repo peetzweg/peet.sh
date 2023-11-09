@@ -52,29 +52,10 @@ const Scene = () => {
 
 export function FeatProfileArena() {
   return (
-    <div
-      style={{
-        display: 'flex',
-        width: '100vw',
-        height: '100vh',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        flexWrap: 'wrap',
-      }}
-    >
-      <div style={{ position: 'fixed', top: 16, left: 16 }}>◠◠</div>
+    <div className="flex w-screen h-screen flex-row justify-between flex-wrap">
+      <div className="fixed top-2 left-4">◠◠</div>
 
-      <div
-        style={{
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignContent: 'center',
-          justifyContent: 'center',
-          fontWeight: '600',
-          lineHeight: 1.7,
-        }}
-      >
+      <div className="w-full flex flex-col justify-center items-center">
         <div
           style={{
             height: '100%',
@@ -85,80 +66,71 @@ export function FeatProfileArena() {
           }}
         >
           <Canvas
+            className="w-screen h-screen absolute top-0 left-0 -z-10"
             style={{
               position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: -1,
-              height: '100vh',
-              width: '100vw',
             }}
             camera={{ fov: 90, near: 0.1, far: 10, position: [0, 0, 1.5] }}
           >
             <Scene />
           </Canvas>
-          <div></div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'row',
-              justifyContent: 'center',
-            }}
-          >
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-              }}
-            >
-              <div style={{ display: 'flex', flexDirection: 'row' }}>
+
+          <div>
+            <br />
+          </div>
+
+          <div>
+            <div className="grid grid-cols-3 gap-4">
+              <div className="justify-end flex">
                 <div>peet.sh /</div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <br />
-                <a href={'/software'}>
-                  <div>software</div>
+
+              <div className="flex flex-col">
+                <a className="underline" href={'/software'}>
+                  software
                 </a>
-                <a href={'/client-work'}>
-                  <div>client-work</div>
+                <a className="underline" href={'/client-work'}>
+                  client-work
                 </a>
-                <a href={'/hardware'}>
-                  <div>hardware</div>
+                <a className="underline" href={'/hardware'}>
+                  hardware
                 </a>
                 <div>profiles /</div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <br />
 
-                <br />
+              <div className="grid grid-rows-8">
+                <div>
+                  <br />
+                </div>
+                <div>
+                  <br />
+                </div>
+                <div>
+                  <br />
+                </div>
 
-                <br />
-
-                <br />
-                <a href={'https://github.com/peetzweg'}>
-                  <div>github</div>
+                <a href={'https://github.com/peetzweg'} className="underline">
+                  github
                 </a>
-                <a href={'https://twitter.com/peetzweg'}>
-                  <div>twitter</div>
+                <a className="underline" href={'https://twitter.com/peetzweg'}>
+                  twitter
                 </a>
-                <a href={'https://www.linkedin.com/in/peetzweg/'}>
-                  <div>linkedin</div>
+                <a
+                  className="underline"
+                  href={'https://www.linkedin.com/in/peetzweg/'}
+                >
+                  linkedin
                 </a>
-                <a href={'https://www.strava.com/athletes/18353420'}>
-                  <div>strava</div>
+                <a
+                  className="underline"
+                  href={'https://www.strava.com/athletes/18353420'}
+                >
+                  strava
                 </a>
               </div>
             </div>
           </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              marginBottom: 16,
-            }}
-          >
+          <div className="flex flex-col items-center">
             <div>scroll for old website</div>
             <div>↓</div>
           </div>
