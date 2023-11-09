@@ -3,68 +3,54 @@ import styles from './feat-portfolio-diy.module.css';
 /* eslint-disable-next-line */
 export interface FeatPortfolioDiyProps {}
 
-import BathroomLamp from './images/BathroomLamp.jpeg';
-import Bed from './images/bed.jpg';
-import Bernd from './images/bernd.jpg';
-import WallMount from './images/bikewallmount.jpg';
-import ConcreteLamp from './images/concretelamp.jpg';
-import Curtain from './images/CurtainPole.jpg';
-import Lamp from './images/Lamp.jpg';
-import Potence01 from './images/potence01.jpg';
-import Pottery from './images/pottery.jpg';
-import Rack from './images/Rack01.jpg';
-import Shades from './images/shades.jpg';
-import Wakizashi from './images/woodenwakizashi.jpg';
-
 const ENTRIES = [
   {
     title: 'Bathroom Lamp',
-    src: BathroomLamp,
+    src: 'hardware/BathroomLamp.jpeg',
   },
   {
     title: 'Wooden Wakizashi',
-    src: Wakizashi,
+    src: 'hardware/woodenwakizashi.jpg',
   },
   {
     title: 'Concrete Lamp',
-    src: ConcreteLamp,
+    src: 'hardware/concretelamp.jpg',
   },
   {
     title: 'Leather easy chair',
-    src: Bernd,
+    src: 'hardware/bernd.jpg',
   },
   {
     title: 'Bed',
-    src: Bed,
+    src: 'hardware/bed.jpg',
   },
   {
     title: 'Pot',
-    src: Pottery,
+    src: 'hardware/pottery.jpg',
   },
   {
     title: 'Potence01',
-    src: Potence01,
+    src: 'hardware/potence01.jpg',
   },
   {
     title: 'Bike Mount',
-    src: WallMount,
+    src: 'hardware/bikewallmount.jpg',
   },
   {
     title: 'Rack',
-    src: Rack,
+    src: 'hardware/Rack01.jpg',
   },
-
   {
     title: 'Curtain-hanger',
-    src: Curtain,
+    src: 'hardware/CurtainPole.jpg',
   },
   {
     title: 'Chandelier',
-    src: Lamp,
+    src: 'hardware/Lamp.jpg',
   },
   {
     title: 'Shades',
-    src: Shades,
+    src: 'hardware/shades.jpg',
   },
 ];
 
