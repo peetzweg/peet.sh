@@ -1,0 +1,35 @@
+{
+  "name": "www",
+  "version": "0.0.0",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "private": true,
+  "dependencies": {
+    "@astrojs/tailwind": "^5.0.2",
+    "@fontsource/noto-sans-mono": "^5.0.5",
+    "feature-portfolio-diy": "workspace:*",
+    "feature-portfolio-models": "workspace:*",
+    "feature-portfolio-p5": "workspace:*",
+    "feature-profile-arena": "workspace:*",
+    "feature-profile-terminal": "workspace:*",
+    "feature-sport-stats": "workspace:*",
+    "tailwindcss": "^3.3.5"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/react": "^3.0.4",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "astro": "^3.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2"
+  }
+}
