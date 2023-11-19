@@ -36,7 +36,7 @@ export function AccumulatedGraph({
     const prefersDark = window.matchMedia(
       '(prefers-color-scheme: dark)',
     ).matches;
-    return prefersDark ? ['#e0e0e0', '#1b1a1e'] : ['#1b1a1e', '#e0e0e0'];
+    return prefersDark ? ['#e0e0e0', '#22262c'] : ['#22262c', '#e0e0e0'];
   }, []);
   // bounds
   const xMax = width - margin.left - margin.right;
