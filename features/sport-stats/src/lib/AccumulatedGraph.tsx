@@ -32,6 +32,12 @@ export function AccumulatedGraph({
   width: number;
   height: number;
 }) {
+  const [foreground, background] = useMemo(() => {
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches;
+    return prefersDark ? ['#e0e0e0', '#1b1a1e'] : ['#1b1a1e', '#e0e0e0'];
+  }, []);
   // bounds
   const xMax = width - margin.left - margin.right;
   const yMax = height - margin.top - margin.bottom;
@@ -43,21 +49,15 @@ export function AccumulatedGraph({
     let marathons = 0,
       halfs = 0;
     data.forEach((d) =>
-      d.distance >= 42 ? marathons++ : d.distance >= 21 ? halfs++ : undefined
+      d.distance >= 42 ? marathons++ : d.distance >= 21 ? halfs++ : undefined,
     );
     return [marathons, halfs];
   }, []);
   return (
     <svg width={width} height={height}>
       <Group left={margin.left} top={margin.top}>
-        <GridColumns
-          scale={xScale}
-          width={xMax}
-          height={yMax}
-          stroke="#e0e0e0"
-        />
         <Group left={30} top={30}>
-          <text x="0" y="0" fontSize={11}>
+          <text x="0" y="0" fontSize={11} fill={foreground}>
             Cumulated Running Distance (km)
           </text>
 
@@ -69,14 +69,26 @@ export function AccumulatedGraph({
           </text>
         </Group>
 
-        <GridRows scale={yScale} width={xMax} height={yMax} stroke="#e0e0e0" />
+        <GridColumns
+          scale={xScale}
+          width={xMax}
+          height={yMax}
+          stroke={background}
+        />
+
+        <GridRows
+          scale={yScale}
+          width={xMax}
+          height={yMax}
+          stroke={background}
+        />
 
         <LinePath<Run>
           curve={curveStep}
           data={data}
           x={(d) => xScale(getX(d)) ?? 0}
           y={(d) => yMax - yScale(getY(d)) ?? 0}
-          stroke="#333"
+          stroke={foreground}
         />
 
         {data.map((d, i) => {
@@ -108,10 +120,10 @@ export function AccumulatedGraph({
           top={yMax}
           scale={xScale}
           tickFormat={(d) => d.getFullYear()}
-          stroke={'#1b1a1e'}
-          tickStroke={'#1b1a1e'}
+          stroke={foreground}
+          tickStroke={foreground}
           tickLabelProps={() => ({
-            fill: '#1b1a1e',
+            fill: foreground,
             fontSize: 11,
             textAnchor: 'middle',
           })}
@@ -120,16 +132,14 @@ export function AccumulatedGraph({
         <AxisRight
           left={xMax}
           scale={yScale}
-          tickFormat={(d) =>{
-            return d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'km'
+          tickFormat={(d) =>
+            d.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'km'
           }
-
-          }
-          stroke={'#1b1a1e'}
-          tickStroke={'#1b1a1e'}
+          stroke={foreground}
+          tickStroke={foreground}
           tickLabelProps={() => ({
             x: 11,
-            fill: '#1b1a1e',
+            fill: foreground,
             fontSize: 11,
             textAnchor: 'start',
           })}
