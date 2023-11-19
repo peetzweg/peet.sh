@@ -131,7 +131,7 @@ export function FeatProfileArena() {
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <div>scroll for old website</div>
+            <div>scroll for playground</div>
             <div>↓</div>
           </div>
         </div>
