@@ -1,6 +1,8 @@
-import { P5CanvasInstance, ReactP5Wrapper } from '@p5-wrapper/react';
+import { ReactP5Wrapper, Sketch, SketchProps } from '@p5-wrapper/react';
 
-function sketch(p5: P5CanvasInstance) {
+type MySketchProps = SketchProps & {};
+
+const sketch: Sketch<MySketchProps> = (p5) => {
   let start = 0;
   let end = 0;
   let blue = 0;
@@ -18,7 +20,7 @@ function sketch(p5: P5CanvasInstance) {
     blue = p5.map(p5.random(), 0, 1, 0, 255);
     green = p5.map(p5.random(), 0, 1, 0, 255);
     p5.noStroke();
-    p5.background(255);
+    p5.background(255, 0);
     p5.noiseDetail(2, 0.2);
 
     p5.noLoop();
@@ -84,7 +86,7 @@ function sketch(p5: P5CanvasInstance) {
     }
     p5.pop();
   };
-}
+};
 
 export function Subscapes() {
   return <ReactP5Wrapper sketch={sketch} />;

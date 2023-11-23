@@ -23,7 +23,7 @@ function sketch(globalP5: P5CanvasInstance) {
 
   function draw(p5: P5CanvasInstance) {
     return () => {
-      p5.background(255);
+      p5.background(255, 0);
       for (let x = start; x < end; x += 2) {
         const value = p5.noise(x / 100);
         const mappedValue = p5.map(
@@ -31,7 +31,7 @@ function sketch(globalP5: P5CanvasInstance) {
           0,
           1,
           -1 * (p5.height / 2),
-          p5.height / 2
+          p5.height / 2,
         );
         const rValue = p5.map(x, start, end, 0, 255);
         color = p5.color(rValue, green, blue);

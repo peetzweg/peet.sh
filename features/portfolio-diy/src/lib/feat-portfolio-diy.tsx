@@ -6,51 +6,51 @@ export interface FeatPortfolioDiyProps {}
 const ENTRIES = [
   {
     title: 'Bathroom Lamp',
-    src: 'hardware/BathroomLamp.jpeg',
+    src: '/hardware/BathroomLamp.jpeg',
   },
   {
     title: 'Wooden Wakizashi',
-    src: 'hardware/woodenwakizashi.jpg',
+    src: '/hardware/woodenwakizashi.jpg',
   },
   {
     title: 'Concrete Lamp',
-    src: 'hardware/concretelamp.jpg',
+    src: '/hardware/concretelamp.jpg',
   },
   {
     title: 'Leather easy chair',
-    src: 'hardware/bernd.jpg',
+    src: '/hardware/bernd.jpg',
   },
   {
     title: 'Bed',
-    src: 'hardware/bed.jpg',
+    src: '/hardware/bed.jpg',
   },
   {
     title: 'Pot',
-    src: 'hardware/pottery.jpg',
+    src: '/hardware/pottery.jpg',
   },
   {
     title: 'Potence01',
-    src: 'hardware/potence01.jpg',
+    src: '/hardware/potence01.jpg',
   },
   {
     title: 'Bike Mount',
-    src: 'hardware/bikewallmount.jpg',
+    src: '/hardware/bikewallmount.jpg',
   },
   {
     title: 'Rack',
-    src: 'hardware/Rack01.jpg',
+    src: '/hardware/Rack01.jpg',
   },
   {
     title: 'Curtain-hanger',
-    src: 'hardware/CurtainPole.jpg',
+    src: '/hardware/CurtainPole.jpg',
   },
   {
     title: 'Chandelier',
-    src: 'hardware/Lamp.jpg',
+    src: '/hardware/Lamp.jpg',
   },
   {
     title: 'Shades',
-    src: 'hardware/shades.jpg',
+    src: '/hardware/shades.jpg',
   },
 ];
 
