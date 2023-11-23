@@ -127,6 +127,14 @@ export function FeatProfileArena() {
                 >
                   strava
                 </a>
+                <a
+                  className="underline"
+                  href={
+                    'https://www.goodreads.com/user/show/150027885-peetzweg'
+                  }
+                >
+                  goodreads
+                </a>
               </div>
             </div>
           </div>
