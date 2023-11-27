@@ -34,6 +34,9 @@ importers:
       feature-sport-stats:
         specifier: workspace:*
         version: link:../../features/sport-stats
+      feature-strava-activities:
+        specifier: workspace:*
+        version: link:../../features/strava-activities
       tailwindcss:
         specifier: ^3.3.5
         version: 3.3.5
@@ -566,6 +569,37 @@ importers:
       prettier:
         specifier: ^3.0.0
         version: 3.0.3
+      tslib:
+        specifier: ^2.6.0
+        version: 2.6.2
+      typescript:
+        specifier: 5.1.6
+        version: 5.1.6
+
+  features/strava-activities:
+    dependencies:
+      react:
+        specifier: 18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: 18.2.0
+        version: 18.2.0(react@18.2.0)
+    devDependencies:
+      '@types/react':
+        specifier: 18.2.24
+        version: 18.2.24
+      '@types/react-dom':
+        specifier: 18.2.9
+        version: 18.2.9
+      '@types/react-is':
+        specifier: 18.2.2
+        version: 18.2.2
+      '@typescript-eslint/eslint-plugin':
+        specifier: 5.62.0
+        version: 5.62.0(@typescript-eslint/parser@5.62.0)(eslint@8.46.0)(typescript@5.1.6)
+      '@typescript-eslint/parser':
+        specifier: 5.62.0
+        version: 5.62.0(eslint@8.46.0)(typescript@5.1.6)
       tslib:
         specifier: ^2.6.0
         version: 2.6.2

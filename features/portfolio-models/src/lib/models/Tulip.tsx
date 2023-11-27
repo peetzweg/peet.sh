@@ -11,7 +11,8 @@ export const Model = React.forwardRef<Group>((props, ref) => {
   return (
     <motion.group
       {...props}
-      whileHover={{ scale: 5 }}
+      scale={5}
+      whileHover={{ scale: 4 }}
       // whileTap={{ scale: 6 }}
       ref={ref}
       dispose={null}

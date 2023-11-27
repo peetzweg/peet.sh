@@ -1,0 +1,23 @@
+{
+  "name": "feature-strava-activities",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "private": true,
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.24",
+    "@types/react-dom": "18.2.9",
+    "@types/react-is": "18.2.2",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "tslib": "^2.6.0",
+    "typescript": "5.1.6"
+  }
+}

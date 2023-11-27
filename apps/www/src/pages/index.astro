@@ -4,16 +4,41 @@ import { TerminalComponent } from 'feature-profile-terminal';
 import { FeatPortfolioP5 } from 'feature-portfolio-p5';
 import { FeatPortfolioModels } from 'feature-portfolio-models';
 import { FeatSportStats } from 'feature-sport-stats';
+import { FeatStravaActivities } from 'feature-strava-activities';
 
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="peet.sh / Philip Poloczek">
   <main>
-    <FeatProfileArena client:only/>
-    <FeatSportStats client:only/>
-    <FeatPortfolioModels client:only/>
-    <FeatPortfolioP5 client:only/>
-    <TerminalComponent client:only/>
+    <FeatProfileArena client:only />
+    <div class="relative">
+      <h1 class="text-8xl absolute top-0">epic adventures</h1>
+      <FeatStravaActivities client:only />
+    </div>
+    <div class="relative">
+      <h1 class="text-8xl absolute top-36">number go up ↗</h1>
+      <FeatSportStats client:only />
+    </div>
+    <div class="relative">
+      <h1 class="text-6xl absolute top-[80vh] left-[50vw]">
+        ❀ handmade flowers, just for you ✿
+      </h1>
+      <FeatPortfolioModels client:only />
+    </div>
+
+    <div class="relative">
+      <h1 class="text-6xl absolute top-[30vh] left-[20vw]">
+        much nfts, such wow •ᴗ•
+      </h1>
+
+      <FeatPortfolioP5 client:only />
+    </div>
+    <div class="relative">
+      <h1 class="text-6xl absolute top-[30vh] left-[20vw]">
+        old, but still cool ☞☜
+      </h1>
+      <TerminalComponent client:only />
+      </div>
   </main>
 </Layout>
