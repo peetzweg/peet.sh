@@ -33,12 +33,12 @@ export const FeatStravaActivities: React.FC<Props> = () => {
   }, []);
 
   return (
-    <div className="flex flex-row items-center snap-x snap-mandatory overflow-scroll w-screen h-screen">
-      <div className="min-w-[50vw] snap-center flex items-center justify-center"></div>
+    <div className="flex flex-row items-end snap-x snap-mandatory overflow-scroll gap-4 lg:gap-0 w-screen h-screen pb-4">
+      <div className="min-w-[10vw] lg:min-w-[50vw] snap-center flex items-center justify-center"></div>
       {ACTIVITIES.map((id) => (
         <div
           key={id}
-          className="min-w-[50vw] snap-center flex items-center justify-center"
+          className="min-w-[90vw] lg:min-w-[50vw]  snap-center flex items-center justify-center"
         >
           <div
             className="strava-embed-placeholder"
