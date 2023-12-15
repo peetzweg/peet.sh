@@ -6,7 +6,7 @@ export interface FeatPortfolioP5Props {}
 
 export function FeatPortfolioP5(props: FeatPortfolioP5Props) {
   return (
-    <div className="h-screen flex flex-row flex-wrap justify-around items-center">
+    <div className="h-screen flex flex-row flex-wrap justify-around items-center overflow-hidden">
       <Subscapes />
       <ChromieSquiggle />
     </div>
