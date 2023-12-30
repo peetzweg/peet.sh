@@ -11,10 +11,10 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="peet.sh / Philip Poloczek">
   <main>
-    <FeatProfileArena client:only />
+    <FeatProfileArena client:load />
     <div class="relative">
       <h1 class="text-8xl absolute top-0 break-all">epic adventures</h1>
-      <FeatStravaActivities client:only />
+      <FeatStravaActivities client:visible />
     </div>
     <div class="relative">
       <h1 class="text-8xl absolute top-36 break-all">number go up ↗</h1>
@@ -24,7 +24,7 @@ import Layout from '../layouts/Layout.astro';
       <h1 class="text-6xl absolute top-[80vh] left-[50vw] break-all">
         ❀ handmade flowers, just for you ✿
       </h1>
-      <FeatPortfolioModels client:only />
+      <FeatPortfolioModels client:visible />
     </div>
 
     <div class="relative">
@@ -38,7 +38,7 @@ import Layout from '../layouts/Layout.astro';
       <h1 class="text-6xl absolute top-[30vh] left-[20vw] break-all">
         old, but still cool ☞☜
       </h1>
-      <TerminalComponent client:only />
+      <TerminalComponent client:visible />
       </div>
   </main>
 </Layout>
