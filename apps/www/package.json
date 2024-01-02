@@ -12,8 +12,8 @@
   },
   "private": true,
   "dependencies": {
-    "@astrojs/tailwind": "^5.0.2",
-    "@fontsource/noto-sans-mono": "^5.0.5",
+    "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/noto-sans-mono": "^5.0.18",
     "feature-portfolio-diy": "workspace:*",
     "feature-portfolio-models": "workspace:*",
     "feature-portfolio-p5": "workspace:*",
@@ -21,16 +21,16 @@
     "feature-profile-terminal": "workspace:*",
     "feature-sport-stats": "workspace:*",
     "feature-strava-activities": "workspace:*",
-    "tailwindcss": "^3.3.5"
+    "tailwindcss": "^3.4.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.3.1",
-    "@astrojs/react": "^3.0.4",
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
-    "astro": "^3.5.0",
+    "@astrojs/check": "^0.3.4",
+    "@astrojs/react": "^3.0.9",
+    "@types/react": "^18.2.46",
+    "@types/react-dom": "^18.2.18",
+    "astro": "^3.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   }
 }
