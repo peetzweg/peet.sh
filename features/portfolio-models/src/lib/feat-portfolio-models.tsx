@@ -1,7 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber';
 import { useRef } from 'react';
 import { Group } from 'three';
-import styles from './feat-portfolio-models.module.css';
 import { Model as Tulip } from './models/Tulip';
 
 /* eslint-disable-next-line */
@@ -20,7 +19,7 @@ const RotatingTulip = () => {
 
 export function FeatPortfolioModels(props: FeatPortfolioModelsProps) {
   return (
-    <div className={styles['container']}>
+    <div>
       <Canvas style={{ height: '100vh' }}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
