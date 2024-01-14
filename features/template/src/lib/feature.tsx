@@ -1,7 +1,7 @@
 /* eslint-disable-next-line */
-export interface FeatTemplateProps {}
+export interface FeatureProps {}
 
-export function FeatTemplate(props: FeatTemplateProps) {
+export function Feature(props: FeatureProps) {
   return (
     <div className="v-screen h-screen flex justify-center items-center p-8">
       <h1>Template Feature</h1>
@@ -9,4 +9,4 @@ export function FeatTemplate(props: FeatTemplateProps) {
   );
 }
 
-export default FeatTemplate;
+export default Feature;

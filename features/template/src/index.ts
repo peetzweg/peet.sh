@@ -1,1 +1,1 @@
-export * from './lib/feat-template';
+export * from './lib/feature';
