@@ -18,6 +18,7 @@
     "feature-portfolio-models": "workspace:*",
     "feature-portfolio-p5": "workspace:*",
     "feature-profile-arena": "workspace:*",
+    "feature-template": "workspace:*",
     "feature-profile-terminal": "workspace:*",
     "feature-sport-stats": "workspace:*",
     "feature-strava-activities": "workspace:*",
