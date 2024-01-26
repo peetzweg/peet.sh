@@ -18,20 +18,20 @@
     "feature-portfolio-models": "workspace:*",
     "feature-portfolio-p5": "workspace:*",
     "feature-profile-arena": "workspace:*",
-    "feature-template": "workspace:*",
     "feature-profile-terminal": "workspace:*",
     "feature-sport-stats": "workspace:*",
     "feature-strava-activities": "workspace:*",
-    "tailwindcss": "^3.4.0"
+    "feature-vocabulary": "workspace:*",
+    "react-dom": "^18.2.0",
+    "react": "^18.2.0",
+    "tailwindcss": "^3.4.1"
   },
   "devDependencies": {
     "@astrojs/check": "^0.3.4",
     "@astrojs/react": "^3.0.9",
-    "@types/react": "^18.2.46",
+    "@types/react": "^18.2.47",
     "@types/react-dom": "^18.2.18",
-    "astro": "^3.6.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "astro": "^4.1.2",
     "typescript": "^5.3.3"
   }
 }

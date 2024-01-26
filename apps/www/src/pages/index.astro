@@ -6,6 +6,7 @@ import { FeatPortfolioModels } from 'feature-portfolio-models';
 import { FeatSportStats } from 'feature-sport-stats';
 import { FeatStravaActivities } from 'feature-strava-activities';
 
+import { Feature as Vocabulary } from 'feature-vocabulary';
 import Layout from '../layouts/Layout.astro';
 ---
 
@@ -15,6 +16,10 @@ import Layout from '../layouts/Layout.astro';
       <FeatProfileArena client:load />
     </div>
     <div class="relative">
+      <h1 class="text-2xl absolute top-2 left-20 break-all">words I collected from books</h1>
+      <Vocabulary client:visible/>
+    </div>
+    <div class="relative">
       <h1 class="text-8xl absolute top-0 break-all">epic adventures</h1>
       <FeatStravaActivities client:visible />
     </div>
@@ -22,6 +27,7 @@ import Layout from '../layouts/Layout.astro';
       <h1 class="text-8xl absolute top-36 break-all">number go up ↗</h1>
       <FeatSportStats client:only />
     </div>
+
     <div class="relative">
       <h1 class="text-6xl absolute top-[80vh] left-[50vw] break-all">
         ❀ handmade flowers, just for you ✿
