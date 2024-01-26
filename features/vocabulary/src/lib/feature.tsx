@@ -118,13 +118,24 @@ export function Feature(props: FeatureProps) {
 
         <div className="flex flex-row gap-x-4 items-center absolute bottom-12">
           <div className="flex flex-row gap-4 items-center">
-            <div className="w-8 h-8 border flex flex-row items-center justify-center">
-              <code className="">←</code>
+            <div className="flex flex-row gap-3 items-center">
+              <div className="w-8 h-8 border flex flex-row items-center justify-center">
+                <code>←</code>
+              </div>
+              previous
             </div>
-            <div className="w-8 h-8 border flex flex-row items-center justify-center">
-              <code className="">→</code>
+            <div className="flex flex-row gap-3 items-center">
+              <div className="w-8 h-8 border flex flex-row items-center justify-center">
+                <code>→</code>
+              </div>
+              next
             </div>
-            Previous / Next
+            <div className="flex flex-row gap-3 items-center">
+              <div className="w-20 h-8 border flex flex-row items-center justify-center">
+                <code>Shift</code>
+              </div>
+              audio
+            </div>
           </div>
         </div>
       </div>
