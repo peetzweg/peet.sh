@@ -90,8 +90,11 @@ export function Feature(props: FeatureProps) {
     .filter(Boolean);
 
   return (
-    <div className="v-screen h-screen flex justify-center items-center p-8">
-      <div className="flex flex-col h-96 items-start gap-12 lg:w-1/2 w-full">
+    <div className="v-screen h-screen flex justify-center items-center p-4 sm:p-8">
+      <div
+        className="flex flex-col h-96 items-start gap-12 lg:w-1/2 w-full"
+        onClick={() => nextWord()}
+      >
         <div>
           <h1 className="text-5xl lg:text-6xl self-center">{word}</h1>
         </div>
@@ -116,7 +119,7 @@ export function Feature(props: FeatureProps) {
           <audio ref={audio} className="hidden" src={phonetics[0]} controls />
         )}
 
-        <div className="flex flex-row gap-x-4 items-center absolute bottom-12">
+        <div className="flex-row gap-x-4 items-center absolute bottom-12 hidden sm:flex sm:visible">
           <div className="flex flex-row gap-4 items-center">
             <div className="flex flex-row gap-3 items-center">
               <div className="w-8 h-8 border flex flex-row items-center justify-center">
