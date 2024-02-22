@@ -1,7 +1,7 @@
 ---
 import { FeatProfileArena } from 'feature-profile-arena';
 import { TerminalComponent } from 'feature-profile-terminal';
-import { FeatPortfolioP5 } from 'feature-portfolio-p5';
+import { Feature as FeatPortfolioP5 } from 'feature-portfolio-p5';
 import { FeatPortfolioModels } from 'feature-portfolio-models';
 import { FeatSportStats } from 'feature-sport-stats';
 import { FeatStravaActivities } from 'feature-strava-activities';
@@ -16,34 +16,34 @@ import Layout from '../layouts/Layout.astro';
       <FeatProfileArena client:load />
     </div>
     <div class="relative">
-      <h1 class="text-2xl absolute top-2 left-20 break-all">words I collected from books</h1>
+      <h1 class="text-4xl absolute top-2 left-20 break-word">words I collected from books</h1>
       <Vocabulary client:visible/>
     </div>
     <div class="relative">
-      <h1 class="text-8xl absolute top-0 break-all">epic adventures</h1>
+      <h1 class="text-4xl md:text-8xl absolute top-0 break-word">epic adventures</h1>
       <FeatStravaActivities client:visible />
     </div>
     <div class="relative">
-      <h1 class="text-8xl absolute top-36 break-all">number go up ↗</h1>
+      <h1 class="text-4xl md:text-8xl absolute top-36 break-word">number go up ↗</h1>
       <FeatSportStats client:only />
     </div>
 
     <div class="relative">
-      <h1 class="text-6xl absolute top-[80vh] left-[50vw] break-all">
+      <h1 class="text-4xl md:text-6xl absolute top-[10vh] left-[10vw] break-word">
         ❀ handmade flowers, just for you ✿
       </h1>
       <FeatPortfolioModels client:visible />
     </div>
 
     <div class="relative">
-      <h1 class="text-6xl absolute top-[30vh] left-[20vw] break-all">
+      <h1 class="text-2xl md:text-6xl sticky  top-[30vh] left-[20vw] break-word">
         much nfts, such wow •ᴗ•
       </h1>
 
       <FeatPortfolioP5 client:only />
     </div>
     <div class="relative">
-      <h1 class="text-6xl absolute top-[30vh] left-[20vw] break-all">
+      <h1 class="text-2xl bg-yellow-600 md:text-6xl absolute top-[30vh] left-[20vw] break-all">
         old, but still cool ☞☜
       </h1>
       <TerminalComponent client:only />
