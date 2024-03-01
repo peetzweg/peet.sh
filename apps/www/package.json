@@ -17,6 +17,7 @@
     "feature-portfolio-diy": "workspace:*",
     "feature-portfolio-models": "workspace:*",
     "feature-portfolio-p5": "workspace:*",
+    "feature-punchcard": "workspace:*",
     "feature-profile-arena": "workspace:*",
     "feature-profile-terminal": "workspace:*",
     "feature-sport-stats": "workspace:*",

@@ -1,0 +1,42 @@
+{
+  "name": "feature-punchcard",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "private": true,
+  "dependencies": {
+    "@visx/axis": "^3.3.0",
+    "@visx/grid": "^3.3.0",
+    "@visx/group": "^3.3.0",
+    "@visx/responsive": "^3.0.0",
+    "@visx/scale": "^3.3.0",
+    "@visx/shape": "^3.0.0",
+    "d3-array": "^3.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-is": "18.2.0"
+  },
+  "devDependencies": {
+    "@astrojs/react": "^3.0.4",
+    "@types/d3-array": "^3.0.5",
+    "@types/react": "18.2.24",
+    "@types/react-dom": "18.2.9",
+    "@types/react-is": "18.2.2",
+    "@typescript-eslint/eslint-plugin": "5.62.0",
+    "@typescript-eslint/parser": "5.62.0",
+    "babel-plugin-styled-components": "2.1.4",
+    "eslint": "8.46.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-cypress": "^2.13.3",
+    "eslint-plugin-import": "2.27.5",
+    "eslint-plugin-jsx-a11y": "6.7.1",
+    "eslint-plugin-react": "7.32.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "prettier": "^3.0.0",
+    "tslib": "^2.6.0",
+    "typescript": "5.1.6"
+  }
+}
