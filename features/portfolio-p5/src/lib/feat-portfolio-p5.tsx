@@ -13,12 +13,23 @@ export function Feature(props: FeatPortfolioP5Props) {
           href="https://github.com/peetzweg/peet.sh/blob/main/features/portfolio-p5/src/lib/sketches/ChromieSquiggle.tsx"
           target="_blank"
           rel="noreferrer noopener"
-          className="underline font-mono"
+          className="underline font-mono pl-4"
         >
           ChromieSquiggle - source ↗
         </a>
       </div>
-      <Subscapes />
+
+      <div className="flex flex-col w-full md:w-1/2">
+        <Subscapes />
+        <a
+          href="https://github.com/peetzweg/peet.sh/blob/main/features/portfolio-p5/src/lib/sketches/Subscapes.tsx"
+          target="_blank"
+          rel="noreferrer noopener"
+          className="underline font-mono pl-4 mt-[-20vh] pb-4"
+        >
+          Subscapes - source ↗
+        </a>
+      </div>
     </div>
   );
 }
