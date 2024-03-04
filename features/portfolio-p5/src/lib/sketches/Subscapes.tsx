@@ -13,7 +13,7 @@ const sketch: Sketch<MySketchProps> = (p5) => {
   p5.setup = () => {
     // use parent to render the canvas in this ref
     // (without that p5 will render the canvas outside of your component)
-    p5.createCanvas(630, 891, p5.WEBGL);
+    p5.createCanvas(630, 800, p5.WEBGL);
     start = -1 * (p5.width / 2) + p5.width * 0.15;
     end = p5.width * 0.35;
 

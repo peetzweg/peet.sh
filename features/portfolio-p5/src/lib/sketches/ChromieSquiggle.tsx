@@ -19,7 +19,7 @@ function sketch(p5: P5CanvasInstance<ChromieSquiggleProps>) {
   let color = undefined;
 
   p5.setup = () => {
-    p5.createCanvas(960, 480);
+    p5.createCanvas(960, 768);
     start = p5.width * 0.1;
     end = p5.width * 0.9;
     blue = p5.map(p5.noise(offset / 10), 0, 1, 0, 255);
@@ -32,11 +32,7 @@ function sketch(p5: P5CanvasInstance<ChromieSquiggleProps>) {
 
   p5.draw = () => {
     p5.clear();
-    if (p5.frameCount % 1 === 0) {
-      offset += 0.025;
-      // blue = p5.map(p5.random(), 0, 1, 0, 255);
-      // green = p5.map(p5.random(), 0, 1, 0, 255);
-    }
+    offset += 0.015;
 
     blue = p5.map(p5.noise(offset), 0, 1, 0, 255);
     green = p5.map(p5.noise(offset), 0, 1, 0, 255);
@@ -63,7 +59,7 @@ function sketch(p5: P5CanvasInstance<ChromieSquiggleProps>) {
 }
 
 export function ChromieSquiggle() {
-  return <ReactP5Wrapper sketch={sketch} width={960} height={960} />;
+  return <ReactP5Wrapper sketch={sketch} width={960} height={1500} />;
 }
 
 export default ChromieSquiggle;
