@@ -4,8 +4,8 @@ import { TerminalComponent } from 'feature-profile-terminal';
 import { Feature as FeatPortfolioP5 } from 'feature-portfolio-p5';
 import { FeatPortfolioModels } from 'feature-portfolio-models';
 import { FeatSportStats } from 'feature-sport-stats';
+import { Feature as FeaturePunchcard } from 'feature-punchcard';
 import { FeatStravaActivities } from 'feature-strava-activities';
-
 import { Feature as Vocabulary } from 'feature-vocabulary';
 import Layout from '../layouts/Layout.astro';
 ---
@@ -15,16 +15,25 @@ import Layout from '../layouts/Layout.astro';
     <div style="height:105vh">
       <FeatProfileArena client:load />
     </div>
+
     <div class="relative">
-      <h1 class="text-4xl absolute top-2 left-20 break-word">words I collected from books</h1>
+      <h1 class=" text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">Days spent reading</h1>
+      <FeaturePunchcard client:visible/>
+    </div>
+    <div class="relative">
+
+      <h1 class=" text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">Collected words along the way</h1>
       <Vocabulary client:visible/>
     </div>
     <div class="relative">
-      <h1 class="text-4xl md:text-8xl absolute top-0 break-word">epic adventures</h1>
+      <h1 class=" text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">Adventures had</h1>
       <FeatStravaActivities client:visible />
     </div>
+
+
+
     <div class="relative">
-      <h1 class="text-4xl md:text-8xl absolute top-36 break-word">number go up ↗</h1>
+      <h1 class=" text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">Kilometers conquered</h1>
       <FeatSportStats client:only />
     </div>
 
@@ -36,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="relative">
-      <h1 class="text-2xl md:text-6xl sticky  top-[30vh] left-[20vw] break-word">
+      <h1 class="text-2xl md:text-6xl sticky top-[10vh] pl-[10vw] break-word">
         much nfts, such wow •ᴗ•
       </h1>
 

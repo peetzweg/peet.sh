@@ -1,65 +1,55 @@
-import { useEffect, useMemo } from 'react';
+import { clsx } from 'clsx';
+import { useMemo } from 'react';
 import timestamps from '../data/timestamps.json';
+import {
+  digestTimestamps,
+  longestStreak,
+  padData,
+  padStartToDay,
+} from './util';
 
 export interface Props {}
-
-const digestTimestamps = (timestamps: number[]): [Date[], number[]] => {
-  const days = [];
-  const count: number[] = [];
-  let currentDate = new Date(timestamps[0]);
-  count.push(1);
-  days.push(currentDate);
-  timestamps.forEach((timestamp, index) => {
-    let nextDate = new Date(timestamp);
-    if (nextDate.getUTCDay() === currentDate.getUTCDay()) {
-      count[count.length - 1] += 1;
-    } else {
-      days.push(nextDate);
-      count.push(1);
-      currentDate = nextDate;
-    }
-  });
-  console.log({ days, count });
-  return [days, count];
-};
-
-const padData = (days: Date[], count: number[]): [Date[], number[]] => {
-  const currentDay = new Date(days[0]);
-  const paddedDays: Date[] = [];
-  const paddedCount: number[] = [];
-  days.forEach((day, index) => {
-    paddedDays.push(new Date(day));
-    paddedCount.push(count[index]);
-
-    const currentDay = new Date(day);
-    currentDay.setUTCDate(currentDay.getUTCDate() + 1);
-    const nextDay = days[index + 1];
-
-    while (nextDay && nextDay.getUTCDay() !== currentDay.getUTCDay()) {
-      paddedDays.push(new Date(currentDay));
-      paddedCount.push(0);
-      currentDay.setUTCDate(currentDay.getUTCDate() + 1);
-    }
-  });
-
-  return [paddedDays, paddedCount];
-};
 
 export function Feature(props: Props) {
   const [days, count] = useMemo(() => {
     const result = digestTimestamps(timestamps);
-    return padData(result[0], result[1]);
+    const padded = padData(result);
+    return padStartToDay(padded, 1);
   }, []);
-  console.log({ days, count });
+
+  const streak = useMemo(() => {
+    return longestStreak([days, count]);
+  }, [days, count]);
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center p-8">
-      <div className="grid grid-rows-7 grid-flow-col gap-4">
-        {days.map((day, index) => (
-          <div style={{ opacity: count[index] > 0 ? 1 : 0.2 }}>
-            {count[index] > 0 ? 'x' : 'o'}
+    <div className=" h-screen w-screen flex justify-center items-center flex-row px-4">
+      <div className="grid grid-rows-7 grid-flow-col gap-y-0 gap-x-4">
+        {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day) => (
+          <div className="text-gray-800 align-middle flex items-center text-lg h-[40px] pr-4">
+            {day}
           </div>
         ))}
+      </div>
+      <div className="w-full md:w-3/4 overflow-scroll">
+        <div className="grid grid-rows-7 grid-flow-col gap-y-0 gap-x-4 py-4">
+          {days.map((day, index) => {
+            return (
+              <>
+                <div
+                  className={clsx(
+                    {
+                      'text-gray-800': count[index] === 0,
+                    },
+                    'h-[40px] text-2xl align-bottom relative',
+                  )}
+                  title={day.toLocaleDateString()}
+                >
+                  {count[index] > 0 ? 'x' : 'o'}
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
