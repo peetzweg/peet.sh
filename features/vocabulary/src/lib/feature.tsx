@@ -90,11 +90,11 @@ export function Feature(props: FeatureProps) {
     .filter(Boolean);
 
   return (
-    <div className="v-screen h-screen flex justify-center items-center p-4 sm:p-8">
-      <div
-        className="flex flex-col h-96 items-start gap-12 lg:w-1/2 w-full"
-        onClick={() => nextWord()}
-      >
+    <div
+      className="v-screen h-screen flex justify-center items-center p-4 sm:p-8"
+      onClick={() => nextWord()}
+    >
+      <div className="flex flex-col h-96 items-start gap-12 lg:w-1/2 w-full">
         <div>
           <h1 className="text-5xl lg:text-6xl self-center">{word}</h1>
         </div>
@@ -133,12 +133,18 @@ export function Feature(props: FeatureProps) {
               </div>
               next
             </div>
-            <div className="flex flex-row gap-3 items-center">
+            <div className="invisible sm:visible flex flex-row gap-3 items-center">
+              <div className="w-20 h-8 border flex flex-row items-center justify-center">
+                <code>click</code>
+              </div>
+              next
+            </div>
+            {/* <div className="flex flex-row gap-3 items-center">
               <div className="w-20 h-8 border flex flex-row items-center justify-center">
                 <code>Shift</code>
               </div>
               audio
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
