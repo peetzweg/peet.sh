@@ -1,6 +1,7 @@
-import timestamps from '../data/timestamps.json';
 import { clsx } from 'clsx';
-import { Calendar, Lochkarte } from 'lochkarte';
+import { Lochkarte } from 'lochkarte';
+
+import Kindle from 'db/kindle';
 export interface Props {}
 
 export function Feature(props: Props) {
@@ -31,7 +32,7 @@ export function Feature(props: Props) {
         <div className="flex flex-col justify-center items-center w-full">
           <div className="w-full p-4 md:p-0 md:w-3/4">
             <Lochkarte
-              timestamps={timestamps}
+              timestamps={Kindle}
               renderDay={(day, count) => (
                 <div
                   className={clsx(

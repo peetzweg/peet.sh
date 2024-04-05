@@ -1,4 +1,4 @@
-import data from './data.json';
+import data from 'db/elevate';
 
 interface ElevateRow {
   'Distance (km)': number;
@@ -43,7 +43,7 @@ export default (data as unknown as ElevateData)
         distance: Number(d['Distance (km)']) || 0,
         date: new Date(d.Date),
         elevation: Number(d['Elevation Gain (m)']) || 0,
-      } as Run)
+      }) as Run,
   ) as RunningData;
 
 let accElevation = 0;

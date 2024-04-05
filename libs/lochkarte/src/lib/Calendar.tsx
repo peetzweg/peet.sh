@@ -21,10 +21,6 @@ export function Calendar({ timestamps, classNames, renderDay }: Props) {
     return padStartToDay(padded, 1);
   }, []);
 
-  const streak = useMemo(() => {
-    return longestStreak([days, count]);
-  }, [days, count]);
-
   return (
     <div className={clsx(classNames, 'flex flex-col')}>
       <div className="grid grid-flow-col gap-y-0 gap-x-4">

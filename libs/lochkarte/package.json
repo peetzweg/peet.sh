@@ -2,8 +2,13 @@
   "name": "lochkarte",
   "version": "0.1.0",
   "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "build": "tsup ./src/index.ts --minify --dts --format cjs,esm --out-dir ./dist"
   },
   "exports": {
     ".": "./src/index.ts"
@@ -27,6 +32,7 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "prettier": "^3.0.0",
     "tslib": "^2.6.0",
+    "tsup": "^8.0.2",
     "typescript": "5.1.6",
     "vitest": "^1.4.0"
   }

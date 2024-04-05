@@ -26,20 +26,27 @@ export function Lochkarte({ timestamps, classNames, renderDay }: Props) {
       <div className="w-full overflow-scroll">
         <div className="flex flex-row">
           <div className="fixed">
-            <div className="grid grid-rows-7 border-r grid-flow-col gap-y-0 gap-x-4 items-center bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-              {['M', 'T', 'W', 'T', 'F', 'S', 'S'].map((day) => (
-                <div
-                  className=" px-2 h-[40px] text-2xl font-semibold"
-                  style={{ fontVariant: 'small-caps' }}
-                >
-                  {day.toLocaleLowerCase()}
-                </div>
-              ))}
+            <div className="grid grid-rows-7 border-gray-500 grid-flow-col items-center bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+              {['Mon', 'Tue', 'Wes', 'Thu', 'Fri', 'Sat', 'Sun'].map(
+                (day, index) => (
+                  <div
+                    key={index}
+                    className="px-2 h-[40px] text-2xl font-semibold"
+                    style={{ fontVariant: 'small-caps' }}
+                  >
+                    {day.toLocaleLowerCase()}
+                  </div>
+                ),
+              )}
             </div>
           </div>
 
-          <div className="grid pl-8 grid-rows-7 grid-flow-col gap-y-0 gap-x-4">
-            {days.map((day, index) => renderDay(day, count[index]))}
+          <div className="grid pl-16 grid-rows-7 grid-flow-col gap-x-4">
+            {days.map((day, index) => (
+              <React.Fragment key={index}>
+                {renderDay(day, count[index])}
+              </React.Fragment>
+            ))}
           </div>
         </div>
       </div>
