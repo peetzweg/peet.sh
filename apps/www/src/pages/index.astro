@@ -3,7 +3,7 @@ import { FeatProfileArena } from 'feature-profile-arena';
 import { TerminalComponent } from 'feature-profile-terminal';
 import { Feature as FeatPortfolioP5 } from 'feature-portfolio-p5';
 import { FeatPortfolioModels } from 'feature-portfolio-models';
-import { FeatSportStats } from 'feature-sport-stats';
+import { FeatSportStats, FeatSportTotals } from 'feature-sport-stats';
 import { Feature as FeaturePunchcard } from 'feature-punchcard';
 import { FeatStravaActivities } from 'feature-strava-activities';
 import { Feature as Vocabulary } from 'feature-vocabulary';
@@ -35,6 +35,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="relative">
       <h1 class=" text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">Kilometers conquered</h1>
       <FeatSportStats client:only />
+      <FeatSportTotals />
     </div>
 
     <div class="relative">

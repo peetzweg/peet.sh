@@ -1,40 +1,42 @@
 {
-  "name": "feature-punchcard",
-  "version": "0.0.0",
+  "name": "db",
+  "version": "0.1.0",
   "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "build": "tsup ./src/index.ts --minify --dts --format cjs,esm --out-dir ./dist"
   },
+  "files": [
+    "data/*.json"
+  ],
   "exports": {
-    ".": "./src/index.ts"
+    ".": "./src/index.ts",
+    "./*": "./src/data/*.json"
   },
   "private": true,
   "dependencies": {
-    "lochkarte": "workspace:*",
-    "db": "workspace:*"
-  },
-  "peerDependencies": {
     "clsx": "^2.1.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-is": "18.2.0"
+    "react": "18.2.0"
   },
   "devDependencies": {
     "@types/react": "18.2.24",
-    "@types/react-dom": "18.2.9",
-    "@types/react-is": "18.2.2",
     "@typescript-eslint/eslint-plugin": "5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "babel-plugin-styled-components": "2.1.4",
-    "eslint": "8.46.0",
     "eslint-config-prettier": "9.0.0",
     "eslint-plugin-cypress": "^2.13.3",
     "eslint-plugin-import": "2.27.5",
     "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-react": "7.32.2",
     "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react": "7.32.2",
+    "eslint": "8.46.0",
     "prettier": "^3.0.0",
     "tslib": "^2.6.0",
+    "tsup": "^8.0.2",
     "typescript": "5.1.6",
     "vitest": "^1.4.0"
   }

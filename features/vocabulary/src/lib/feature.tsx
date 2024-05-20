@@ -1,6 +1,6 @@
 export interface FeatureProps {}
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import Dict from '../data/dict.json';
+import Dict from 'db/dict';
 
 interface DictionaryEntry {
   phonetics: Array<{
