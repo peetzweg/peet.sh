@@ -6,7 +6,7 @@ export interface FeatSportStatsProps {}
 
 export function FeatSportStats(props: FeatSportStatsProps) {
   return (
-    <div className="v-screen h-screen flex justify-center items-center p-8">
+    <div className="w-screen h-screen flex justify-center items-center p-8">
       <ParentSize>
         {({ width, height }) => (
           <AccumulatedGraph width={width} height={height} />
@@ -15,5 +15,3 @@ export function FeatSportStats(props: FeatSportStatsProps) {
     </div>
   );
 }
-
-export default FeatSportStats;
