@@ -1,0 +1,13 @@
+---
+title: 'Posts';
+const posts = await Astro.glob('./*.md');
+import Layout from '../../layouts/TocLayout.astro';
+---
+
+
+<Layout title={"Posts"}>
+
+  <ul>
+    {posts.map((post) => <a href={post.url}><li>{post.frontmatter.title}</li></a>)}
+  </ul>
+</Layout>

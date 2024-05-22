@@ -43,6 +43,9 @@ importers:
       feature-vocabulary:
         specifier: workspace:*
         version: link:../../features/vocabulary
+      latex.css:
+        specifier: ^1.11.0
+        version: 1.11.0
       lochkarte:
         specifier: workspace:*
         version: link:../../libs/lochkarte
@@ -8603,6 +8606,10 @@ packages:
     dependencies:
       language-subtag-registry: 0.3.22
     dev: true
+
+  /latex.css@1.11.0:
+    resolution: {integrity: sha512-94bTsUV8Bf2p3lvnXxAl4NFnvhcAs1uAK01NxnosTuQ50mcVJFXpbS7SbpBuBuM69J/jBB00fzTCkcfh8DjWRQ==}
+    dev: false
 
   /lazy-ass@1.6.0:
     resolution: {integrity: sha512-cc8oEVoctTvsFZ/Oje/kGnHbpWHYBe8IAJe4C0QNc3t8uM/0Y8+erSz/7Y1ALuXTEZTMvxXwO6YbX1ey3ujiZw==}

@@ -95,10 +95,16 @@ export function FeatProfileArena() {
                 <a className="underline" href={'/hardware'}>
                   hardware
                 </a>
+                <a className="underline" href={'/posts'}>
+                  posts
+                </a>
                 <div>profiles /</div>
               </div>
 
               <div className="grid grid-rows-8">
+                <div>
+                  <br />
+                </div>
                 <div>
                   <br />
                 </div>
