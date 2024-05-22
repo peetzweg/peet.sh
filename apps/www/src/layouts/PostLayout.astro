@@ -10,9 +10,10 @@ import 'latex.css';
   </head>
   <body>
     <main>
-      <article class="indent-pars">
-        <h1>{content.title}</h1>
+      <h1>{content.title}</h1>
         <p class="author">{content.author}<br />{content.date}</p>
+      <article class="indent-pars">
+
         <slot />
       </article>
       <p>Back to <code><a href="/">peet.sh</a></code></p>
