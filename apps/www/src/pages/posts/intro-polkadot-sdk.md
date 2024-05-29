@@ -29,6 +29,14 @@ Building on the Polkadot SDK, FRAME (Framework for Runtime Aggregation of Modula
 
 Each pallet is designed to work independently or in conjunction with others, allowing developers to pick and choose the components needed for their blockchain. By assembling these audited and production-proven pallets, you can create a robust and customized STF, tailored to your specific application logic.
 
+## Smart Contracts: The Contracts Pallet
+
+Smart contracts on Polkadot are implemented through a pallet simply called contracts. This pallet provides all the smart contract functionality you would expect from Ethereum. It allows for deploying a smart contract via an extrinsic, and once instantiated, you can call the contract's functions, interact with other contracts, and even potentially execute other runtime pallet code if permitted.
+
+The contracts pallet runs smart contracts in a Wasm sandbox, metering execution time and securing the contracts against the rest of the blockchain state. Although it operates within the smart contract realm, it can interact with the broader runtime realm if allowed.
+
+Currently, smart contracts for the contracts pallet are written in Rust. There is a framework called [`ink!`](https://use.ink/), which provides macros to annotate your Rust code, making it compatible with the smart contract sandbox seamlessly. ink! knows how to store and retrieve data, call other contracts, and write tests, offering a streamlined development experience for smart contract developers.
+
 ## Conclusion
 
 The features discussed here only scratch the surface of what the Polkadot SDK and FRAME offer. The flexibility, adaptability, and modularity of this framework are game-changing for blockchain development. In potential future articles, I plan to delve deeper into the essential and interesting pallets provided by FRAME, highlighting their potential uses and benefits.
