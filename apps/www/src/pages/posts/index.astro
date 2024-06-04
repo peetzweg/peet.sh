@@ -7,7 +7,16 @@ import Layout from '../../layouts/TocLayout.astro';
 
 <Layout title={"Posts"}>
 
+
   <ol class="text-lg">
-    {posts.reverse().map((post) => <a href={post.url}><li class="mb-2">{post.frontmatter.title}</li></a>)}
+    {posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)).map((post) => (
+      <a href={post.url}>
+        <li class="mb-2">
+          {`${post.frontmatter.title}`}
+        </li>
+      </a>
+    ))}
+  </ol>
+  </ol>
   </ol>
 </Layout>

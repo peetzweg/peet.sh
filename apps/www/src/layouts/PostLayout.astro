@@ -11,12 +11,12 @@ import 'latex.css';
   <body>
     <main>
       <h1>{content.title}</h1>
-        <p class="author">{content.author}<br />{content.date}</p>
-      <article class="indent-pars">
+      <p class="author">{content.author}<br />{content.date}</p>
 
+      <article class="indent-pars">
         <slot />
       </article>
-      <hr class="mt-8"/>
+      <hr class="mt-8" />
       <p><a href="/">Back to <code>peet.sh</code></a></p>
     </main>
   </body>

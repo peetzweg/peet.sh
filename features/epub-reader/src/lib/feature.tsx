@@ -88,7 +88,7 @@ export function EpubReader() {
       />
       <motion.div
         layout
-        className="rounded-full px-4 py-2 bg-black flex flex-row gap-4 cursor-pointer z-50 select-none"
+        className="rounded-full max-w-[400px] bg-black flex flex-row gap-4 cursor-pointer z-50 select-none"
         whileHover={{
           scale: 1.05,
           transition: { duration: 0.1 },
@@ -108,6 +108,7 @@ export function EpubReader() {
             {book && (
               <motion.div
                 onClick={() => inputRef.current?.click()}
+                className="pl-4 py-2 text-ellipsis text-white text-nowrap overflow-hidden"
                 key={book.packaging.metadata.title}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -117,6 +118,7 @@ export function EpubReader() {
             )}
             {book && (
               <div
+                className="py-2 pr-4"
                 onClick={() => {
                   setBook(undefined);
                   setContent(undefined);
@@ -131,6 +133,7 @@ export function EpubReader() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
+                className="px-4 py-2"
                 key="select-epub-file"
                 onClick={() => inputRef.current?.click()}
               >
