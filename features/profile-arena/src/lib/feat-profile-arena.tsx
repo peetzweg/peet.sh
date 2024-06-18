@@ -86,16 +86,16 @@ export function FeatProfileArena() {
               </div>
 
               <div className="flex flex-col">
-                <a className="underline" href={'/software'}>
+                <a target="_blank" className="underline" href={'/software'}>
                   software
                 </a>
-                <a className="underline" href={'/client-work'}>
+                <a target="_blank" className="underline" href={'/client-work'}>
                   client-work
                 </a>
-                <a className="underline" href={'/hardware'}>
+                <a target="_blank" className="underline" href={'/hardware'}>
                   hardware
                 </a>
-                <a className="underline" href={'/posts'}>
+                <a target="_blank" className="underline" href={'/posts'}>
                   posts
                 </a>
                 <div>profiles /</div>
@@ -115,26 +115,37 @@ export function FeatProfileArena() {
                   <br />
                 </div>
 
-                <a href={'https://github.com/peetzweg'} className="underline">
-                  github
-                </a>
-                <a className="underline" href={'https://twitter.com/peetzweg'}>
-                  twitter
+                <a
+                  className="underline"
+                  target="_blank"
+                  href={'https://x.com/peetzweg'}
+                >
+                  x
                 </a>
                 <a
                   className="underline"
+                  target="_blank"
+                  href={'https://github.com/peetzweg'}
+                >
+                  github
+                </a>
+                <a
+                  className="underline"
+                  target="_blank"
                   href={'https://www.linkedin.com/in/peetzweg/'}
                 >
                   linkedin
                 </a>
                 <a
                   className="underline"
+                  target="_blank"
                   href={'https://www.strava.com/athletes/18353420'}
                 >
                   strava
                 </a>
                 <a
                   className="underline"
+                  target="_blank"
                   href={
                     'https://www.goodreads.com/user/show/150027885-peetzweg'
                   }
