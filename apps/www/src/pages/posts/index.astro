@@ -1,5 +1,4 @@
 ---
-title: 'Posts';
 const posts = await Astro.glob('./*.md');
 import Layout from '../../layouts/TocLayout.astro';
 ---
@@ -9,7 +8,7 @@ import Layout from '../../layouts/TocLayout.astro';
 
 
   <ol class="text-lg">
-    {posts.sort((a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)).map((post) => (
+    {posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime()).map((post) => (
       <a href={post.url}>
         <li class="mb-2">
           {`${post.frontmatter.title}`}
