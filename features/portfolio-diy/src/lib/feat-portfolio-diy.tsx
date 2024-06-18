@@ -5,12 +5,16 @@ export interface FeatPortfolioDiyProps {}
 
 const ENTRIES = [
   {
-    title: 'Bathroom Lamp',
-    src: '/hardware/BathroomLamp.jpeg',
+    title: 'Backlit Mirror',
+    src: '/hardware/mirror.jpg',
   },
   {
     title: 'Wooden Wakizashi',
     src: '/hardware/woodenwakizashi.jpg',
+  },
+  {
+    title: 'Bathroom Lamp',
+    src: '/hardware/BathroomLamp.jpeg',
   },
   {
     title: 'Concrete Lamp',
