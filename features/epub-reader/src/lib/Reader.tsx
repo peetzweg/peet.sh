@@ -1,38 +1,32 @@
 import { useEffect, useMemo, useState } from 'react';
+import { useStore } from './store';
 
 interface Props {
   text: string;
 }
 export const Reader = ({ text }: Props) => {
-  const [isPlaying, setPlaying] = useState(false);
+  const isPlaying = useStore((state) => state.isPlaying);
+  const setProgress = useStore((state) => state.setProgress);
   const [current, setCurrent] = useState<number>(0);
-  const words = useMemo(() => {
-    setPlaying(false);
+  const [words, total] = useMemo(() => {
     setCurrent(0);
-    return text.split(' ');
+    const words = text.split('\n').join(' ').split(' ');
+    const total = words.length;
+    return [words, total];
   }, [text]);
   const [interval, saveInterval] = useState<
     undefined | ReturnType<typeof setInterval>
   >(undefined);
 
   useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === ' ') {
-        console.log('Space bar pressed');
-        setPlaying((prev) => !prev);
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, []);
-
-  useEffect(() => {
     if (isPlaying) {
       const newInterval = setInterval(() => {
-        setCurrent((prev) => prev + 2);
-      }, 500);
+        setCurrent((prev) => {
+          const newCurrent = prev + 1;
+          setProgress(newCurrent / total);
+          return newCurrent;
+        });
+      }, 250);
       saveInterval(newInterval);
     }
   }, [isPlaying]);
@@ -42,10 +36,11 @@ export const Reader = ({ text }: Props) => {
       clearInterval(interval);
     }
   }, [interval, isPlaying]);
+  // console.log(words[current]);
 
   return (
-    <div className="flex flex-col justify-center items-center w-full h-96 text-3xl leading-3 tracking-tight">
-      <h1>{`${words[current]} ${words[current + 1]}`}</h1>
+    <div className="flex flex-col justify-center font-serif items-center w-full h-96 text-5xl ">
+      <h1>{`${words[current]}`}</h1>
     </div>
   );
 };

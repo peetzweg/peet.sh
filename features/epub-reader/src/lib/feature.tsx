@@ -1,23 +1,48 @@
 import ePub from 'epubjs';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { Reader } from './Reader.tsx';
+import { Reader } from './Reader';
 import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
+import { useStore } from './store';
 
 type Section = ReturnType<ePub.Book['spine']['get']>;
 
 export function EpubReader() {
   const inputRef = useRef<HTMLInputElement>(null);
   const [book, setBook] = useState<ePub.Book | undefined>(undefined);
-  const [section, setSection] = useState<Section | undefined>(undefined);
+  const [section, setSection] = useState<string | undefined>(undefined);
   const [content, setContent] = useState<string | undefined>(undefined);
   const [html, setHTML] = useState<string | undefined>(undefined);
   const [chapters, setChapters] = useState<string[] | undefined>(undefined);
+  const [coverUrl, setCoverUrl] = useState<string | undefined>(undefined);
+  const toggle = useStore((state) => state.toggle);
+  const isPlaying = useStore((state) => state.isPlaying);
+  const progress = useStore((state) => state.progress);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      switch (e.key) {
+        case 'Escape':
+          setBook(undefined);
+          setContent(undefined);
+          setSection(undefined);
+          break;
+        case ' ':
+          toggle();
+          break;
+        default:
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   const onChange = useCallback(
     async (e: React.ChangeEvent<HTMLInputElement>) => {
       if (e.target && e.target.files && e.target.files.length === 0) return;
       const file = e.target.files![0];
-      console.log({ file });
+
       const buffer = await file.arrayBuffer();
 
       const book = ePub(buffer);
@@ -34,16 +59,16 @@ export function EpubReader() {
   );
 
   const selectSection = useCallback(
-    (href: string) => async () => {
+    (href: string, name: string) => async () => {
       if (!book) return null;
       const section = book.spine.get(href);
       const chapter = await book.load(section.href);
-      console.log({ href, section: section.href });
+
       if (!(chapter instanceof Document) || !chapter.body?.textContent) {
         console.info('Odd Chapter', href, chapter);
         return '';
       }
-      setSection(section);
+      setSection(name);
       setContent(chapter.body.textContent.trim());
       setHTML(chapter.body.innerHTML);
     },
@@ -53,6 +78,13 @@ export function EpubReader() {
   useEffect(() => {
     if (book && book.isOpen) {
       const sectionPromises: Promise<string>[] = [];
+      book.coverUrl().then((url) => {
+        if (!url) {
+          console.warn('No cover available');
+        } else {
+          setCoverUrl(url);
+        }
+      });
 
       book.spine.each((section: Section) => {
         const sectionPromise = (async () => {
@@ -62,7 +94,7 @@ export function EpubReader() {
             return '';
           }
           const text = chapter.body.innerHTML;
-          console.log({ text });
+          // console.log({ text });
           // console.log("loading", section.href, text.length);
           return text;
         })();
@@ -82,96 +114,175 @@ export function EpubReader() {
     <div className="flex flex-col pt-10 items-center w-screen min-h-screen ">
       <input
         type="file"
+        accept=".epub"
         ref={inputRef}
         onChange={onChange}
         className="hidden"
       />
       <motion.div
         layout
-        className="rounded-full max-w-[400px] bg-black flex flex-row gap-4 cursor-pointer z-50 select-none"
-        whileHover={{
-          scale: 1.05,
-          transition: { duration: 0.1 },
+        className="max-w-96 gap-4 bg-black flex flex-col cursor-pointer select-none overflow-hidden"
+        variants={{
+          closed: {
+            borderRadius: '99px',
+            transition: {
+              duration: 0.1,
+            },
+          },
+          open: {
+            borderRadius: '32px',
+            transition: {
+              duration: 0.1,
+            },
+          },
         }}
-        whileTap={{ scale: 0.95 }}
+        animate={book ? 'open' : 'closed'}
         transition={{
           duration: 0.5,
           type: 'spring',
-          stiffness: 400,
+          stiffness: 200,
           damping: 20,
           mass: 1,
           when: 'afterChildren',
         }}
+        whileHover={
+          !book
+            ? {
+                scale: 1.03,
+                transition: { duration: 0.1 },
+              }
+            : undefined
+        }
+        whileTap={!book ? { scale: 0.97 } : undefined}
       >
         <AnimatePresence mode="wait">
           <LayoutGroup>
             {book && (
               <motion.div
-                onClick={() => inputRef.current?.click()}
-                className="pl-4 py-2 text-ellipsis text-white text-nowrap overflow-hidden"
+                layout="position"
+                className="w-96 py-6 px-6 text-white gap-3 flex flex-col justify-start items-start"
                 key={book.packaging.metadata.title}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
-                exit={{ opacity: 0 }}
-              >{`${book.packaging.metadata.title} - ${book.packaging.metadata.creator}`}</motion.div>
-            )}
-            {book && (
-              <div
-                className="py-2 pr-4"
-                onClick={() => {
-                  setBook(undefined);
-                  setContent(undefined);
-                }}
+                initial={{ opacity: 0, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, filter: 'blur(0px)' }}
+                exit={{ opacity: 0, filter: 'blur(10px)' }}
+                transition={{ duration: 0.6 }}
               >
-                ×
-              </div>
+                <div className="flex flex-row gap-x-3">
+                  <div className="w-12 overflow-hidden">
+                    {coverUrl && <img className="w-12" src={coverUrl} />}
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <div className="">{book.packaging.metadata.title}</div>
+                    <div className="opacity-30">
+                      {book.packaging.metadata.creator}
+                    </div>
+                    {section && (
+                      <motion.div
+                        layout="size"
+                        title={section}
+                        className="text-ellipsis w-72 text-nowrap overflow-hidden"
+                        key="section"
+                        initial={{
+                          opacity: 0,
+                          filter: 'blur(10px)',
+                          height: '0%',
+                        }}
+                        animate={{
+                          opacity: 1,
+                          filter: 'blur(0px)',
+                          height: '100%',
+                        }}
+                        exit={{
+                          opacity: 0,
+                          filter: 'blur(10px)',
+                          height: '0%',
+                        }}
+                      >
+                        {`→ ${section}`}
+                      </motion.div>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {section && (
+              <motion.div
+                layout
+                key="progress"
+                className="w-full relative mt-[-0.75rem]"
+              >
+                <div className="relative mx-6">
+                  <div className="h-[3px] rounded-full bg-slate-600 "></div>
+                  <div
+                    className="absolute w-full top-0 h-[3px] rounded-full bg-white"
+                    style={{
+                      clipPath: `inset(0 ${100 - progress * 100}% 0 0)`,
+                    }}
+                  ></div>
+                </div>
+              </motion.div>
+            )}
+
+            {section && (
+              <motion.div
+                layout
+                key="controls"
+                className="flex flex-row items-center justify-center pb-4"
+                initial={{ opacity: 0, filter: 'blur(10px)', height: '0%' }}
+                animate={{ opacity: 1, filter: 'blur(0px)', height: '100%' }}
+                exit={{ opacity: 0, filter: 'blur(10px)', height: '0%' }}
+                onMouseDown={toggle}
+              >
+                {isPlaying ? (
+                  <div className="rotate-180">||</div>
+                ) : (
+                  <div className="rotate-180">⨞</div>
+                )}
+              </motion.div>
             )}
 
             {!book && (
               <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="px-4 py-2"
+                layout
+                initial={{ opacity: 0, filter: 'blur(10px)' }}
+                animate={{ opacity: 1, filter: 'blur(0px)' }}
+                exit={{ opacity: 0, filter: 'blur(10px)' }}
+                className="px-6 py-3"
                 key="select-epub-file"
+                transition={{ duration: 0.6 }}
                 onClick={() => inputRef.current?.click()}
               >
-                ↳ Select ePub File...
+                ↳ Select ePub File
               </motion.div>
             )}
           </LayoutGroup>
         </AnimatePresence>
       </motion.div>
 
-      {book && (
+      {book && !section && (
         <motion.div
-          className="flex flex-col w-1/3 p-4 absolute bg-slate-900 top-20 left-0"
-          whileHover={{ x: 0 }}
-          transition={{
-            duration: 0.2,
-            type: 'tween',
-            stiffness: 400,
-            damping: 20,
-          }}
-          initial={{ x: '-90%' }}
+          initial={{ opacity: 0, filter: 'blur(10px)' }}
+          animate={{ opacity: 1, filter: 'blur(0px)' }}
+          exit={{ opacity: 0, filter: 'blur(10px)' }}
+          className="px-4 w-96 py-4 text-ellipsis text-white gap-1 gap-x-3 flex flex-col justify-start  items-start overflow-hidden"
+          key={'toc'}
         >
-          <div className="top-2 right-4 absolute">→</div>
           {book.navigation.toc.map((t) => {
             return (
               <motion.div
                 key={t.label}
-                className="hover:opacity-100 opacity-45 cursor-pointer"
-                style={{ opacity: section?.href === t.href ? 1 : undefined }}
-                onClick={selectSection(t.href)}
-              >{`${section?.href === t.href ? '→ ' : ''}${t.label}`}</motion.div>
+                className="hover:opacity-100 opacity-45 cursor-pointer max-w-96 overflow-hidden text-ellipsis text-nowrap"
+                onClick={selectSection(t.href, t.label)}
+              >
+                {t.label}
+              </motion.div>
             );
           })}
         </motion.div>
       )}
 
       {content && <Reader text={content} />}
-
       {/* {html && <div dangerouslySetInnerHTML={{ __html: html }}></div>} */}
 
       {/* <h1>All Content</h1>
