@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef } from 'react';
 import { Reader } from './Reader';
 import { useStore } from './store';
 import { Progress } from './Progress';
+import { Controls } from './Controls';
 
 export function Navigation() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -11,7 +12,6 @@ export function Navigation() {
   const [openBook, back] = useStore((state) => [state.openBook, state.back]);
 
   const book = useStore((state) => state.book);
-  const content = useStore((state) => state.content);
   const section = useStore((state) => state.chapter);
   const selectSection = useStore((state) => state.selectSection);
   const coverUrl = useStore((state) => state.cover);
@@ -51,7 +51,7 @@ export function Navigation() {
       />
       <motion.div
         layout
-        className="max-w-96 gap-4 bg-black flex flex-col cursor-pointer select-none overflow-hidden"
+        className="text-white max-w-96 gap-4 bg-black flex flex-col cursor-pointer select-none overflow-hidden"
         variants={{
           closed: {
             borderRadius: '99px',
@@ -78,12 +78,12 @@ export function Navigation() {
         whileHover={
           !book
             ? {
-                scale: 1.03,
+                scale: 1.05,
                 transition: { duration: 0.1 },
               }
             : undefined
         }
-        whileTap={!book ? { scale: 0.97 } : undefined}
+        whileTap={!book ? { scale: 0.95 } : undefined}
       >
         <AnimatePresence mode="wait">
           <LayoutGroup>
@@ -138,23 +138,7 @@ export function Navigation() {
 
             {section && <Progress />}
 
-            {section && (
-              <motion.div
-                layout
-                key="controls"
-                className="flex flex-row items-center justify-center pb-4"
-                initial={{ opacity: 0, filter: 'blur(10px)', height: '0%' }}
-                animate={{ opacity: 1, filter: 'blur(0px)', height: '100%' }}
-                exit={{ opacity: 0, filter: 'blur(10px)', height: '0%' }}
-                onMouseDown={toggle}
-              >
-                {isPlaying ? (
-                  <div className="rotate-180">||</div>
-                ) : (
-                  <div className="rotate-180">⨞</div>
-                )}
-              </motion.div>
-            )}
+            {section && <Controls />}
 
             {!book && (
               <motion.div
@@ -179,7 +163,7 @@ export function Navigation() {
           initial={{ opacity: 0, filter: 'blur(10px)' }}
           animate={{ opacity: 1, filter: 'blur(0px)' }}
           exit={{ opacity: 0, filter: 'blur(10px)' }}
-          className="px-4 w-96 py-4 text-ellipsis text-white gap-1 gap-x-3 flex flex-col justify-start  items-start overflow-hidden"
+          className="px-4 w-96 py-4 text-ellipsis gap-1 gap-x-3 flex flex-col justify-start  items-start overflow-hidden"
           key={'toc'}
         >
           {book.navigation.toc.map((t) => {
