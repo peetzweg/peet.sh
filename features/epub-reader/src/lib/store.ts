@@ -14,6 +14,7 @@ type Store = {
   setProgress: (progress: number) => void;
   openBook: (file: File) => Promise<void>;
   closeBook: () => void;
+  back: () => void;
   selectSection: (href: string) => Promise<void>;
 };
 
@@ -38,6 +39,21 @@ export const useStore = create<Store>()((set, get) => ({
     await book.opened;
     const url = await book.coverUrl();
     set({ book, cover: url || undefined });
+  },
+  back: () => {
+    const chapter = get().chapter;
+    if (chapter) {
+      set((state) => ({
+        ...INITIAL_STATE,
+        book: state.book,
+        cover: state.cover,
+      }));
+    } else {
+      const book = get().book;
+      if (book) {
+        set({ ...INITIAL_STATE });
+      }
+    }
   },
   closeBook: () => {
     set({
