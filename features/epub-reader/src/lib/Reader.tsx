@@ -11,6 +11,7 @@ export const Reader = ({ text }: Props) => {
   const [words, total] = useMemo(() => {
     setCurrent(0);
     const words = text.split('\n').join(' ').split(' ');
+
     const total = words.length;
     return [words, total];
   }, [text]);

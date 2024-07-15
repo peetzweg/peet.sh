@@ -1,20 +1,22 @@
-import ePub from 'epubjs';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
+import { useCallback, useEffect, useRef } from 'react';
 import { Reader } from './Reader';
-import { motion, AnimatePresence, LayoutGroup } from 'framer-motion';
 import { useStore } from './store';
-
-type Section = ReturnType<ePub.Book['spine']['get']>;
 
 export function EpubReader() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [book, setBook] = useState<ePub.Book | undefined>(undefined);
-  const [section, setSection] = useState<string | undefined>(undefined);
-  const [content, setContent] = useState<string | undefined>(undefined);
-  const [html, setHTML] = useState<string | undefined>(undefined);
-  const [chapters, setChapters] = useState<string[] | undefined>(undefined);
-  const [coverUrl, setCoverUrl] = useState<string | undefined>(undefined);
+
   const toggle = useStore((state) => state.toggle);
+  const [openBook, closeBook] = useStore((state) => [
+    state.openBook,
+    state.closeBook,
+  ]);
+
+  const book = useStore((state) => state.book);
+  const content = useStore((state) => state.content);
+  const section = useStore((state) => state.chapter);
+  const selectSection = useStore((state) => state.selectSection);
+  const coverUrl = useStore((state) => state.cover);
   const isPlaying = useStore((state) => state.isPlaying);
   const progress = useStore((state) => state.progress);
 
@@ -22,9 +24,7 @@ export function EpubReader() {
     const handleKeyDown = (e: KeyboardEvent) => {
       switch (e.key) {
         case 'Escape':
-          setBook(undefined);
-          setContent(undefined);
-          setSection(undefined);
+          closeBook();
           break;
         case ' ':
           toggle();
@@ -38,77 +38,10 @@ export function EpubReader() {
     };
   }, []);
 
-  const onChange = useCallback(
-    async (e: React.ChangeEvent<HTMLInputElement>) => {
-      if (e.target && e.target.files && e.target.files.length === 0) return;
-      const file = e.target.files![0];
-
-      const buffer = await file.arrayBuffer();
-
-      const book = ePub(buffer);
-
-      console.log(book);
-      await book.opened;
-
-      // const rendition = book.renderTo("area", { width: 600, height: 400 });
-      // rendition.display();
-      console.log(book);
-      setBook(book);
-    },
-    [],
-  );
-
-  const selectSection = useCallback(
-    (href: string, name: string) => async () => {
-      if (!book) return null;
-      const section = book.spine.get(href);
-      const chapter = await book.load(section.href);
-
-      if (!(chapter instanceof Document) || !chapter.body?.textContent) {
-        console.info('Odd Chapter', href, chapter);
-        return '';
-      }
-      setSection(name);
-      setContent(chapter.body.textContent.trim());
-      setHTML(chapter.body.innerHTML);
-    },
-    [book],
-  );
-
-  useEffect(() => {
-    if (book && book.isOpen) {
-      const sectionPromises: Promise<string>[] = [];
-      book.coverUrl().then((url) => {
-        if (!url) {
-          console.warn('No cover available');
-        } else {
-          setCoverUrl(url);
-        }
-      });
-
-      book.spine.each((section: Section) => {
-        const sectionPromise = (async () => {
-          const chapter = await book.load(section.href);
-          if (!(chapter instanceof Document) || !chapter.body?.textContent) {
-            console.info('Odd Chapter', section.href, chapter);
-            return '';
-          }
-          const text = chapter.body.innerHTML;
-          // console.log({ text });
-          // console.log("loading", section.href, text.length);
-          return text;
-        })();
-
-        sectionPromises.push(sectionPromise);
-      });
-
-      Promise.all(sectionPromises).then((content) => {
-        const filtered = content.filter((text) => text);
-        setChapters(filtered);
-      });
-    }
-  }, [book]);
-  console.log({ chapters, book });
+  const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target && e.target.files && e.target.files.length === 0) return;
+    openBook(e.target.files![0]);
+  }, []);
 
   return (
     <div className="flex flex-col pt-10 items-center w-screen min-h-screen ">
@@ -253,7 +186,7 @@ export function EpubReader() {
                 transition={{ duration: 0.6 }}
                 onClick={() => inputRef.current?.click()}
               >
-                ↳ Select ePub File
+                ↳ Select a Book
               </motion.div>
             )}
           </LayoutGroup>
@@ -273,7 +206,7 @@ export function EpubReader() {
               <motion.div
                 key={t.label}
                 className="hover:opacity-100 opacity-45 cursor-pointer max-w-96 overflow-hidden text-ellipsis text-nowrap"
-                onClick={selectSection(t.href, t.label)}
+                onClick={() => selectSection(t.href)}
               >
                 {t.label}
               </motion.div>
@@ -283,14 +216,6 @@ export function EpubReader() {
       )}
 
       {content && <Reader text={content} />}
-      {/* {html && <div dangerouslySetInnerHTML={{ __html: html }}></div>} */}
-
-      {/* <h1>All Content</h1>
-      {chapters &&
-        chapters.length > 0 &&
-        chapters.map((chapter, i) => (
-          <div key={i} dangerouslySetInnerHTML={{ __html: chapter }}></div>
-        ))} */}
     </div>
   );
 }
