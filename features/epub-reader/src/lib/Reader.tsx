@@ -13,7 +13,7 @@ export const Reader = ({ text }: Props) => {
   const [current, setCurrent] = useState<number>(0);
   const [words, total] = useMemo(() => {
     setCurrent(0);
-    const words = text.split('\n').join(' ').split(' ');
+    const words = text.replaceAll('—', ' — ').split('\n').join(' ').split(' ');
 
     const total = words.length;
     return [words, total];
