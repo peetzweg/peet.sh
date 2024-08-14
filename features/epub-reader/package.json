@@ -10,9 +10,10 @@
   "dependencies": {
     "epubjs": "^0.3.93",
     "framer-motion": "^11.2.10",
-    "react": "18.2.0",
+    "lib-utils": "workspace:*",
     "react-dom": "18.2.0",
     "react-is": "18.2.0",
+    "react": "18.2.0",
     "zustand": "^4.5.4"
   },
   "devDependencies": {
