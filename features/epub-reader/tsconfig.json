@@ -5,7 +5,8 @@
     "resolveJsonModule": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
-    "strict": true
+    "strict": true,
+    "types": ["@types/wicg-file-system-access"]
   },
   "files": [],
   "include": [],
