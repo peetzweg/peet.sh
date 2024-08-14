@@ -1,9 +1,8 @@
 import { AnimatePresence, LayoutGroup, motion } from 'framer-motion';
 import { useCallback, useEffect, useRef } from 'react';
-import { Reader } from './Reader';
-import { useStore } from './store';
-import { Progress } from './Progress';
 import { Controls } from './Controls';
+import { Progress } from './Progress';
+import { useStore } from './store';
 
 export function Navigation() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -15,7 +14,6 @@ export function Navigation() {
   const section = useStore((state) => state.chapter);
   const selectSection = useStore((state) => state.selectSection);
   const coverUrl = useStore((state) => state.cover);
-  const isPlaying = useStore((state) => state.isPlaying);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -85,7 +83,7 @@ export function Navigation() {
         }
         whileTap={!book ? { scale: 0.95 } : undefined}
       >
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" initial={false}>
           <LayoutGroup>
             {book && (
               <motion.div
