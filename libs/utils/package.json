@@ -14,7 +14,10 @@
   },
   "private": true,
   "dependencies": {
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "tailwind-merge": "^2.5.2"
+  },
+  "devDependencies": {
+    "tsup": "^8.2.4"
   }
 }

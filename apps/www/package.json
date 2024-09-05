@@ -13,7 +13,7 @@
   "private": true,
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
-    "@fontsource/noto-sans-mono": "^5.0.19",
+    "@fontsource/noto-sans-mono": "^5.0.20",
     "feature-epub-reader": "workspace:*",
     "feature-portfolio-diy": "workspace:*",
     "feature-portfolio-models": "workspace:*",
@@ -28,14 +28,14 @@
     "lochkarte": "workspace:*",
     "react-dom": "^18.2.0",
     "react": "^18.2.0",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.10"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/react": "^3.1.1",
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/react": "^3.6.2",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
-    "astro": "^4.5.16",
-    "typescript": "^5.4.4"
+    "astro": "^4.15.3",
+    "typescript": "^5.5.4"
   }
 }

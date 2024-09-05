@@ -40,18 +40,18 @@ const shuffleArray = <T,>(array: Array<T>) => {
 };
 
 export function Feature(props: FeatureProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const audio = useRef<HTMLAudioElement>(null);
 
-  const entries: Entries = useMemo(() => {
-    const values = Object.entries(Dict);
-    shuffleArray(values);
-    // values.sort((a, b) => a[0].localeCompare(b[0]));
+  const entries = useMemo(() => {
+    const values = Object.entries(Dict) as Entries;
+
     return values;
   }, []);
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
   const playAudio = useCallback(() => {
-    if (audio.current) {
+    if (audio.current !== null && audio.current.src !== undefined) {
       audio.current.play();
     }
   }, [audio]);
@@ -68,7 +68,7 @@ export function Feature(props: FeatureProps) {
     const handleKeyPresses = (e: KeyboardEvent) => {
       e.code === 'ArrowRight' && nextWord();
       e.code === 'ArrowLeft' && prevWord();
-      e.code === 'ShiftRight' && playAudio();
+      e.code === 'ArrowUp' && playAudio();
     };
 
     window.addEventListener('keyup', handleKeyPresses);
@@ -79,15 +79,30 @@ export function Feature(props: FeatureProps) {
     return null;
   }
 
-  const [word, { dictionary, translation }] = entries[currentIndex];
-  const meanings = dictionary.map((entry) => entry.meanings).flat();
-
-  const phonetics = dictionary
-    .map((entry) => entry.phonetics)
-    .flat()
-    .map((phonetic) => phonetic.audio)
-    .flat()
-    .filter(Boolean);
+  const { word, translation, meanings, phonetics } = useMemo(() => {
+    if (entries.length === 0)
+      return {
+        word: '',
+        translation: { text: '' },
+        meanings: [],
+        phonetics: [],
+      };
+    const [word, { dictionary, translation }] = entries[currentIndex];
+    const meanings = dictionary.map((entry) => entry.meanings).flat();
+    const phonetics = dictionary
+      .map((entry) => entry.phonetics)
+      .flat()
+      .map((phonetic) => phonetic.audio)
+      .flat()
+      .filter(Boolean);
+    return {
+      word,
+      translation,
+      meanings,
+      phonetics,
+    };
+  }, [entries, currentIndex]);
+  console.log({ phonetics });
 
   return (
     <div
@@ -115,9 +130,7 @@ export function Feature(props: FeatureProps) {
           </div>
         </div>
 
-        {phonetics.length > 0 && (
-          <audio ref={audio} className="hidden" src={phonetics[0]} controls />
-        )}
+        <audio ref={audio} className="hidden" src={phonetics[0]} />
 
         <div className="flex-row gap-x-4 items-center absolute bottom-12 hidden sm:flex sm:visible">
           <div className="flex flex-row gap-4 items-center">
@@ -139,12 +152,12 @@ export function Feature(props: FeatureProps) {
               </div>
               next
             </div>
-            {/* <div className="flex flex-row gap-3 items-center">
+            <div className="flex flex-row gap-3 items-center">
               <div className="w-20 h-8 border flex flex-row items-center justify-center">
                 <code>Shift</code>
               </div>
               audio
-            </div> */}
+            </div>
           </div>
         </div>
       </div>

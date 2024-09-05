@@ -17,29 +17,46 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="relative">
-      <h1 class=" text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">Days spent reading</h1>
-      <FeaturePunchcard client:visible/>
+      <h1
+        class="text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      >
+        Days spent reading
+      </h1>
+      <FeaturePunchcard client:visible />
     </div>
-    <div class="relative">
 
-      <h1 class=" text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">Collected words along the way</h1>
-      <Vocabulary client:visible/>
-    </div>
     <div class="relative">
-      <h1 class=" text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">Adventures had</h1>
+      <h1
+        class="text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      >
+        Collected words along the way
+      </h1>
+      <Vocabulary client:visible />
+    </div>
+
+    <div class="relative">
+      <h1
+        class="text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      >
+        Adventures had
+      </h1>
       <FeatStravaActivities client:visible />
     </div>
 
-
-
     <div class="relative">
-      <h1 class=" text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">Kilometers conquered</h1>
+      <h1
+        class="text-xl sticky top-0 pt-1 pb-2 pl-4 z-50 opacity-90 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      >
+        Kilometers conquered
+      </h1>
       <FeatSportStats client:only />
       <FeatSportTotals />
     </div>
 
     <div class="relative">
-      <h1 class="text-4xl md:text-6xl absolute top-[10vh] left-[10vw] break-word">
+      <h1
+        class="text-4xl md:text-6xl absolute top-[10vh] left-[10vw] break-word"
+      >
         ❀ handmade flowers, just for you ✿
       </h1>
       <FeatPortfolioModels client:visible />
@@ -53,7 +70,9 @@ import Layout from '../layouts/Layout.astro';
       <FeatPortfolioP5 client:only />
     </div>
     <div class="relative">
-      <h1 class="text-2xl bg-yellow-600 md:text-6xl absolute top-[30vh] left-[20vw] break-all">
+      <h1
+        class="text-2xl bg-yellow-600 md:text-6xl absolute top-[30vh] left-[20vw] break-all"
+      >
         old, but still cool ☞☜
       </h1>
       <TerminalComponent client:only />
