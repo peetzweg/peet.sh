@@ -87,7 +87,7 @@ export function AccumulatedGraph({
           curve={curveStep}
           data={data}
           x={(d) => xScale(getX(d)) ?? 0}
-          y={(d) => yMax - yScale(getY(d)) ?? 0}
+          y={(d) => yMax - yScale(getY(d)) || 0}
           stroke={foreground}
         />
 

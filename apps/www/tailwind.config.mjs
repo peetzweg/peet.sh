@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+import path from 'node:path';
+
 export default {
   content: [
-    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-    '../../features/**/src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
+    path.join(__dirname, './src/**/*.{astro,html,jsx,md,mdx,svelte,tsx,vue}'),
+    path.join(
+      __dirname,
+      '../../features/**/src/**/*.{astro,html,jsx,md,mdx,svelte,tsx,vue}',
+    ),
   ],
   theme: {
     extend: {

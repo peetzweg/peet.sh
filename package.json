@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "dev":"pnpm --filter www dev",
-    "build":"pnpm --filter www build"
+    "build":"pnpm --filter www build",
+    "postinstall": "pnpm --filter 'lib-*' build"
   },
   "private": true,
   "dependencies": {

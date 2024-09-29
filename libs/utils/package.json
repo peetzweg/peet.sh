@@ -1,0 +1,23 @@
+{
+  "name": "lib-utils",
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsup ./src/index.ts --minify --dts --format cjs,esm --out-dir ./dist"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "private": true,
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.2"
+  },
+  "devDependencies": {
+    "tsup": "^8.2.4"
+  }
+}
