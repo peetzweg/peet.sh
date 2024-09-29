@@ -95,7 +95,7 @@ export function FeatProfileArena() {
                 <a target="_blank" className="underline" href={'/hardware'}>
                   hardware
                 </a>
-                <a target="_blank" className="underline" href={'/goodies'}>
+                <a target="_blank" className="underline" href={'/hyperlinks'}>
                   sweet-hyperlinks
                 </a>
                 <a target="_blank" className="underline" href={'/posts'}>
