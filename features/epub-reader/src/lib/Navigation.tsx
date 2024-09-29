@@ -37,6 +37,20 @@ export function Navigation() {
 
   const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target && e.target.files && e.target.files.length === 0) return;
+    const file = e.target.files![0];
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      if (event.target?.result) {
+        const arrayBuffer = event.target.result as ArrayBuffer;
+        const hashBuffer = await crypto.subtle.digest('SHA-256', arrayBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray
+          .map((b) => b.toString(16).padStart(2, '0'))
+          .join('');
+        console.log('File hash:', hashHex);
+      }
+    };
+    reader.readAsArrayBuffer(file);
     openBook(e.target.files![0]);
   }, []);
 
