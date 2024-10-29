@@ -123,7 +123,7 @@ export function FeatProfileArena() {
                   target="_blank"
                   href={'https://x.com/peetzweg'}
                 >
-                  x
+                  x / twitter
                 </a>
                 <a
                   className="underline"
