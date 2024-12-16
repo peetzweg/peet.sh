@@ -22,23 +22,30 @@ export interface LinkInfo {
 ---
 
 <Layout title={'List of nice hyperlinks'}>
-  <ol class="gap-2">
+  <ol class="gap-4">
     {
       linkData.map((link: LinkInfo, index: number) => (
         <li>
           <a
-            class="flex flex-col py-2 px-1 font-mono "
+            class="flex flex-col py-2 px-1 md:px-0 font-mono "
             href={link.url}
             target={'_blank'}
           >
+
             <div class="flex flex-row gap-2 items-center">
               <img class="aspect-square w-4" src={link.favicon} alt=" " />
 
               <span class="truncate">{link.ogTitle || link.title}</span>
             </div>
-            <div>
-              <span class="text-sm line-clamp-2 text-black">{link.description}</span>
+
+            <div class="text-sm pl-6  text-gray-500">
+              <span title={link.url} class="line-clamp-1">{link.url}</span>
             </div>
+
+            {link.description&&<div class='pl-6 pt-2'>
+              <span class="text-sm line-clamp-2 text-black">{link.description}</span>
+            </div>}
+
           </a>
         </li>
       ))
