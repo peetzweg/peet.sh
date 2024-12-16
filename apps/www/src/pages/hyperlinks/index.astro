@@ -31,7 +31,6 @@ export interface LinkInfo {
             href={link.url}
             target={'_blank'}
           >
-
             <div class="flex flex-row gap-2 items-center">
               <img class="aspect-square w-4" src={link.favicon} alt=" " />
 
@@ -39,13 +38,18 @@ export interface LinkInfo {
             </div>
 
             <div class="text-sm pl-6  text-gray-500">
-              <span title={link.url} class="line-clamp-1">{link.url}</span>
+              <span title={link.url} class="line-clamp-1">
+                {link.url}
+              </span>
             </div>
 
-            {link.description&&<div class='pl-6 pt-2'>
-              <span class="text-sm line-clamp-2 text-black">{link.description}</span>
-            </div>}
-
+            {link.description && (
+              <div class="pl-6 pt-2">
+                <span class="text-sm line-clamp-2 text-black">
+                  {link.description}
+                </span>
+              </div>
+            )}
           </a>
         </li>
       ))
