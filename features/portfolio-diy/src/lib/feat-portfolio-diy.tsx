@@ -5,6 +5,14 @@ export interface FeatPortfolioDiyProps {}
 
 const ENTRIES = [
   {
+    title: 'Wooden Bench',
+    src: '/hardware/bench.jpeg',
+  },
+  {
+    title: 'Couch Pillow',
+    src: '/hardware/pillow.jpeg',
+  },
+  {
     title: 'Backlit Mirror',
     src: '/hardware/mirror.jpg',
   },
