@@ -117,13 +117,23 @@ export function FeatProfileArena() {
                 <div>
                   <br />
                 </div>
+                <div>
+                  <br />
+                </div>
 
+                <a
+                  className="underline"
+                  target="_blank"
+                  href={'https://bsky.app/profile/peet.sh'}
+                >
+                  bluesky
+                </a>
                 <a
                   className="underline"
                   target="_blank"
                   href={'https://x.com/peetzweg'}
                 >
-                  x / twitter
+                  x
                 </a>
                 <a
                   className="underline"
