@@ -16,29 +16,31 @@ import Rack01 from './assets/Rack01.jpg';
 import Shades from './assets/shades.jpg';
 
 const images = [
-    { src: BathroomLamp, alt: "Bathroom Lamp" },
-    { src: Bench, alt: "Wooden Bench" },
-    { src: ConcreteLamp, alt: "Concrete Lamp" },
-    { src: Mirror, alt: "Mirror" },
-    { src: Pillow, alt: "Pillow" },
-    { src: Bed, alt: "Bed" },
-    { src: Bernd, alt: "Bernd" },
-    { src: Bikewallmount, alt: "Bike Wall Mount" },
-    { src: CurtainPole, alt: "Curtain Pole" },
-    { src: Lamp, alt: "Lamp" },
-    { src: Pottery, alt: "Pottery" },
-    { src: Potence01, alt: "Potence 01" },
-    { src: Rack01, alt: "Rack 01" },
-    { src: Shades, alt: "Shades" }
+    { src: BathroomLamp, alt: "Scrapped bathroom lamp with Coffee Filter diffusor" },
+    { src: Bench, alt: "Wooden bench made from my dining table" },
+    { src: ConcreteLamp, alt: "Concrete Lamp, used milk carton as base" },
+    { src: Mirror, alt: "Backlit mirror" },
+    { src: Pillow, alt: "Pillow sewn from textile examples" },
+    { src: Bed, alt: "Bed and headboard made from cheap wood laths" },
+    { src: Bernd, alt: "Easy Chair made of an old couch, got new leather upholstery" },
+    { src: Bikewallmount, alt: "Simple wall mount for my bike" },
+    { src: CurtainPole, alt: "Hangers for my curtains made from heating pipes" },
+    { src: Lamp, alt: "Chandelier installation with an old painters ladder" },
+    { src: Pottery, alt: "Wheel thrown pottery" },
+    { src: Potence01, alt: "Potence inspired concept lamp made with bronze rods" },
+    { src: Rack01, alt: "IKEA compatible rack welded from steel rods" },
+    { src: Shades, alt: "Blocky paper shades A3/A4" }
 ];
 ---
 
 <div class="flex flex-col gap-4">
-    <h1>Hardware</h1>
+  <div class="flex items-center justify-center w-full h-[90vh]">
+    <h1>Hardware Made by Me ↓</h1>
+  </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {images.map(({ src, alt }) => (
             <div class="flex flex-col gap-2">
-                <Image src={src} alt={alt} class="w-full h-auto rounded-lg" />
+                <Image src={src} alt={alt} class="w-full h-auto" />
                 <p class="text-sm text-gray-600">{alt}</p>
             </div>
         ))}
