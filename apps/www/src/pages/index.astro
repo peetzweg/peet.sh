@@ -6,14 +6,14 @@ import { FeatPortfolioModels } from 'feature-portfolio-models';
 import { FeatSportStats, FeatSportTotals } from 'feature-sport-stats';
 import { Feature as FeaturePunchcard } from 'feature-punchcard';
 import { FeatStravaActivities } from 'feature-strava-activities';
-import { Feature as Vocabulary } from 'feature-vocabulary';
+
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="peet.sh / Philip Poloczek">
   <main>
     <div style="height:105vh">
-      <FeatProfileArena client:load />
+      <FeatProfileArena client:only="react" />
     </div>
 
     <div class="relative">
@@ -22,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
       >
         Days spent reading
       </h1>
-      <FeaturePunchcard client:visible />
+      <FeaturePunchcard client:only="react" />
     </div>
 
     <div class="relative">
@@ -31,7 +31,7 @@ import Layout from '../layouts/Layout.astro';
       >
         Collected words along the way
       </h1>
-      <Vocabulary client:visible />
+      <!-- <Vocabulary client:visible /> -->
     </div>
 
     <div class="relative">
@@ -40,7 +40,7 @@ import Layout from '../layouts/Layout.astro';
       >
         Adventures had
       </h1>
-      <FeatStravaActivities client:visible />
+      <FeatStravaActivities client:only="react" />
     </div>
 
     <div class="relative">
@@ -49,8 +49,8 @@ import Layout from '../layouts/Layout.astro';
       >
         Kilometers conquered
       </h1>
-      <FeatSportStats client:only />
-      <FeatSportTotals />
+      <FeatSportStats client:only="react" />
+      <FeatSportTotals client:only="react" />
     </div>
 
     <div class="relative">
@@ -59,7 +59,7 @@ import Layout from '../layouts/Layout.astro';
       >
         ❀ <a class="underline" href="https://x.com/peetzweg/status/1625962357967945733" target="_blank">handmade</a> flowers ✿
       </h1>
-      <FeatPortfolioModels client:visible />
+      <FeatPortfolioModels client:only="react" />
     </div>
 
     <div class="relative">
@@ -67,7 +67,7 @@ import Layout from '../layouts/Layout.astro';
         much nfts, such wow •ᴗ•
       </h1>
 
-      <FeatPortfolioP5 client:only />
+      <FeatPortfolioP5 client:only="react" />
     </div>
     <div class="relative">
       <h1
@@ -75,7 +75,7 @@ import Layout from '../layouts/Layout.astro';
       >
         old, but still cool ☞☜
       </h1>
-      <TerminalComponent client:only />
+      <TerminalComponent client:only="react" />
     </div>
   </main>
 </Layout>
